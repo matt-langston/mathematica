@@ -1,0 +1,948 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     40537,        939]
+NotebookOptionsPosition[     37194,        816]
+NotebookOutlinePosition[     37648,        834]
+CellTagsIndexPosition[     37605,        831]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Xcode", "Title",
+ CellChangeTimes->{{3.423249435765991*^9, 3.4232494362659817`*^9}, {
+  3.425938595649876*^9, 3.425938599462327*^9}, {3.4728325864937787`*^9, 
+  3.4728325871186867`*^9}, {3.4728543628462152`*^9, 3.4728543676746492`*^9}, {
+  3.472995656439145*^9, 3.472995657329765*^9}, {3.4745662179002285`*^9, 
+  3.4745662197439785`*^9}, {3.4862219719168663`*^9, 3.4862219765293274`*^9}, {
+  3.4889321576242976`*^9, 3.488932170023537*^9}, {3.4890041680376186`*^9, 
+  3.489004174237239*^9}, {3.489324591621959*^9, 3.489324593756173*^9}, {
+  3.4896916145120697`*^9, 3.4896916154722977`*^9}, {3.4896922922018747`*^9, 
+  3.489692293109723*^9}, {3.4897517967336097`*^9, 3.489751797778714*^9}, {
+  3.490302807089181*^9, 3.4903028083673086`*^9}, {3.575828899887245*^9, 
+  3.575828900869228*^9}, {3.5759932374344273`*^9, 3.5759932397011747`*^9}, {
+  3.582567672410555*^9, 3.5825676746881037`*^9}, {3.585597472526136*^9, 
+  3.5855974731992903`*^9}},
+ TextAlignment->Center],
+
+Cell[CellGroupData[{
+
+Cell["Setup", "Section",
+ CellChangeTimes->{{3.474554985665854*^9, 3.474554986572104*^9}, {
+  3.4774892196824455`*^9, 3.47748922549502*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Xcode`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.5856587755694427`*^9, 3.585658780099402*^9}, 
+   3.599604629618512*^9}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Utilities`Debug`\>\"", "]"}]], "Input",
+ CellChangeTimes->{
+  3.4900434366656055`*^9, {3.575828983190866*^9, 3.575828985442533*^9}, 
+   3.599604627284566*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Xcode", "Section",
+ CellChangeTimes->{{3.5855997365674763`*^9, 3.585599752979813*^9}, {
+  3.585615377127557*^9, 3.585615377548991*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"XcodePath", "[", "]"}]], "Input"],
+
+Cell[BoxData["\<\"/Applications/Xcode.app/Contents/Developer\"\>"], "Output",
+ CellChangeTimes->{3.585616389846122*^9, 3.5856166129504623`*^9, 
+  3.585617830675049*^9, 3.585618132397382*^9, 3.585618966698057*^9, 
+  3.5856190560551863`*^9, 3.58565895202309*^9, 3.585659037227646*^9, 
+  3.585659127617358*^9, 3.586956614949267*^9, 3.599604658874837*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"XcodeSdkPath", "[", "]"}]], "Input"],
+
+Cell[BoxData["\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk\"\>"], "Output",
+ CellChangeTimes->{3.5856163899408703`*^9, 3.585616613051408*^9, 
+  3.585617830750222*^9, 3.585618132471732*^9, 3.585618966781129*^9, 
+  3.585619056164109*^9, 3.585659040226572*^9, 3.585659127682781*^9, 
+  3.5869566181368923`*^9, 3.599604659884316*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"XcodeSdkVersion", "[", "]"}]], "Input"],
+
+Cell[BoxData["\<\"10.9\"\>"], "Output",
+ CellChangeTimes->{3.5856163900383863`*^9, 3.585616613148151*^9, 
+  3.585617830830584*^9, 3.585618132547784*^9, 3.585618966858316*^9, 
+  3.585619056270348*^9, 3.585659042565901*^9, 3.585659127743218*^9, 
+  3.5869566185107737`*^9, 3.599604660345963*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"XcodeSdkPlatformPath", "[", "]"}]], "Input"],
+
+Cell[BoxData["\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform\"\>"], "Output",
+ CellChangeTimes->{3.5856163901346273`*^9, 3.58561661323413*^9, 
+  3.585617830901016*^9, 3.585618132636199*^9, 3.585618966942512*^9, 
+  3.58561905635107*^9, 3.585659046671114*^9, 3.585659127773952*^9, 
+  3.586956618775207*^9, 3.599604660589965*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"XcodeSdkPlatformVersion", "[", "]"}]], "Input"],
+
+Cell[BoxData["\<\"1.1\"\>"], "Output",
+ CellChangeTimes->{3.585616390234606*^9, 3.585616613314374*^9, 
+  3.585617830981083*^9, 3.585618132715333*^9, 3.58561896703328*^9, 
+  3.585619056434598*^9, 3.585659048918454*^9, 3.585659127801758*^9, 
+  3.586956619039237*^9, 3.5996046608531837`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReadList", "[", 
+   RowBox[{"\"\<!xcodebuild -showsdks\>\"", ",", "String"}], "]"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.585615975343501*^9, 3.5856159764706306`*^9}}],
+
+Cell[BoxData["9"], "Output",
+ CellChangeTimes->{3.5856159775649652`*^9, 3.5856163904879713`*^9, 
+  3.585616613565935*^9, 3.585617831246293*^9, 3.585618132978078*^9, 
+  3.5856189672956743`*^9, 3.585619056687257*^9, 3.585659055793749*^9, 
+  3.585659128298778*^9, 3.5869566193418083`*^9, 3.599604661098589*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReadList", "[", 
+   RowBox[{"\"\<!xcodebuild -showsdks\>\"", ",", "String"}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.5856159460901623`*^9, 3.585615955793901*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"OS X SDKs:\"\>"},
+     {"\<\"\\tOS X 10.8                     \\t-sdk macosx10.8\"\>"},
+     {"\<\"\\tOS X 10.9                     \\t-sdk macosx10.9\"\>"},
+     {"\<\"iOS SDKs:\"\>"},
+     {"\<\"\\tiOS 7.0                       \\t-sdk iphoneos7.0\"\>"},
+     {"\<\"iOS Simulator SDKs:\"\>"},
+     {"\<\"\\tSimulator - iOS 6.0           \\t-sdk iphonesimulator6.0\"\>"},
+     {"\<\"\\tSimulator - iOS 6.1           \\t-sdk iphonesimulator6.1\"\>"},
+     {"\<\"\\tSimulator - iOS 7.0           \\t-sdk iphonesimulator7.0\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.585615948764338*^9, 3.58561595654196*^9}, 
+   3.585616390749886*^9, 3.585616613819601*^9, 3.585617831509259*^9, 
+   3.5856181332428007`*^9, 3.585618967551592*^9, 3.58561905694963*^9, 
+   3.585659057872518*^9, 3.5856591285532923`*^9, 3.586956619689951*^9, 
+   3.599604661393114*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"XcodeSdkList", "[", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"macosx10.8\"\>", ",", "\<\"OS X 10.8\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"macosx10.9\"\>", ",", "\<\"OS X 10.9\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"iphoneos7.0\"\>", ",", "\<\"iOS 7.0\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"iphonesimulator6.0\"\>", 
+     ",", "\<\"Simulator - iOS 6.0\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"iphonesimulator6.1\"\>", 
+     ",", "\<\"Simulator - iOS 6.1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"iphonesimulator7.0\"\>", 
+     ",", "\<\"Simulator - iOS 7.0\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.5856163911174803`*^9, 3.5856164395671062`*^9, 
+  3.585616614188456*^9, 3.585617690700914*^9, 3.585617831921583*^9, 
+  3.585618133650158*^9, 3.585618967952664*^9, 3.5856190573315487`*^9, 
+  3.585659061364443*^9, 3.585659128912745*^9, 3.586956619949441*^9, 
+  3.599604661703311*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"XcodeSdkPath", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.585616563301649*^9, 3.585616572759987*^9}}],
+
+Cell[BoxData["\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk\"\>"], "Output",
+ CellChangeTimes->{{3.5856165640677423`*^9, 3.585616573147944*^9}, 
+   3.5856166143380632`*^9, 3.585617832034082*^9, 3.585618133784073*^9, 
+   3.58561896809496*^9, 3.585619057472466*^9, 3.585620287334373*^9, 
+   3.585659069217005*^9, 3.585659128946663*^9, 3.586956619986923*^9, 
+   3.5996046618542633`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Join", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{"{", 
+        RowBox[{"XcodeSdkPath", "[", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}], "}"}]}], "]"}], "&"}], ",", 
+    RowBox[{"XcodeSdkList", "[", "]"}]}], "]"}], "//", "TableForm"}]], "Input",\
+
+ CellChangeTimes->{{3.585616524597682*^9, 3.585616584387809*^9}, 
+   3.58561905030329*^9, {3.585620150953624*^9, 3.5856202447924643`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"macosx10.8\"\>", "\<\"OS X 10.8\"\>", \
+"\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/\
+Developer/SDKs/MacOSX10.8.sdk\"\>"},
+    {"\<\"macosx10.9\"\>", "\<\"OS X 10.9\"\>", \
+"\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/\
+Developer/SDKs/MacOSX10.9.sdk\"\>"},
+    {"\<\"iphoneos7.0\"\>", "\<\"iOS 7.0\"\>", \
+"\<\"/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/\
+Developer/SDKs/iPhoneOS7.0.sdk\"\>"},
+    {"\<\"iphonesimulator6.0\"\>", "\<\"Simulator - iOS 6.0\"\>", \
+"\<\"/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.\
+platform/Developer/SDKs/iPhoneSimulator6.0.sdk\"\>"},
+    {"\<\"iphonesimulator6.1\"\>", "\<\"Simulator - iOS 6.1\"\>", \
+"\<\"/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.\
+platform/Developer/SDKs/iPhoneSimulator6.1.sdk\"\>"},
+    {"\<\"iphonesimulator7.0\"\>", "\<\"Simulator - iOS 7.0\"\>", \
+"\<\"/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.\
+platform/Developer/SDKs/iPhoneSimulator7.0.sdk\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.585616530428602*^9, 3.5856166145929956`*^9}, 
+   3.5856178323050222`*^9, 3.585618134058832*^9, 3.585618968353948*^9, 
+   3.585619057738036*^9, {3.585620239104526*^9, 3.585620247509838*^9}, {
+   3.585620291895865*^9, 3.5856202946313877`*^9}, {3.585659074216161*^9, 
+   3.585659080059256*^9}, 3.5856591312759247`*^9, 3.586956626467979*^9, 
+   3.599604666157839*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"XcodeFrameworksPath", "[", "]"}]], "Input",
+ CellChangeTimes->{3.585618055897904*^9}],
+
+Cell[BoxData["\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks\"\>"], \
+"Output",
+ CellChangeTimes->{3.5856167050168257`*^9, 3.5856178323680277`*^9, 
+  3.585618056626563*^9, 3.585618134122867*^9, 3.585618968416252*^9, 
+  3.585619057792295*^9, 3.5856590827303123`*^9, 3.585659131335429*^9, 
+  3.586956626626039*^9, 3.5996046662896757`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"XcodeFrameworksPath", "[", "\"\<iphonesimulator7.0\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{3.585616740844266*^9, 3.585617773200408*^9, 
+  3.5856190469912043`*^9}],
+
+Cell[BoxData["\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks\"\>"], "Output",
+ CellChangeTimes->{3.585616741675769*^9, 3.585617832940372*^9, 
+  3.585618134701899*^9, 3.5856189689687433`*^9, 3.585619058362092*^9, 
+  3.585659085005398*^9, 3.585659131592662*^9, 3.586956626889579*^9, 
+  3.599604666529208*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"XcodeFrameworkPathList", "[", "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{";;", "5"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.585616896407383*^9, 3.585616905560629*^9}, 
+   3.585617782283963*^9, 3.585618076797243*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accelerate.\
+framework\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Accounts.\
+framework\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AddressBook.\
+framework\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AGL.\
+framework\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.\
+framework\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.585616889017603*^9, 3.585616905709072*^9}, 
+   3.585617833087549*^9, 3.585618033002441*^9, 3.5856180772653103`*^9, 
+   3.5856181348916473`*^9, 3.5856189691641273`*^9, 3.5856190584773808`*^9, 
+   3.585659088182263*^9, 3.585659131626608*^9, 3.5869566269349537`*^9, 
+   3.599604666563455*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"XcodeFrameworkPathList", "[", "\"\<iphonesimulator7.0\>\"", "]"}], 
+  "[", 
+  RowBox[{"[", 
+   RowBox[{";;", "5"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{3.585617071631069*^9, 3.585617804219186*^9, 
+  3.5856180847571507`*^9, 3.5856190425271807`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/Accelerate.framework\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/Accounts.framework\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/AddressBook.framework\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/AddressBookUI.framework\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/AdSupport.framework\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.585617072893175*^9, 3.58561783390704*^9, 
+  3.585618085906528*^9, 3.585618135698897*^9, 3.585618969965269*^9, 
+  3.585619058638131*^9, 3.585659091405334*^9, 3.585659132128952*^9, 
+  3.586956627488719*^9, 3.599604667060604*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"#", ",", 
+       RowBox[{"Length", "[", 
+        RowBox[{"XcodeFrameworkPathList", "[", "#", "]"}], "]"}]}], "}"}], 
+     "&"}], ",", 
+    RowBox[{
+     RowBox[{"XcodeSdkList", "[", "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "1"}], "]"}], "]"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.585617087620699*^9, 3.5856171341455097`*^9}, {
+   3.585617587738061*^9, 3.585617611641218*^9}, 3.585617806421288*^9, 
+   3.5856180925852118`*^9}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"macosx10.8\"\>", "110"},
+    {"\<\"macosx10.9\"\>", "111"},
+    {"\<\"iphoneos7.0\"\>", "57"},
+    {"\<\"iphonesimulator6.0\"\>", "54"},
+    {"\<\"iphonesimulator6.1\"\>", "54"},
+    {"\<\"iphonesimulator7.0\"\>", "58"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.585617143409474*^9, {3.585617587584712*^9, 3.585617618576459*^9}, {
+   3.5856176680863943`*^9, 3.585617671430952*^9}, 3.585617839618692*^9, 
+   3.585618099692231*^9, 3.5856181413414097`*^9, 3.585618975471422*^9, 
+   3.585619058899439*^9, 3.5856590968409653`*^9, 3.585659135937335*^9, 
+   3.586956631632205*^9, 3.5996046699027643`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"XcodeFrameworkNameQ", ",", 
+   RowBox[{"{", 
+    RowBox[{"\"\<Foo\>\"", ",", "\"\<JavaScriptCore\>\""}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.585618706313107*^9, 3.585618726776216*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"False", ",", "True"}], "}"}]], "Output",
+ CellChangeTimes->{3.58561872756036*^9, 3.585618793929249*^9, 
+  3.5856189757509108`*^9, 3.585619059093389*^9, 3.5856590972860413`*^9, 
+  3.585659136005179*^9, 3.5869566317058268`*^9, 3.599604670153159*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"XcodeFrameworkHeaderList", "[", "\"\<JavaScriptCore\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.5856187357055902`*^9, 3.5856187541243153`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JavaScriptCore.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JavaScript.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JSBase.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JSContext.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JSContextRef.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JSExport.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JSManagedValue.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JSObjectRef.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JSStringRefCF.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JSStringRef.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JSValue.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JSValueRef.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/JSVirtualMachine.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.\
+platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/\
+JavaScriptCore.framework/Headers/WebKitAvailability.h\"\>"}], "}"}]], "Output",\
+
+ CellChangeTimes->{{3.585618742385838*^9, 3.585618754685074*^9}, 
+   3.585618796292581*^9, 3.58561897581583*^9, 3.585619059136759*^9, {
+   3.585659099353774*^9, 3.5856591040188637`*^9}, 3.585659136044611*^9, 
+   3.586956631756036*^9, 3.599604670204752*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"XcodeFrameworkHeaderList", "[", 
+  RowBox[{"\"\<JavaScriptCore\>\"", ",", "\"\<iphonesimulator7.0\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.585618933924169*^9, 3.5856189416491137`*^9}, 
+   3.585619030232892*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JavaScriptCore.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JavaScript.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JSBase.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JSContext.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JSContextRef.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JSExport.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JSManagedValue.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JSObjectRef.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JSStringRefCF.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JSStringRef.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JSValue.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JSValueRef.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/JSVirtualMachine.h\"\>", 
+   ",", "\<\"/Applications/Xcode.app/Contents/Developer/Platforms/\
+iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/\
+Frameworks/JavaScriptCore.framework/Headers/WebKitAvailability.h\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.5856189763112593`*^9, {3.585619031575179*^9, 3.585619060598027*^9}, {
+   3.585659107777834*^9, 3.585659136816921*^9}, 3.5869566325619993`*^9, 
+   3.599604670922922*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Xcode Project File", "Section",
+ CellChangeTimes->{{3.5855997365674763`*^9, 3.585599752979813*^9}, {
+  3.585615377127557*^9, 3.585615377548991*^9}, {3.586956660861845*^9, 
+  3.586956664197875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"testDataDir", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "$ProjectDirectory", ",", "\"\<TestData\>\"", ",", "\"\<Xcode\>\"", ",", 
+      "\"\<xcode_project_empty_static_library\>\""}], "}"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.5713287110603027`*^9, 3.571328719012298*^9}, {
+  3.5787533862167664`*^9, 3.578753413602745*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FileNames", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"\"\<ios\>\"", "|", "\"\<osx\>\""}], ")"}], "~~", 
+    "DigitCharacter"}], ",", 
+   RowBox[{"{", "testDataDir", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.489703023508099*^9, 3.489703029305976*^9}, {
+   3.4900430471444387`*^9, 3.490043082804697*^9}, {3.571328591314693*^9, 
+   3.571328630723558*^9}, {3.571328664902741*^9, 3.5713286724561043`*^9}, 
+   3.5713287268045483`*^9, {3.5787534189325657`*^9, 3.5787534193548737`*^9}, {
+   3.578753462333775*^9, 3.578753519624655*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{
+  3.4897030302301207`*^9, 3.489703064878433*^9, 3.489703981144204*^9, 
+   3.489704012427629*^9, 3.489704493783039*^9, 3.489704843353084*^9, 
+   3.489704954626094*^9, 3.489706215185616*^9, 3.489708290806575*^9, 
+   3.4897160559721746`*^9, 3.489722538378076*^9, 3.48976502539647*^9, 
+   3.4897654355334797`*^9, 3.489765567953721*^9, 3.4897656945263767`*^9, 
+   3.489765963494271*^9, {3.4897659940173225`*^9, 3.48976602309223*^9}, 
+   3.4897660757804985`*^9, 3.4897710089557667`*^9, 3.489918286241706*^9, 
+   3.489918352523333*^9, 3.4899202460216637`*^9, 3.4899227892799644`*^9, 
+   3.489922938432878*^9, 3.489923087647798*^9, 3.489923218399872*^9, 
+   3.48994223257117*^9, 3.4899479668696127`*^9, 3.489948632400159*^9, 
+   3.489948786467564*^9, 3.4899501773076344`*^9, 3.4899502935112534`*^9, 
+   3.4899514500628967`*^9, 3.4899516116350527`*^9, 3.4899559035772038`*^9, 
+   3.489956296350477*^9, 3.4899570035431895`*^9, 3.4899570865344877`*^9, 
+   3.4899572239192247`*^9, 3.4899573462304544`*^9, 3.4899579458654127`*^9, 
+   3.4899600364064455`*^9, 3.4899601986896725`*^9, 3.489960353311133*^9, 
+   3.4899632881136446`*^9, 3.4899635737872095`*^9, 3.489963665665396*^9, 
+   3.489963921610988*^9, 3.489964533343155*^9, 3.4899656231751275`*^9, 
+   3.489966752822081*^9, 3.4899672358783817`*^9, 3.4899681523640213`*^9, 
+   3.4899682474495287`*^9, {3.49004308443635*^9, 3.490043095247672*^9}, 
+   3.490043190626809*^9, 3.490043282318471*^9, {3.490043317350478*^9, 
+   3.490043362763828*^9}, 3.4900434503753467`*^9, 3.4900434986540003`*^9, {
+   3.490044206079549*^9, 3.49004421130375*^9}, 3.4901007253713365`*^9, 
+   3.4901022933743362`*^9, 3.4901042553233366`*^9, 3.4901043420633364`*^9, 
+   3.4901044106673365`*^9, 3.490104800204336*^9, 3.490104999072336*^9, 
+   3.490105161258336*^9, 3.490105464862336*^9, 3.4901059550853367`*^9, 
+   3.4901061202533364`*^9, 3.490106199843336*^9, 3.4901066629893365`*^9, {
+   3.4901068195693364`*^9, 3.4901068349653363`*^9}, 3.4901069771743364`*^9, 
+   3.490109833562104*^9, 3.4901155536200533`*^9, 3.490115866574345*^9, 
+   3.490115995073194*^9, 3.490116432357918*^9, 3.4901171013308086`*^9, 
+   3.4901288130918674`*^9, 3.4901290810396595`*^9, 3.490129490925644*^9, 
+   3.4901295937669272`*^9, 3.4901301865562005`*^9, 3.490130256788223*^9, 
+   3.4901310815396895`*^9, 3.4901311205325885`*^9, 3.4901312207716117`*^9, 
+   3.4901314635548873`*^9, 3.4901325443639574`*^9, 3.49013272971249*^9, 
+   3.490133064321948*^9, 3.4901335653390446`*^9, 3.490136893544832*^9, 
+   3.4901373928277555`*^9, 3.4901374701874905`*^9, 3.4901379338018475`*^9, 
+   3.4901379846939363`*^9, 3.4901385902894897`*^9, 3.49014012374282*^9, 
+   3.490140336217065*^9, 3.4901406072531657`*^9, 3.4901408101194506`*^9, 
+   3.4901454832398567`*^9, 3.4901457263961697`*^9, 3.490145838189348*^9, 
+   3.490146141089635*^9, 3.490146713670888*^9, 3.4901469797384915`*^9, 
+   3.4901472191954346`*^9, 3.4901473662561398`*^9, 3.490149757281218*^9, 
+   3.490150069047392*^9, 3.4901517880482745`*^9, 3.490274556368864*^9, 
+   3.4902908820177927`*^9, 3.4902950801105604`*^9, 3.490295309200467*^9, 
+   3.4902953786304092`*^9, 3.4902955563491793`*^9, 3.490295745342077*^9, 
+   3.4902959488304234`*^9, 3.490296177090247*^9, 3.4902962995164886`*^9, 
+   3.490296396052141*^9, 3.4902965654340773`*^9, 3.4902968273872705`*^9, {
+   3.490302978358306*^9, 3.4903029800464745`*^9}, 3.4903030105095205`*^9, 
+   3.49031561706421*^9, 3.490317211171605*^9, 3.4903849975808125`*^9, 
+   3.490451917619401*^9, 3.49045206432807*^9, 3.490452440054639*^9, 
+   3.4904530532459517`*^9, {3.490453277306356*^9, 3.4904533037670016`*^9}, 
+   3.4904570470092883`*^9, 3.4910610364924316`*^9, 3.491061180276432*^9, 
+   3.491061546704174*^9, 3.49106163737724*^9, 3.4910637586803493`*^9, 
+   3.491063844386919*^9, 3.491064010762555*^9, 3.491064080748553*^9, 
+   3.4910718067100906`*^9, 3.4910720126766853`*^9, 3.491072410349448*^9, 
+   3.491241315185534*^9, 3.4912413785668716`*^9, 3.4913152423851132`*^9, 
+   3.4913153017430487`*^9, 3.4913159547103386`*^9, 3.4913168182276816`*^9, 
+   3.491359709410512*^9, 3.4913597634999204`*^9, 3.4913617568102317`*^9, {
+   3.4913619409966483`*^9, 3.491361965786127*^9}, 3.4913621084743943`*^9, {
+   3.5713286072457857`*^9, 3.571328631526545*^9}, {3.57132866684391*^9, 
+   3.5713286733733*^9}, 3.5713287272528477`*^9, 3.57133177992517*^9, 
+   3.571332025586421*^9, 3.5713322013791637`*^9, 3.5713333809892607`*^9, 
+   3.571335850761499*^9, 3.571341536573938*^9, 3.5713529538259783`*^9, 
+   3.571352987300147*^9, 3.578753430280559*^9, {3.578753482598328*^9, 
+   3.57875352024223*^9}, 3.578753558083653*^9, 3.5787536983560953`*^9, 
+   3.586956706655992*^9, 3.599604675390326*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["iOS2", "Subsection",
+ CellChangeTimes->{{3.4897651325171814`*^9, 3.489765133292259*^9}, 
+   3.489968326023385*^9, {3.5713288045100107`*^9, 3.5713288048125*^9}, {
+   3.5787535923060617`*^9, 3.578753595071566*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"xcodeProjectDir", "=", 
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{"testDataDir", ",", "\"\<ios2\>\""}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.4745555853377285`*^9, 3.4745556009314785`*^9}, {
+   3.4773911908763094`*^9, 3.4773911942826033`*^9}, 3.4774891637129793`*^9, {
+   3.4889322628358173`*^9, 3.488932268389373*^9}, {3.4889323040469384`*^9, 
+   3.4889323635928926`*^9}, 3.4889357598514843`*^9, 3.489703048421372*^9, 
+   3.4897040175861263`*^9, {3.489704727421516*^9, 3.489704730598343*^9}, {
+   3.4900433111069813`*^9, 3.4900433387070174`*^9}, 3.571328745989821*^9, {
+   3.578753683975457*^9, 3.578753685943174*^9}}],
+
+Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/Utilities/TestData/\
+Xcode/xcode_project_empty_static_library/ios2\"\>"], "Output",
+ CellChangeTimes->{
+  3.489704018306484*^9, 3.489704493879362*^9, 3.489704641840926*^9, 
+   3.489704843457177*^9, 3.489704954696199*^9, 3.489706215293173*^9, 
+   3.4897082909087763`*^9, 3.489716056076939*^9, 3.489722538512869*^9, 
+   3.489765157882718*^9, 3.489765435580485*^9, 3.4897655680147266`*^9, 
+   3.489765694571381*^9, 3.489765963539275*^9, {3.489765994061327*^9, 
+   3.4897660231462355`*^9}, 3.489766075825503*^9, 3.4897710090047717`*^9, 
+   3.4899182862927103`*^9, 3.4899183525983405`*^9, 3.4899202460876703`*^9, 
+   3.4899227893449707`*^9, 3.4899229384978848`*^9, 3.4899230877118044`*^9, 
+   3.4899232184638786`*^9, 3.4899422326231747`*^9, 3.48994796694262*^9, 
+   3.4899486324851675`*^9, 3.489948786537571*^9, 3.489950177377641*^9, 
+   3.489950293601262*^9, 3.489951450137904*^9, 3.4899516117130604`*^9, 
+   3.489955903648211*^9, 3.4899562964134836`*^9, 3.4899570037422094`*^9, 
+   3.4899570866034946`*^9, 3.4899572239842315`*^9, 3.489957346303462*^9, 
+   3.4899579459484205`*^9, 3.4899600364804525`*^9, 3.48996019876868*^9, 
+   3.4899603533811398`*^9, 3.4899632881826515`*^9, 3.4899635738772182`*^9, 
+   3.4899636657404037`*^9, 3.4899639216849957`*^9, 3.4899645334061613`*^9, 
+   3.4899656232451344`*^9, 3.489966752887088*^9, 3.4899672359493885`*^9, 
+   3.4899681524360285`*^9, 3.4899682475065346`*^9, 3.4900430953106976`*^9, 
+   3.4900431906838317`*^9, 3.4900432823774943`*^9, {3.4900433174055*^9, 
+   3.4900433628228397`*^9}, 3.490043450432358*^9, 3.490043498711012*^9, {
+   3.490044206146137*^9, 3.4900442113701057`*^9}, 3.4901007254193363`*^9, 
+   3.4901022934303365`*^9, 3.490104255381336*^9, 3.4901043421433363`*^9, 
+   3.4901044107203364`*^9, 3.4901048002603364`*^9, 3.4901049991273365`*^9, 
+   3.4901051613123364`*^9, 3.4901054649203367`*^9, 3.4901059551433363`*^9, 
+   3.490106120310336*^9, 3.4901061998983364`*^9, 3.4901066630503364`*^9, {
+   3.4901068196243362`*^9, 3.4901068350193367`*^9}, 3.490106977230336*^9, 
+   3.490109833628111*^9, 3.4901155536730585`*^9, 3.4901158666263504`*^9, 
+   3.4901159951291995`*^9, 3.490116432412924*^9, 3.4901171013848143`*^9, 
+   3.490128813147873*^9, 3.4901290810946655`*^9, 3.4901294909796495`*^9, 
+   3.4901295938229327`*^9, 3.4901301866072054`*^9, 3.4901302568462286`*^9, 
+   3.4901310815976954`*^9, 3.4901311205835934`*^9, 3.490131220824617*^9, 
+   3.4901314636068926`*^9, 3.4901325444159627`*^9, 3.490132729765496*^9, 
+   3.4901330643759537`*^9, 3.49013356539205*^9, 3.4901368936008377`*^9, 
+   3.490137392880761*^9, 3.4901374702444963`*^9, 3.4901379338618536`*^9, 
+   3.490137984749942*^9, 3.4901385903394947`*^9, 3.4901401237988253`*^9, 
+   3.4901403362850714`*^9, 3.4901406073191724`*^9, 3.490140810177456*^9, 
+   3.490145483291862*^9, 3.4901457264521756`*^9, 3.4901458382423534`*^9, 
+   3.490146141149641*^9, 3.4901467137318935`*^9, 3.490146979795497*^9, 
+   3.49014721924944*^9, 3.490147366320146*^9, 3.4901497573342237`*^9, 
+   3.490150069105397*^9, 3.490151788091279*^9, 3.490274556471457*^9, 
+   3.490290882210812*^9, 3.4902950803745866`*^9, 3.4902953092674737`*^9, 
+   3.4902953787324195`*^9, 3.490295556420186*^9, 3.4902957454230847`*^9, 
+   3.490295948908431*^9, 3.4902961771622543`*^9, 3.490296299601497*^9, 
+   3.4902963961151476`*^9, 3.490296565505085*^9, 3.4902968274602776`*^9, {
+   3.490302978425313*^9, 3.4903029801064806`*^9}, 3.490303010579528*^9, 
+   3.490315617124216*^9, 3.49031721122661*^9, 3.490384997625817*^9, 
+   3.4904519176654053`*^9, 3.4904520643720746`*^9, 3.4904524401006436`*^9, 
+   3.4904530532939568`*^9, {3.4904532773523607`*^9, 3.490453303811006*^9}, 
+   3.4904570470612936`*^9, 3.4910610365344315`*^9, 3.491061180319432*^9, 
+   3.4910615467501783`*^9, 3.4910616374232445`*^9, 3.491063758724354*^9, 
+   3.4910638444339237`*^9, 3.49106401080956*^9, 3.4910640807955575`*^9, 
+   3.4910718067580957`*^9, 3.4910720127296906`*^9, 3.4910724104004536`*^9, 
+   3.4912413182788434`*^9, 3.4912413786168766`*^9, 3.4913152424371185`*^9, 
+   3.4913153017950535`*^9, 3.4913159547593436`*^9, 3.491316818481707*^9, 
+   3.491359709459517*^9, 3.4913597635639267`*^9, 3.491361756855236*^9, {
+   3.491361941054654*^9, 3.491361965836132*^9}, 3.4913621085263996`*^9, 
+   3.571328751886579*^9, 3.571331780023753*^9, 3.5713320256674643`*^9, 
+   3.571332201427314*^9, 3.5713333810388203`*^9, 3.571335850867959*^9, 
+   3.571341536623385*^9, 3.571352954129838*^9, 3.5713529874009743`*^9, 
+   3.578753558167594*^9, 3.578753703262081*^9, 3.586956730270499*^9, 
+   3.599604675448637*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FileNames", "[", 
+   RowBox[{"\"\<*\>\"", ",", 
+    RowBox[{"{", "xcodeProjectDir", "}"}], ",", "Infinity"}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.5787537299296627`*^9, 3.578753763819686*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"{", "}"}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.578753738722715*^9, 3.578753764371356*^9}, 
+   3.586956733968029*^9, 3.599604675496848*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"xcodeprojDir", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"xcodeProjectDir", ",", "\"\<Foo.xcodeproj\>\""}], "}"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.578753640600821*^9, 3.5787536585249233`*^9}, 
+   3.5787537159347467`*^9, {3.578753856206908*^9, 3.578753861152022*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BlueprintIdentifier", "=", "\"\<C950847C1755276C0000437E\>\""}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.57875507787383*^9, 3.5787550790768633`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringMatchQ", "[", 
+  RowBox[{"\"\<C950847C1755276C0000437E\>\"", ",", "BlueprintIdentifier"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.578755092946649*^9, 3.578755127876814*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.578755128649375*^9, 3.586956745211185*^9, 
+  3.599604675606804*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1673, 827},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 970, 14, 92, "Title"],
+Cell[CellGroupData[{
+Cell[1562, 40, 140, 2, 80, "Section"],
+Cell[1705, 44, 165, 3, 28, "Input"],
+Cell[1873, 49, 200, 4, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2110, 58, 141, 2, 80, "Section"],
+Cell[CellGroupData[{
+Cell[2276, 64, 57, 1, 28, "Input"],
+Cell[2336, 67, 351, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2724, 76, 60, 1, 28, "Input"],
+Cell[2787, 79, 388, 5, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3212, 89, 63, 1, 28, "Input"],
+Cell[3278, 92, 292, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3607, 101, 68, 1, 28, "Input"],
+Cell[3678, 104, 354, 5, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4069, 114, 71, 1, 28, "Input"],
+Cell[4143, 117, 288, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4468, 126, 218, 5, 28, "Input"],
+Cell[4689, 133, 307, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5033, 142, 221, 5, 28, "Input"],
+Cell[5257, 149, 1378, 30, 176, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6672, 184, 60, 1, 28, "Input"],
+Cell[6735, 187, 978, 22, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7750, 214, 126, 2, 28, "Input"],
+Cell[7879, 218, 442, 6, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8358, 229, 509, 14, 28, "Input"],
+Cell[8870, 245, 1973, 38, 126, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10880, 288, 109, 2, 28, "Input"],
+Cell[10992, 292, 420, 6, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11449, 303, 191, 4, 28, "Input"],
+Cell[11643, 309, 409, 6, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12089, 320, 255, 6, 28, "Input"],
+Cell[12347, 328, 1199, 21, 97, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13583, 354, 289, 7, 28, "Input"],
+Cell[13875, 363, 1233, 20, 97, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15145, 388, 577, 17, 28, "Input"],
+Cell[15725, 407, 1092, 26, 126, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16854, 438, 246, 6, 28, "Input"],
+Cell[17103, 446, 287, 5, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17427, 456, 171, 3, 28, "Input"],
+Cell[17601, 461, 3057, 48, 250, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20695, 514, 243, 5, 28, "Input"],
+Cell[20941, 521, 3232, 48, 250, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24222, 575, 203, 3, 80, "Section"],
+Cell[24428, 580, 407, 10, 28, "Input"],
+Cell[CellGroupData[{
+Cell[24860, 594, 577, 12, 31, "Input"],
+Cell[25440, 608, 4727, 66, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30204, 679, 218, 3, 44, "Subsection"],
+Cell[CellGroupData[{
+Cell[30447, 686, 672, 11, 28, "Input"],
+Cell[31122, 699, 4598, 63, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35757, 767, 253, 6, 28, "Input"],
+Cell[36013, 775, 221, 6, 39, "Output"]
+}, Open  ]],
+Cell[36249, 784, 350, 8, 28, "Input"],
+Cell[36602, 794, 186, 4, 28, "Input"],
+Cell[CellGroupData[{
+Cell[36813, 802, 206, 4, 28, "Input"],
+Cell[37022, 808, 120, 2, 62, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
