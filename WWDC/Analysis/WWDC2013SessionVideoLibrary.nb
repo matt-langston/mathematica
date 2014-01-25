@@ -1,0 +1,1611 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     61946,       1602]
+NotebookOptionsPosition[     57584,       1446]
+NotebookOutlinePosition[     58038,       1464]
+CellTagsIndexPosition[     57995,       1461]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["WWDC 2013 Session Videos", "Title",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQB2IQzdBc0RzS+NLxTVMHmD55umRKadtLx6TT78A051l/
+zuf3Xzp6nEkG00Yi0as/Auld076C6SpevpVmD1465vdqgek152w6TR+D6HIw
+/SOs9lLBz5eODh8ELoNo+1+b1ef8e+l48YCDJojWMWEM3A+ky6YfB9Pizz8f
+jf7/0nGSkcUxEP0g6cJvPoZXjgKy78H0odK2AH4gfatpMZjeXTk9TgdIW73e
+AaYn3XqUZcn4yvHfAe5sEB2QUmMSteSV4/YLs8H0lWdri1YBabaCb2A6Q+/9
+v/ClrxzD5FX+g+gZXNUzfyx75ehlvBdMS61ft6B5+SvHF0s+gumlQqkyZate
+OZ68OR1M63TPYz61+pVjHM8GMJ12bVXI+12vHO+o7wXTvBetrYT3vHJcfXYL
+mAYA1KzIJw==
+  "],
+ TextAlignment->Center],
+
+Cell[CellGroupData[{
+
+Cell["Setup", "Section",
+ CellChangeTimes->{{3.474554985665854*^9, 3.474554986572104*^9}, {
+  3.4774892196824455`*^9, 3.47748922549502*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Calendar`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.5763487724667397`*^9, 3.576348775393676*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Appcelerator`Utilities`Debug`\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{
+  3.4900434366656055`*^9, {3.575828983190866*^9, 3.575828985442533*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Appcelerator`WWDC2013`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.580739260886853*^9, 3.580739268102388*^9}, {
+  3.588262650900156*^9, 3.588262652392825*^9}, {3.588262696179031*^9, 
+  3.5882626965127907`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[" Data", "Section",
+ CellChangeTimes->{
+  3.489709153907304*^9, {3.489765469322859*^9, 3.489765470082935*^9}, 
+   3.4899683232231054`*^9, {3.575843619946903*^9, 3.575843620275611*^9}, {
+   3.57972794759219*^9, 3.579727948003664*^9}, {3.5797285937079973`*^9, 
+   3.579728602343278*^9}, 3.588266820884323*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sessionsJsonLocalRaw", "=", 
+   RowBox[{
+   "Import", "[", 
+    "\"\</Users/matt/WolframWorkspaces/Base/Appcelerator/TestData/WWDC/\
+sessions.json\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.579728606326969*^9, 3.579728641035577*^9}, {
+   3.579729677994985*^9, 3.579729678522429*^9}, {3.579729740036175*^9, 
+   3.57972974031386*^9}, 3.588262999062503*^9, 3.5882667109432087`*^9, 
+   3.5882667736592207`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sessionsJson", "=", 
+   RowBox[{"sessionsJsonLocalRaw", "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "2", ",", "2", ",", "2", ",", "All"}], "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.579728739223549*^9, 3.5797288494590178`*^9}, {
+   3.579728906722941*^9, 3.57972892294831*^9}, {3.579729704276127*^9, 
+   3.579729750485218*^9}, {3.588262988702652*^9, 3.5882630005705643`*^9}, 
+   3.588263425415614*^9, 3.5882667786296883`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sessionsJson", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.5807387754643908`*^9, 3.580738776606943*^9}, 
+   3.588263448581378*^9}],
+
+Cell[BoxData["232"], "Output",
+ CellChangeTimes->{
+  3.580737868562491*^9, 3.5807387769700108`*^9, 3.580760472236516*^9, 
+   3.580760647528902*^9, 3.580761033230147*^9, 3.580761516458633*^9, 
+   3.580762860989367*^9, 3.5808301665405903`*^9, 3.581016045794528*^9, 
+   3.5876687739068537`*^9, 3.58767057958092*^9, 3.587689681925146*^9, 
+   3.58803667292178*^9, 3.5882598258348913`*^9, 3.588262814021181*^9, {
+   3.588263449775721*^9, 3.5882634779290113`*^9}, 3.5882648153032312`*^9, 
+   3.588264867377384*^9, 3.5882651389125*^9, 3.588265776874174*^9, 
+   3.58826583157323*^9, 3.5882661523484573`*^9, 3.588266836430121*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sessions", "=", 
+   RowBox[{"Select", "[", 
+    RowBox[{"sessionsJson", ",", "SessionQ"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{3.588266811959043*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sessions", "//", "Length"}]], "Input",
+ CellChangeTimes->{3.5882668191721582`*^9}],
+
+Cell[BoxData["106"], "Output",
+ CellChangeTimes->{3.5882668365667686`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["WWDC Session Video Data", "Section",
+ CellChangeTimes->{{3.580009485602325*^9, 3.580009548267757*^9}, {
+  3.580010399560931*^9, 3.580010404353941*^9}, {3.5876694058601303`*^9, 
+  3.587669412944339*^9}, {3.5882668821706533`*^9, 3.588266883289323*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+  "\"\</Users/matt/WolframWorkspaces/Base/Appcelerator/TestData/WWDC/WWDC \
+2013 Session Videos - Apple Developer.html\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"\"\<XHTML\>\"", ",", "\"\<Elements\>\""}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.580008750132449*^9, 3.580008775029552*^9}, {
+   3.580008842545884*^9, 3.58000884837155*^9}, 3.5800088822635107`*^9, {
+   3.58000891763835*^9, 3.5800089348221817`*^9}, {3.580009565471212*^9, 
+   3.580009623351368*^9}, {3.5800096553263493`*^9, 3.580009659516938*^9}, 
+   3.580009704765543*^9, {3.580010425221139*^9, 3.580010435595579*^9}, {
+   3.587669419204444*^9, 3.587669426567871*^9}, {3.587669456763599*^9, 
+   3.5876694629382343`*^9}, {3.587669835332851*^9, 3.5876698555744953`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Data\"\>", ",", "\<\"FullData\"\>", ",", "\<\"Hyperlinks\"\>", 
+   ",", "\<\"ImageLinks\"\>", ",", "\<\"Images\"\>", ",", "\<\"Plaintext\"\>",
+    ",", "\<\"Source\"\>", ",", "\<\"Title\"\>", ",", "\<\"XMLObject\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.58766985590806*^9, 3.587670600243844*^9, 
+  3.587689737015456*^9, 3.588036699892029*^9, 3.588259846964901*^9, 
+  3.588266981047502*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Data", "Subsection",
+ CellChangeTimes->{{3.580009485602325*^9, 3.580009548267757*^9}, {
+  3.580010399560931*^9, 3.580010404353941*^9}, {3.5876694058601303`*^9, 
+  3.587669412944339*^9}, {3.587670086660274*^9, 3.587670087041256*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wwdc2013SessionVideosData", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\</Users/matt/WolframWorkspaces/Base/Appcelerator/TestData/WWDC/WWDC \
+2013 Session Videos - Apple Developer.html\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<XHTML\>\"", ",", "\"\<Data\>\""}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.587669879243371*^9, 3.587669913952898*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wwdc2013SessionVideosData", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.587669918767379*^9, 3.587669919813057*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.587669920449299*^9, 3.5876706018074293`*^9, 
+  3.5876897411545773`*^9, 3.588036701882266*^9, 3.58825984846343*^9, 
+  3.588266983329815*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wwdc2013SessionVideosData", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.587669962573765*^9, 3.587669983287326*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"News\"\>", ",", "\<\"Schedule\"\>", ",", "\<\"Labs\"\>", 
+   ",", "\<\"Events\"\>", ",", "\<\"Videos\"\>", ",", "\<\"Resources\"\>", 
+   ",", "\<\"More\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.587669964180121*^9, 3.5876699838844643`*^9}, 
+   3.58767060184833*^9, 3.5876897412726393`*^9, 3.588036701928721*^9, 
+   3.588259848481132*^9, 3.588266983374003*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wwdc2013SessionVideosData", "[", 
+  RowBox[{"[", "3", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.587669991941925*^9, 3.587669997572886*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"Developer\"\>", ",", "\<\"WWDC\"\>", ",", "\<\"Videos\"\>"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"News\"\>", ",", "\<\"Register\"\>", 
+     ",", "\<\"Report Bugs\"\>", ",", "\<\"Contact Us\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Terms of Use\"\>", ",", "\<\"Privacy Policy\"\>"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"\:7b80\:4f53\:4e2d\:6587\"\>", 
+     ",", "\<\"\:65e5\:672c\:8a9e\"\>", ",", "\<\"\:d55c\:ad6d\:c5b4\"\>"}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.587669992571804*^9, 3.587669997794816*^9}, 
+   3.5876706018992987`*^9, 3.5876897413817244`*^9, 3.588036701974819*^9, 
+   3.588259848499013*^9, 3.588266983438381*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wwdc2013SessionVideosData", "[", 
+  RowBox[{"[", 
+   RowBox[{"2", ",", "2"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5876700085195637`*^9, 3.587670038483117*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Description\"\>", ",", "\<\"Track\"\>", 
+   ",", "\<\"Session\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.587670009117062*^9, 3.587670038967265*^9}, 
+   3.5876706019496813`*^9, 3.5876897414709377`*^9, 3.588036702029841*^9, 
+   3.588259848517045*^9, 3.588266983486495*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wwdc2013SessionVideosData", "[", 
+  RowBox[{"[", 
+   RowBox[{"2", ",", "3", ",", "1"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.587670127363353*^9, 3.5876701281959333`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Xcode 5\"\>", 
+     ",", "\<\"Tools\"\>", ",", "400"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Xcode 5\"\>", 
+     ",", "\<\"Session 400\"\>", ",", "\<\"Play\"\>"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.5876701286091022`*^9, 3.587670601999543*^9, 
+  3.5876897416110764`*^9, 3.588036702092539*^9, 3.588259848534997*^9, 
+  3.588266983534844*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wwdc2013SessionVideosData", "[", 
+  RowBox[{"[", 
+   RowBox[{"2", ",", "3", ",", 
+    RowBox[{";;", "10"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.587670046704221*^9, 3.5876700720933657`*^9}, {
+  3.587670103931334*^9, 3.587670115986394*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"What\[CloseCurlyQuote]s New in Xcode 5\"\>", 
+       ",", "\<\"Tools\"\>", ",", "400"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"What\[CloseCurlyQuote]s New in Xcode 5\"\>", 
+       ",", "\<\"Session 400\"\>", ",", "\<\"Play\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"Xcode Core Concepts\"\>", ",", "\<\"Tools\"\>", ",", 
+       "401"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"Xcode Core Concepts\"\>", ",", "\<\"Session 401\"\>", 
+       ",", "\<\"Play\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"Taking Control of Auto Layout in Xcode 5\"\>", 
+       ",", "\<\"Tools\"\>", ",", "406"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"Taking Control of Auto Layout in Xcode 5\"\>", 
+       ",", "\<\"Session 406\"\>", ",", "\<\"Play\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"Interface Builder Core Concepts\"\>", ",", "\<\"Tools\"\>",
+        ",", "405"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"Interface Builder Core Concepts\"\>", 
+       ",", "\<\"Session 405\"\>", ",", "\<\"Play\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"Debugging with Xcode\"\>", ",", "\<\"Tools\"\>", ",", 
+       "407"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"Debugging with Xcode\"\>", ",", "\<\"Session 407\"\>", 
+       ",", "\<\"Play\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"Understanding Source Control in Xcode\"\>", 
+       ",", "\<\"Tools\"\>", ",", "414"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"Understanding Source Control in Xcode\"\>", 
+       ",", "\<\"Session 414\"\>", ",", "\<\"Play\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"Testing in Xcode 5\"\>", ",", "\<\"Tools\"\>", ",", 
+       "409"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"Testing in Xcode 5\"\>", ",", "\<\"Session 409\"\>", 
+       ",", "\<\"Play\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"Continuous Integration with Xcode 5\"\>", 
+       ",", "\<\"Tools\"\>", ",", "412"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"Continuous Integration with Xcode 5\"\>", 
+       ",", "\<\"Session 412\"\>", ",", "\<\"Play\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"From Zero to App Store in Xcode 5\"\>", 
+       ",", "\<\"Tools\"\>", ",", "403"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"From Zero to App Store in Xcode 5\"\>", 
+       ",", "\<\"Session 403\"\>", ",", "\<\"Play\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"Fixing Memory Issues\"\>", ",", "\<\"Tools\"\>", ",", 
+       "410"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"Fixing Memory Issues\"\>", ",", "\<\"Session 410\"\>", 
+       ",", "\<\"Play\"\>"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.587670047437377*^9, 3.587670072909938*^9}, {
+   3.587670106588978*^9, 3.5876701166304283`*^9}, 3.58767060205053*^9, 
+   3.587689741694656*^9, 3.5880367021309032`*^9, 3.5882598485531197`*^9, 
+   3.58826698358526*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wwdc2013SessionVideosData", "[", 
+   RowBox[{"[", 
+    RowBox[{"2", ",", "3", ",", "All", ",", "1", ",", "2"}], "]"}], "]"}], "//",
+   "Tally"}]], "Input",
+ CellChangeTimes->{{3.58767073688651*^9, 3.587670769332405*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"Tools\"\>", ",", "17"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Frameworks\"\>", ",", "28"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Services\"\>", ",", "11"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Media\"\>", ",", "16"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Core OS\"\>", ",", "14"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Special Events\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Graphics and Games\"\>", ",", "10"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.587670742555814*^9, 3.587670770097052*^9}, 
+   3.58768974178148*^9, 3.588036702189416*^9, 3.5882598485721684`*^9, 
+   3.5882669836370583`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{"SessionTrack", ",", "sessions"}], "]"}], "//", "Tally"}]], "Input",\
+
+ CellChangeTimes->{{3.587670830910036*^9, 3.587670842754777*^9}, {
+  3.588266337386574*^9, 3.588266338386814*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"Tools\"\>", ",", "17"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Frameworks\"\>", ",", "28"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Services\"\>", ",", "11"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Media\"\>", ",", "16"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Core OS\"\>", ",", "14"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Special Events\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Graphics and Games\"\>", ",", "10"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.587670843495592*^9, 3.587689741879895*^9, 
+  3.58803670224957*^9, 3.588259848590658*^9, 3.588266983688983*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wwdc2013SessionVideosData", "[", 
+   RowBox[{"[", 
+    RowBox[{"2", ",", "3", ",", "All", ",", "1", ",", "2"}], "]"}], "]"}], "//",
+   "Length"}]], "Input",
+ CellChangeTimes->{{3.5876708856665373`*^9, 3.5876708884455633`*^9}}],
+
+Cell[BoxData["99"], "Output",
+ CellChangeTimes->{3.587670889037023*^9, 3.58768974198213*^9, 
+  3.588036702317643*^9, 3.588259848608459*^9, 3.58826698373419*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wwdc2013SessionVideosData", "[", 
+  RowBox[{"[", 
+   RowBox[{"2", ",", "3", ",", "All", ",", "1"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5876723019516487`*^9, 3.587672387307118*^9}, {
+  3.5876724947980003`*^9, 3.587672506195128*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Xcode 5\"\>", 
+     ",", "\<\"Tools\"\>", ",", "400"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Xcode Core Concepts\"\>", ",", "\<\"Tools\"\>", ",", "401"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Taking Control of Auto Layout in Xcode 5\"\>", 
+     ",", "\<\"Tools\"\>", ",", "406"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Interface Builder Core Concepts\"\>", ",", "\<\"Tools\"\>", 
+     ",", "405"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Debugging with Xcode\"\>", ",", "\<\"Tools\"\>", ",", 
+     "407"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Understanding Source Control in Xcode\"\>", 
+     ",", "\<\"Tools\"\>", ",", "414"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Testing in Xcode 5\"\>", ",", "\<\"Tools\"\>", ",", "409"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Continuous Integration with Xcode 5\"\>", 
+     ",", "\<\"Tools\"\>", ",", "412"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"From Zero to App Store in Xcode 5\"\>", ",", "\<\"Tools\"\>",
+      ",", "403"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Fixing Memory Issues\"\>", ",", "\<\"Tools\"\>", ",", 
+     "410"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Advanced Debugging with LLDB\"\>", ",", "\<\"Tools\"\>", ",",
+      "413"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Core Data and iCloud\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "207"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Core Data Performance Optimization and Debugging\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "211"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Cocoa Touch\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "203"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Getting Started with UIKit Dynamics\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "206"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Advanced Techniques with UIKit Dynamics\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "221"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Custom Transitions Using View Controllers\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "218"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in State Restoration\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "222"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Customizing Your App\[CloseCurlyQuote]s Appearance for iOS 7\
+\"\>", ",", "\<\"Frameworks\"\>", ",", "214"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Implementing Engaging UI on iOS\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "226"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Exploring Scroll Views on iOS 7\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "217"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Introducing Text Kit\"\>", ",", "\<\"Frameworks\"\>", ",", 
+     "210"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Advanced Text Layouts and Effects with Text Kit\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "220"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Using Fonts with Text Kit\"\>", ",", "\<\"Frameworks\"\>", 
+     ",", "223"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Building User Interfaces for iOS 7\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "201"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Making Your App World-Ready\"\>", ",", "\<\"Frameworks\"\>", 
+     ",", "219"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Bringing Your iOS Apps to OS X\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "216"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Optimizing Drawing and Scrolling on OS X\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "215"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Improving Power Efficiency with App Nap\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "209"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Cocoa\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "205"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Best Practices for Cocoa Animation\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "213"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Passbook\"\>", 
+     ",", "\<\"Services\"\>", ",", "302"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Integrating Passbook into your Ecosystem\"\>", 
+     ",", "\<\"Services\"\>", ",", "303"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Core Location\"\>", 
+     ",", "\<\"Services\"\>", ",", "307"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Using Receipts to Protect Your Digital Sales\"\>", 
+     ",", "\<\"Services\"\>", ",", "308"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Using Store Kit for In-App Purchases\"\>", 
+     ",", "\<\"Services\"\>", ",", "305"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in iTunes Connect\"\>", 
+     ",", "\<\"Services\"\>", ",", "306"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New with Multitasking\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "204"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Managing Apple Devices\"\>", ",", "\<\"Services\"\>", ",", 
+     "300"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Extending Your Apps for Enterprise and Education Use\"\>", 
+     ",", "\<\"Services\"\>", ",", "301"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in the LLVM Compiler\"\>", 
+     ",", "\<\"Tools\"\>", ",", "402"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Optimize Your Code Using LLVM\"\>", ",", "\<\"Tools\"\>", 
+     ",", "408"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Advances in Objective-C\"\>", ",", "\<\"Tools\"\>", ",", 
+     "404"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Accessibility in iOS\"\>", ",", "\<\"Frameworks\"\>", ",", 
+     "202"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Accessibility in OS X\"\>", ",", "\<\"Frameworks\"\>", ",", 
+     "200"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in iOS User Interface \
+Design\"\>", ",", "\<\"Frameworks\"\>", ",", "208"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Best Practices for Great iOS UI Design\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "225"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in iBooks Author\"\>", 
+     ",", "\<\"Media\"\>", ",", "605"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Building Advanced iBooks HTML 5 Widgets and iAd Rich Media \
+Ads\"\>", ",", "\<\"Media\"\>", ",", "611"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Power and Performance: Optimizing Your Website for Great \
+Battery Life and Responsive Scrolling\"\>", ",", "\<\"Media\"\>", ",", 
+     "607"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Safari and WebKit for Web \
+Developers\"\>", ",", "\<\"Media\"\>", ",", "600"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Getting to Know Web Inspector\"\>", ",", "\<\"Media\"\>", 
+     ",", "601"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"iAd Integration and Best Practices\"\>", 
+     ",", "\<\"Media\"\>", ",", "613"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Map Kit\"\>", 
+     ",", "\<\"Services\"\>", ",", "304"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Putting Map Kit in Perspective\"\>", ",", "\<\"Services\"\>",
+      ",", "309"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Introduction to iBooks Author Widget and iAd Rich Media Ad \
+Development with iAd Producer 4\"\>", ",", "\<\"Media\"\>", ",", "609"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Introducing iAd Workbench, The Best Way to Market Your App\"\
+\>", ",", "\<\"Media\"\>", ",", "604"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Harnessing iOS to Create Magic in Your Apps\"\>", 
+     ",", "\<\"Services\"\>", ",", "310"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Protecting Secrets with the Keychain\"\>", 
+     ",", "\<\"Core OS\"\>", ",", "709"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"A Practical Guide to the App Sandbox\"\>", 
+     ",", "\<\"Core OS\"\>", ",", "710"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Protecting your Users\[CloseCurlyQuote] Privacy\"\>", 
+     ",", "\<\"Core OS\"\>", ",", "714"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Foundation Networking\"\>", 
+     ",", "\<\"Core OS\"\>", ",", "705"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Kext Development\"\>", 
+     ",", "\<\"Core OS\"\>", ",", "707"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Efficient Design with XPC\"\>", ",", "\<\"Core OS\"\>", ",", 
+     "702"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"The Accelerate Framework\"\>", ",", "\<\"Core OS\"\>", ",", 
+     "713"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Nearby Networking with Multipeer Connectivity\"\>", 
+     ",", "\<\"Core OS\"\>", ",", "708"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Core Bluetooth\"\>", ",", "\<\"Core OS\"\>", ",", "703"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Designing Accessories for iOS and OS X\"\>", 
+     ",", "\<\"Core OS\"\>", ",", "700"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Advances in AirPrint\"\>", ",", "\<\"Core OS\"\>", ",", 
+     "711"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Preparing and Presenting Media for Accessibility\"\>", 
+     ",", "\<\"Media\"\>", ",", "608"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Advanced Editing with AV Foundation\"\>", 
+     ",", "\<\"Media\"\>", ",", "612"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Moving to AV Kit and AV Foundation\"\>", 
+     ",", "\<\"Media\"\>", ",", "606"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Camera Capture\"\>", 
+     ",", "\<\"Media\"\>", ",", "610"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Core Audio for iOS\"\>", 
+     ",", "\<\"Media\"\>", ",", "602"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Introducing AppleScript Libraries\"\>", ",", "\<\"Tools\"\>",
+      ",", "416"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OS X Automation Update\"\>", ",", "\<\"Tools\"\>", ",", 
+     "417"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Platforms State of the Union\"\>", 
+     ",", "\<\"Special Events\"\>", ",", "101"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Implementing OS X Push Notifications for Websites\"\>", 
+     ",", "\<\"Media\"\>", ",", "614"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Maximizing Apple Development Resources\"\>", 
+     ",", "\<\"Tools\"\>", ",", "415"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Scene Kit\"\>", 
+     ",", "\<\"Graphics and Games\"\>", ",", "500"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Introduction to Sprite Kit\"\>", 
+     ",", "\<\"Graphics and Games\"\>", ",", "502"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Designing Games with Sprite Kit\"\>", 
+     ",", "\<\"Graphics and Games\"\>", ",", "503"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Integrating with Game Controllers\"\>", 
+     ",", "\<\"Graphics and Games\"\>", ",", "501"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Working with OpenCL\"\>", ",", "\<\"Graphics and Games\"\>", 
+     ",", "508"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in OpenGL for OS X\"\>", 
+     ",", "\<\"Graphics and Games\"\>", ",", "507"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Advances in OpenGL ES\"\>", 
+     ",", "\<\"Graphics and Games\"\>", ",", "505"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"What\[CloseCurlyQuote]s New in Game Center\"\>", 
+     ",", "\<\"Graphics and Games\"\>", ",", "504"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Turn-Based Gaming with Game Center\"\>", 
+     ",", "\<\"Graphics and Games\"\>", ",", "506"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Keynote\"\>", ",", "\<\"Special Events\"\>", ",", "100"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Energy Best Practices\"\>", ",", "\<\"Core OS\"\>", ",", 
+     "712"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Integrating JavaScript into Native Apps\"\>", 
+     ",", "\<\"Media\"\>", ",", "615"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Getting the Most Out of Web Inspector\"\>", 
+     ",", "\<\"Media\"\>", ",", "603"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Core Image Effects and Techniques\"\>", 
+     ",", "\<\"Graphics and Games\"\>", ",", "509"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Building Efficient OS X Apps\"\>", ",", "\<\"Core OS\"\>", 
+     ",", "704"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Maximizing Battery Life on OS X\"\>", ",", "\<\"Core OS\"\>",
+      ",", "701"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Designing Code for Performance\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "224"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Solutions to Common Date and Time Challenges\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "227"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Hidden Gems in Cocoa and Cocoa Touch\"\>", 
+     ",", "\<\"Frameworks\"\>", ",", "228"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Painting the Future\"\>", ",", "\<\"Special Events\"\>", ",",
+      "109"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.587672302728285*^9, 3.5876723879579077`*^9}, {
+   3.587672496960925*^9, 3.5876725068252087`*^9}, 3.587689742077324*^9, 
+   3.588036702378723*^9, 3.5882598486281567`*^9, 3.58826698379103*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Hyperlinks", "Subsection",
+ CellChangeTimes->{{3.580009485602325*^9, 3.580009548267757*^9}, {
+   3.580010399560931*^9, 3.580010404353941*^9}, {3.5876694058601303`*^9, 
+   3.587669412944339*^9}, {3.587670086660274*^9, 3.587670087041256*^9}, {
+   3.587670144617976*^9, 3.587670145273445*^9}, 3.588266916572236*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wwdc2013SessionVideosHyperlinks", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\</Users/matt/WolframWorkspaces/Base/Appcelerator/TestData/WWDC/WWDC \
+2013 Session Videos - Apple Developer.html\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<XHTML\>\"", ",", "\"\<Hyperlinks\>\""}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.587669879243371*^9, 3.587669913952898*^9}, {
+  3.58767016147853*^9, 3.587670165828377*^9}, {3.5876704955465717`*^9, 
+  3.587670500588601*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wwdc2013SessionVideosHyperlinks", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.587669918767379*^9, 3.587669919813057*^9}, 
+   3.5876702813479643`*^9, 3.58767050518489*^9}],
+
+Cell[BoxData["517"], "Output",
+ CellChangeTimes->{3.587670281697497*^9, 3.5876705055143538`*^9, 
+  3.5876706035981207`*^9, 3.587689746318706*^9, 3.5880367041070232`*^9, 
+  3.588259850136545*^9, 3.5882669853872757`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wwdc2013SessionVideosHyperlinks", "[", 
+   RowBox[{"[", 
+    RowBox[{";;", "20"}], "]"}], "]"}], "//", "TableForm"}]], "Input",
+ CellChangeTimes->{{3.5876705157577133`*^9, 3.587670548551907*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"/wwdc/\"\>"},
+     {"\<\"/wwdc/news/\"\>"},
+     {"\<\"/wwdc/schedule/\"\>"},
+     {"\<\"/wwdc/labs/\"\>"},
+     {"\<\"/wwdc/events/\"\>"},
+     {"\<\"/wwdc/videos/\"\>"},
+     {"\<\"/wwdc/resources/\"\>"},
+     {"\<\"/wwdc/more/\"\>"},
+     {"\<\"/membercenter/index.action#accountSummary\"\>"},
+     {"\<\"/logout/?return=%2Fwwdc%2Fvideos%2F\"\>"},
+     {"\<\"/wwdc/videos/?include=400#400\"\>"},
+     {"\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+400xex2xbskwa5bkxr17zihju9uf/400/400-HD.mov?dl=1\"\>"},
+     {"\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+400xex2xbskwa5bkxr17zihju9uf/400/400-SD.mov?dl=1\"\>"},
+     {"\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+400xex2xbskwa5bkxr17zihju9uf/400/400.pdf?dl=1\"\>"},
+     {"\<\"https://itunes.apple.com/us/app/wwdc/id640199958?ls=1&mt=8\"\>"},
+     {"\<\"/wwdc/videos/?include=401#401\"\>"},
+     {"\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+401xbx2xq50gv7mqafyfdns2yhxl/401/401-HD.mov?dl=1\"\>"},
+     {"\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+401xbx2xq50gv7mqafyfdns2yhxl/401/401-SD.mov?dl=1\"\>"},
+     {"\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+401xbx2xq50gv7mqafyfdns2yhxl/401/401.pdf?dl=1\"\>"},
+     {"\<\"https://itunes.apple.com/us/app/wwdc/id640199958?ls=1&mt=8\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.5876705178658648`*^9, 3.587670549301051*^9}, 
+   3.587670603657242*^9, 3.5876897464284973`*^9, 3.588036704163404*^9, 
+   3.5882598501549177`*^9, 3.5882669854437027`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wwdc2013SessionVideosHyperlinkPattern", "=", 
+   RowBox[{"downloadURL", ":", 
+    RowBox[{"(", 
+     RowBox[{
+     "\"\<http://devstreaming.apple.com/videos/wwdc/2013/\>\"", "~~", 
+      RowBox[{"sessionToken", ":", 
+       RowBox[{
+        RowBox[{"Except", "[", "\"\</\>\"", "]"}], ".."}]}], "~~", 
+      "\"\</\>\"", "~~", 
+      RowBox[{"sessionNumber1", ":", 
+       RowBox[{"DigitCharacter", ".."}]}], "~~", "\"\</\>\"", "~~", 
+      RowBox[{"fileName", ":", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"sessionNumber2", ":", 
+          RowBox[{"DigitCharacter", ".."}]}], "~~", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"\"\<-\>\"", "~~", 
+            RowBox[{"videoFormat", ":", 
+             RowBox[{"(", 
+              RowBox[{"\"\<HD\>\"", "|", "\"\<SD\>\""}], ")"}]}], "~~", 
+            "\"\<.mov\>\""}], ")"}], "|", "\"\<.pdf\>\""}]}], ")"}]}], "~~", 
+      RowBox[{"rest", ":", "___"}]}], ")"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5876711720283947`*^9, 3.587671182253537*^9}, {
+  3.58767122150883*^9, 3.587671222203424*^9}, {3.587671261244066*^9, 
+  3.587671293914996*^9}, {3.587671455946103*^9, 3.5876714993980083`*^9}, {
+  3.5876720061812677`*^9, 3.587672018317444*^9}, {3.587672986441495*^9, 
+  3.587672999233049*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringMatchQ", "[", 
+  RowBox[{
+  "\"\<http://devstreaming.apple.com/videos/wwdc/2013/\
+400xex2xbskwa5bkxr17zihju9uf/400/400-HD.mov?dl=1\>\"", ",", 
+   "wwdc2013SessionVideosHyperlinkPattern"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5876708956566877`*^9, 3.587670899786449*^9}, {
+  3.587670941252081*^9, 3.587670955230098*^9}, {3.5876710042135468`*^9, 
+  3.587671189263401*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.5876710527464657`*^9, 3.587671084900532*^9, 3.5876711152819643`*^9, {
+   3.587671152951138*^9, 3.5876711900178537`*^9}, 3.5876712460379763`*^9, 
+   3.587671304149571*^9, 3.587671343986146*^9, 3.5876715209326773`*^9, 
+   3.587672036064842*^9, 3.58767224601822*^9, 3.587673005241109*^9, 
+   3.5876734714001217`*^9, 3.587689746604641*^9, 3.588036704223082*^9, 
+   3.588259850182199*^9, 3.588266985515903*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wwdc2013SessionVideosHyperlinkData", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{"StringCases", "[", 
+      RowBox[{"wwdc2013SessionVideosHyperlinks", ",", 
+       RowBox[{"wwdc2013SessionVideosHyperlinkPattern", "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{"sessionToken", ",", 
+          RowBox[{"ToExpression", "[", "sessionNumber1", "]"}], ",", 
+          RowBox[{"ToExpression", "[", "sessionNumber2", "]"}], ",", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"StringLength", "[", "videoFormat", "]"}], ">", "0"}], 
+            ",", "videoFormat", ",", "\"\<PDF\>\""}], "]"}], ",", "fileName", 
+          ",", "rest", ",", "downloadURL"}], "}"}]}]}], "]"}], ",", "1"}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.587671191102873*^9, 3.587671231211541*^9}, {
+  3.5876712841102*^9, 3.587671299461508*^9}, {3.587671336076531*^9, 
+  3.587671339195422*^9}, {3.5876714217052317`*^9, 3.587671423335182*^9}, {
+  3.587671504450494*^9, 3.5876715259673243`*^9}, {3.58767155695228*^9, 
+  3.587671623538824*^9}, {3.587672224715419*^9, 3.587672241106036*^9}, {
+  3.5876730295137167`*^9, 3.5876730298698177`*^9}, {3.587673452351807*^9, 
+  3.587673462414135*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wwdc2013SessionVideosHyperlinkData", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.587671628451028*^9, 3.587671629524344*^9}}],
+
+Cell[BoxData["295"], "Output",
+ CellChangeTimes->{
+  3.587671630230461*^9, 3.5876720361551*^9, 3.587672246103467*^9, {
+   3.5876730053202677`*^9, 3.587673034292776*^9}, 3.587673471485064*^9, 
+   3.5876897468099127`*^9, 3.588036704328047*^9, 3.588259850207905*^9, 
+   3.588266985599107*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wwdc2013SessionVideosHyperlinkData", "[", 
+  RowBox[{"[", 
+   RowBox[{";;", "10"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5876716326992483`*^9, 3.5876716342352247`*^9}, {
+  3.587672190390093*^9, 3.587672207410437*^9}, {3.587673419331065*^9, 
+  3.587673439519334*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"400xex2xbskwa5bkxr17zihju9uf\"\>", ",", "400", ",", "400", 
+     ",", "\<\"HD\"\>", ",", "\<\"400-HD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+400xex2xbskwa5bkxr17zihju9uf/400/400-HD.mov?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"400xex2xbskwa5bkxr17zihju9uf\"\>", ",", "400", ",", "400", 
+     ",", "\<\"SD\"\>", ",", "\<\"400-SD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+400xex2xbskwa5bkxr17zihju9uf/400/400-SD.mov?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"400xex2xbskwa5bkxr17zihju9uf\"\>", ",", "400", ",", "400", 
+     ",", "\<\"PDF\"\>", ",", "\<\"400.pdf\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+400xex2xbskwa5bkxr17zihju9uf/400/400.pdf?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"401xbx2xq50gv7mqafyfdns2yhxl\"\>", ",", "401", ",", "401", 
+     ",", "\<\"HD\"\>", ",", "\<\"401-HD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+401xbx2xq50gv7mqafyfdns2yhxl/401/401-HD.mov?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"401xbx2xq50gv7mqafyfdns2yhxl\"\>", ",", "401", ",", "401", 
+     ",", "\<\"SD\"\>", ",", "\<\"401-SD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+401xbx2xq50gv7mqafyfdns2yhxl/401/401-SD.mov?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"401xbx2xq50gv7mqafyfdns2yhxl\"\>", ",", "401", ",", "401", 
+     ",", "\<\"PDF\"\>", ",", "\<\"401.pdf\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+401xbx2xq50gv7mqafyfdns2yhxl/401/401.pdf?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"406xex3x90a7ka0kyhsfjxfqfbi\"\>", ",", "406", ",", "406", 
+     ",", "\<\"HD\"\>", ",", "\<\"406-HD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", \
+"\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+406xex3x90a7ka0kyhsfjxfqfbi/406/406-HD.mov?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"406xex3x90a7ka0kyhsfjxfqfbi\"\>", ",", "406", ",", "406", 
+     ",", "\<\"SD\"\>", ",", "\<\"406-SD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+406xex3x90a7ka0kyhsfjxfqfbi/406/406-SD.mov?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"406xex3x90a7ka0kyhsfjxfqfbi\"\>", ",", "406", ",", "406", 
+     ",", "\<\"PDF\"\>", ",", "\<\"406.pdf\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+406xex3x90a7ka0kyhsfjxfqfbi/406/406.pdf?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"405xcx3x5ud6sopkxfqg7ikk\"\>", ",", "405", ",", "405", 
+     ",", "\<\"HD\"\>", ",", "\<\"405-HD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+405xcx3x5ud6sopkxfqg7ikk/405/405-HD.mov?dl=1\"\>"}], "}"}]}], "}"}]], "Output",\
+
+ CellChangeTimes->{
+  3.58767163469042*^9, 3.587672036199839*^9, {3.587672195125299*^9, 
+   3.587672208295442*^9}, 3.5876722461544724`*^9, 3.587673005385516*^9, 
+   3.5876730369075603`*^9, {3.587673422033327*^9, 3.587673440216264*^9}, 
+   3.5876734715469513`*^9, 3.587689746895603*^9, 3.588036704387723*^9, 
+   3.588259850227034*^9, 3.588266985666029*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"wwdc2013SessionVideosHyperlinkData", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", "1"}], "]"}], "]"}], "//", "Tally"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.587671650586863*^9, 3.5876716634576597`*^9}}],
+
+Cell[BoxData["99"], "Output",
+ CellChangeTimes->{{3.587671654898398*^9, 3.587671664704185*^9}, 
+   3.587672046362605*^9, 3.58767224620323*^9, 3.587673043711248*^9, 
+   3.587673471608684*^9, 3.5876897469958076`*^9, 3.588036704436248*^9, 
+   3.5882598502470493`*^9, 3.5882669857103977`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"wwdc2013SessionVideosHyperlinkData", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "3"}], "}"}]}], "]"}], "]"}], "//", "Tally"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.587671672108034*^9, 3.5876716806428432`*^9}}],
+
+Cell[BoxData["99"], "Output",
+ CellChangeTimes->{{3.587671672829014*^9, 3.5876716812686872`*^9}, 
+   3.5876720464889708`*^9, 3.587672246253759*^9, 3.587673047986043*^9, 
+   3.587673471657772*^9, 3.587689747078595*^9, 3.5880367044901257`*^9, 
+   3.5882598502654457`*^9, 3.588266985763978*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wwdc2013SessionVideosHyperlinkData", "[", 
+   RowBox[{"[", 
+    RowBox[{"All", ",", "4"}], "]"}], "]"}], "//", "Tally"}]], "Input",
+ CellChangeTimes->{{3.587671691418352*^9, 3.587671693816834*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"HD\"\>", ",", "99"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SD\"\>", ",", "99"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"PDF\"\>", ",", "97"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.587671694301145*^9, 3.58767204652853*^9, 
+  3.587672246304151*^9, 3.587673068475164*^9, 3.587673471706973*^9, 
+  3.5876897471638937`*^9, 3.588036704546691*^9, 3.5882598502843113`*^9, 
+  3.5882669858285027`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wwdc2013SessionVideosHyperlinkData", "[", 
+   RowBox[{"[", 
+    RowBox[{"All", ",", "6"}], "]"}], "]"}], "//", "Tally"}]], "Input",
+ CellChangeTimes->{{3.587671706250206*^9, 3.587671714073041*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"\<\"?dl=1\"\>", ",", "295"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.587671706942543*^9, 3.587671715312359*^9}, 
+   3.587672046562339*^9, 3.58767224635327*^9, 3.5876730813932533`*^9, 
+   3.587673471760111*^9, 3.587689747473134*^9, 3.5880367046191597`*^9, 
+   3.588259850303204*^9, 3.588266985875935*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["WWDC Session Videos", "Section",
+ CellChangeTimes->{{3.580009485602325*^9, 3.580009548267757*^9}, {
+  3.580010399560931*^9, 3.580010404353941*^9}, {3.5876694058601303`*^9, 
+  3.587669412944339*^9}, {3.5882668821706533`*^9, 3.588266883289323*^9}, {
+  3.588267297860923*^9, 3.588267298337288*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "downloadDir", "=", 
+   "\"\</Volumes/LaCie Rugged/WWDC 2013 Session Videos - HD/\>\""}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.588267636345933*^9, 3.588267650740221*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"WWDC2013DownloadOutputFile", "[", 
+    RowBox[{"sessionNumber_Integer", ",", "videoFormat_String"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"description", ",", "track", ",", "session"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"description", ",", "track", ",", "session"}], "}"}], "=", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"Select", "[", 
+         RowBox[{
+          RowBox[{"wwdc2013SessionVideosData", "[", 
+           RowBox[{"[", 
+            RowBox[{"2", ",", "3", ",", "All", ",", "1"}], "]"}], "]"}], ",", 
+          
+          RowBox[{
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "3", "]"}], "]"}], "\[Equal]", "sessionNumber"}], 
+           "&"}]}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{
+        RowBox[{"\"\<Session \>\"", "<>", 
+         RowBox[{"ToString", "[", "session", "]"}], "<>", "\"\< - \>\"", "<>",
+          "description", "<>", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"StringMatchQ", "[", 
+            RowBox[{"videoFormat", ",", "\"\<PDF\>\""}], "]"}], ",", 
+           "\"\<.pdf\>\"", ",", "\"\<.mov\>\""}], "]"}]}], ",", 
+        RowBox[{"\"\<\[CloseCurlyQuote]\>\"", "\[Rule]", "\"\<'\>\""}]}], 
+       "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.587673363806284*^9, 3.587673413109111*^9}, {
+   3.587673475328579*^9, 3.587673477594726*^9}, {3.587673512176096*^9, 
+   3.587673601812469*^9}, {3.587673643710235*^9, 3.587673668565076*^9}, {
+   3.5876737391584797`*^9, 3.587673894138342*^9}, {3.5876742620932302`*^9, 
+   3.5876743257689657`*^9}, {3.5876743880406847`*^9, 3.5876744012174788`*^9}, 
+   3.587674490104144*^9, {3.5876745315575037`*^9, 3.587674568503367*^9}, 
+   3.5876755134543457`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wwdc2013SessionVideosData", "[", 
+   RowBox[{"[", 
+    RowBox[{"2", ",", "3", ",", "All", ",", "1"}], "]"}], "]"}], "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.587673330410326*^9, 3.5876733310889893`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"What\[CloseCurlyQuote]s New in Xcode 5\"\>", 
+   ",", "\<\"Tools\"\>", ",", "400"}], "}"}]], "Output",
+ CellChangeTimes->{{3.587673319664605*^9, 3.587673331658667*^9}, 
+   3.5876734718114433`*^9, 3.587689747578631*^9, 3.588036704663291*^9, 
+   3.5882598503218813`*^9, 3.588266985927945*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"WWDC2013DownloadOutputFile", "[", 
+      RowBox[{"400", ",", "#"}], "]"}], "&"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<HD\>\"", ",", "\"\<SD\>\"", ",", "\"\<PDF\>\""}], "}"}]}], 
+   "]"}], "//", "TableForm"}]], "Input",
+ CellChangeTimes->{{3.5876736764259243`*^9, 3.5876736864569387`*^9}, {
+  3.587673908508665*^9, 3.587673936511209*^9}, {3.5876741446953583`*^9, 
+  3.5876741636259727`*^9}, {3.5876744303480873`*^9, 3.58767443061264*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"Session 400 - What's New in Xcode 5.mov\"\>"},
+     {"\<\"Session 400 - What's New in Xcode 5.mov\"\>"},
+     {"\<\"Session 400 - What's New in Xcode 5.pdf\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.587674164167396*^9, {3.587674406717403*^9, 3.5876744315011463`*^9}, 
+   3.587674492968116*^9, 3.587674536451519*^9, 3.58767457341889*^9, 
+   3.587675516476268*^9, 3.587689747968034*^9, 3.588036704861418*^9, 
+   3.588259850376905*^9, 3.5882670452158403`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SortBy", "[", 
+   RowBox[{
+    RowBox[{"Select", "[", 
+     RowBox[{"wwdc2013SessionVideosHyperlinkData", ",", 
+      RowBox[{
+       RowBox[{"StringMatchQ", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "4", "]"}], "]"}], ",", 
+         RowBox[{"\"\<HD\>\"", "|", "\"\<PDF\>\""}]}], "]"}], "&"}]}], "]"}], 
+    ",", 
+    RowBox[{
+     RowBox[{"#", "[", 
+      RowBox[{"[", "2", "]"}], "]"}], "&"}]}], "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{";;", "10"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5876758847812433`*^9, 3.5876759274360113`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"100xex1xb4fuo9xiu0\"\>", ",", "100", ",", "100", 
+     ",", "\<\"HD\"\>", ",", "\<\"100-HD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+100xex1xb4fuo9xiu0/100/100-HD.mov?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"101xex1x82z7rpszsw\"\>", ",", "101", ",", "101", 
+     ",", "\<\"HD\"\>", ",", "\<\"101-HD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+101xex1x82z7rpszsw/101/101-HD.mov?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"101xex1x82z7rpszsw\"\>", ",", "101", ",", "101", 
+     ",", "\<\"PDF\"\>", ",", "\<\"101.pdf\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+101xex1x82z7rpszsw/101/101.pdf?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"109xxxjfr9zgakbgrzxk23n2\"\>", ",", "109", ",", "109", 
+     ",", "\<\"HD\"\>", ",", "\<\"109-HD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+109xxxjfr9zgakbgrzxk23n2/109/109-HD.mov?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"109xxxjfr9zgakbgrzxk23n2\"\>", ",", "109", ",", "109", 
+     ",", "\<\"PDF\"\>", ",", "\<\"109.pdf\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+109xxxjfr9zgakbgrzxk23n2/109/109.pdf?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"200xdx2x35e1pxiinm\"\>", ",", "200", ",", "200", 
+     ",", "\<\"HD\"\>", ",", "\<\"200-HD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+200xdx2x35e1pxiinm/200/200-HD.mov?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"200xdx2x35e1pxiinm\"\>", ",", "200", ",", "200", 
+     ",", "\<\"PDF\"\>", ",", "\<\"200.pdf\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+200xdx2x35e1pxiinm/200/200.pdf?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"201xex2xxf5ynwnsgl\"\>", ",", "201", ",", "201", 
+     ",", "\<\"HD\"\>", ",", "\<\"201-HD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+201xex2xxf5ynwnsgl/201/201-HD.mov?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"201xex2xxf5ynwnsgl\"\>", ",", "201", ",", "201", 
+     ",", "\<\"PDF\"\>", ",", "\<\"201.pdf\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+201xex2xxf5ynwnsgl/201/201.pdf?dl=1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"202xdx2x47ezp1wein\"\>", ",", "202", ",", "202", 
+     ",", "\<\"HD\"\>", ",", "\<\"202-HD.mov\"\>", ",", "\<\"?dl=1\"\>", 
+     ",", "\<\"http://devstreaming.apple.com/videos/wwdc/2013/\
+202xdx2x47ezp1wein/202/202-HD.mov?dl=1\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.58767593103622*^9, 3.5876897480626717`*^9, 
+  3.588036704909133*^9, 3.588259850397171*^9, 3.588267050232456*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\"\<curl \\\"\>\"", "<>", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "7", "]"}], "]"}], "<>", "\"\<\\\" -o \\\"\>\"", "<>", 
+       RowBox[{"FileNameJoin", "[", 
+        RowBox[{"{", 
+         RowBox[{"downloadDir", ",", 
+          RowBox[{"WWDC2013DownloadOutputFile", "[", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "3", "]"}], "]"}], ",", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "4", "]"}], "]"}]}], "]"}]}], "}"}], "]"}], "<>", 
+       "\"\<\\\"\>\""}], "&"}], ",", 
+     RowBox[{"SortBy", "[", 
+      RowBox[{
+       RowBox[{"Select", "[", 
+        RowBox[{"wwdc2013SessionVideosHyperlinkData", ",", 
+         RowBox[{
+          RowBox[{"StringMatchQ", "[", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "4", "]"}], "]"}], ",", 
+            RowBox[{"\"\<SD\>\"", "|", "\"\<PDF\>\""}]}], "]"}], "&"}]}], 
+        "]"}], ",", 
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "&"}]}], "]"}]}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "//", "FullForm"}]], "Input",
+ CellChangeTimes->{{3.587672903980607*^9, 3.587672905252097*^9}, {
+   3.587672938301228*^9, 3.587672939311038*^9}, {3.587673129406028*^9, 
+   3.587673188245422*^9}, 3.587673985913587*^9, {3.587674020180766*^9, 
+   3.587674065667531*^9}, {3.587674892516655*^9, 3.587674920096661*^9}, {
+   3.587675239589484*^9, 3.587675257186261*^9}, {3.587675367938583*^9, 
+   3.587675412335286*^9}, 3.5876755711138887`*^9, 3.587675917365253*^9, {
+   3.588036743861979*^9, 3.588036744175106*^9}, 3.588267659165338*^9}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   "\"\<curl \
+\\\"http://devstreaming.apple.com/videos/wwdc/2013/100xex1xb4fuo9xiu0/100/100-\
+SD.mov?dl=1\\\" -o \\\"/Volumes/LaCie Rugged/WWDC 2013 Session Videos - \
+HD/Session 100 - Keynote.mov\\\"\>\"",
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{
+  3.587674920865616*^9, {3.587675241156055*^9, 3.5876752579262953`*^9}, 
+   3.587675413812725*^9, 3.587675574795312*^9, 3.5876759312092867`*^9, 
+   3.5876897481827517`*^9, 3.588036704968886*^9, 3.5880367570826*^9, 
+   3.588259850432926*^9, 3.588267191333448*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "$ProjectDirectory", ",", "\"\<TestData\>\"", ",", "\"\<WWDC\>\"", ",", 
+      "\"\<wwdc_2013_session_videos_download.sh\>\""}], "}"}], "]"}], ",", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\"\<curl \\\"\>\"", "<>", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "7", "]"}], "]"}], "<>", "\"\<\\\" -o \\\"\>\"", "<>", 
+       RowBox[{"FileNameJoin", "[", 
+        RowBox[{"{", 
+         RowBox[{"downloadDir", ",", 
+          RowBox[{"WWDC2013DownloadOutputFile", "[", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "3", "]"}], "]"}], ",", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "4", "]"}], "]"}]}], "]"}]}], "}"}], "]"}], "<>", 
+       "\"\<\\\"\>\""}], "&"}], ",", 
+     RowBox[{"SortBy", "[", 
+      RowBox[{
+       RowBox[{"Select", "[", 
+        RowBox[{"wwdc2013SessionVideosHyperlinkData", ",", 
+         RowBox[{
+          RowBox[{"StringMatchQ", "[", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "4", "]"}], "]"}], ",", 
+            RowBox[{"\"\<SD\>\"", "|", "\"\<PDF\>\""}]}], "]"}], "&"}]}], 
+        "]"}], ",", 
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "&"}]}], "]"}]}], "]"}], ",", 
+   "\"\<Text\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.587672903980607*^9, 3.587672905252097*^9}, {
+   3.587672938301228*^9, 3.587672939311038*^9}, {3.587673129406028*^9, 
+   3.587673188245422*^9}, 3.587673985913587*^9, {3.587674020180766*^9, 
+   3.587674065667531*^9}, {3.587674598535068*^9, 3.587674625319158*^9}, {
+   3.587674675674529*^9, 3.5876747451081047`*^9}, {3.587674790494871*^9, 
+   3.587674812563239*^9}, 3.5876749353806257`*^9, {3.587675209692562*^9, 
+   3.587675224720183*^9}, 3.587675268084873*^9, 3.587675433427252*^9, 
+   3.587675579762228*^9, 3.5876759209689493`*^9, {3.588036746775311*^9, 
+   3.5880367469957943`*^9}, 3.588267662706834*^9}],
+
+Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base/Appcelerator/TestData/\
+WWDC/wwdc_2013_session_videos_download.sh\"\>"], "Output",
+ CellChangeTimes->{{3.5876746024558563`*^9, 3.5876746259734077`*^9}, 
+   3.58767485929849*^9, 3.587674936213397*^9, 3.587675268641149*^9, 
+   3.5876754357946243`*^9, 3.5876755801841516`*^9, 3.5876759312744083`*^9, 
+   3.5876897486808043`*^9, 3.588036705144108*^9, 3.58803675724791*^9, 
+   3.588259850527441*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1680, 919},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 548, 11, 92, "Title"],
+Cell[CellGroupData[{
+Cell[1140, 37, 140, 2, 80, "Section"],
+Cell[1283, 41, 142, 2, 28, "Input"],
+Cell[1428, 45, 190, 4, 28, "Input"],
+Cell[1621, 51, 253, 4, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1911, 60, 312, 5, 80, "Section"],
+Cell[2226, 67, 452, 10, 28, "Input"],
+Cell[2681, 79, 477, 10, 28, "Input"],
+Cell[CellGroupData[{
+Cell[3183, 93, 160, 3, 28, "Input"],
+Cell[3346, 98, 620, 9, 28, "Output"]
+}, Open  ]],
+Cell[3981, 110, 193, 5, 28, "Input"],
+Cell[CellGroupData[{
+Cell[4199, 119, 106, 2, 28, "Input"],
+Cell[4308, 123, 74, 1, 28, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4431, 130, 256, 3, 80, "Section"],
+Cell[CellGroupData[{
+Cell[4712, 137, 792, 14, 28, "Input"],
+Cell[5507, 153, 441, 8, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5985, 166, 238, 3, 44, "Subsection"],
+Cell[6226, 171, 418, 10, 28, "Input"],
+Cell[CellGroupData[{
+Cell[6669, 185, 145, 2, 28, "Input"],
+Cell[6817, 189, 189, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7043, 197, 167, 3, 28, "Input"],
+Cell[7213, 202, 408, 7, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7658, 214, 167, 3, 28, "Input"],
+Cell[7828, 219, 765, 18, 35, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8630, 242, 193, 4, 28, "Input"],
+Cell[8826, 248, 319, 6, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9182, 259, 203, 4, 28, "Input"],
+Cell[9388, 265, 501, 12, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9926, 282, 274, 6, 28, "Input"],
+Cell[10203, 290, 3453, 86, 114, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13693, 381, 255, 6, 28, "Input"],
+Cell[13951, 389, 756, 20, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14744, 414, 243, 6, 28, "Input"],
+Cell[14990, 422, 724, 19, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15751, 446, 261, 6, 28, "Input"],
+Cell[16015, 454, 160, 2, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16212, 461, 266, 5, 28, "Input"],
+Cell[16481, 468, 13757, 304, 539, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30287, 778, 318, 4, 44, "Subsection"],
+Cell[30608, 784, 529, 12, 28, "Input"],
+Cell[CellGroupData[{
+Cell[31162, 800, 200, 3, 28, "Input"],
+Cell[31365, 805, 218, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31620, 813, 230, 5, 28, "Input"],
+Cell[31853, 820, 2028, 45, 364, "Output"]
+}, Open  ]],
+Cell[33896, 868, 1311, 30, 65, "Input"],
+Cell[CellGroupData[{
+Cell[35232, 902, 403, 8, 28, "Input"],
+Cell[35638, 912, 461, 7, 28, "Output"]
+}, Open  ]],
+Cell[36114, 922, 1273, 25, 80, "Input"],
+Cell[CellGroupData[{
+Cell[37412, 951, 154, 2, 28, "Input"],
+Cell[37569, 955, 289, 5, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37895, 965, 299, 6, 28, "Input"],
+Cell[38197, 973, 3404, 60, 182, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41638, 1038, 269, 7, 28, "Input"],
+Cell[41910, 1047, 288, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42235, 1056, 324, 9, 28, "Input"],
+Cell[42562, 1067, 291, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42890, 1076, 232, 5, 28, "Input"],
+Cell[43125, 1083, 493, 12, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43655, 1100, 232, 5, 28, "Input"],
+Cell[43890, 1107, 368, 7, 28, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44319, 1121, 301, 4, 80, "Section"],
+Cell[44623, 1127, 212, 6, 28, "Input"],
+Cell[44838, 1135, 1954, 44, 80, "Input"],
+Cell[CellGroupData[{
+Cell[46817, 1183, 268, 6, 28, "Input"],
+Cell[47088, 1191, 334, 6, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47459, 1202, 529, 12, 28, "Input"],
+Cell[47991, 1216, 990, 24, 74, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49018, 1245, 612, 18, 31, "Input"],
+Cell[49633, 1265, 3011, 54, 182, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52681, 1324, 1702, 40, 48, "Input"],
+Cell[54386, 1366, 636, 15, 39, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55059, 1386, 2035, 47, 65, "Input"],
+Cell[57097, 1435, 447, 6, 28, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
