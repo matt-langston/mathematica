@@ -1,0 +1,246 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      7350,        237]
+NotebookOptionsPosition[      5827,        178]
+NotebookOutlinePosition[      6280,        196]
+CellTagsIndexPosition[      6237,        193]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["UnixTime", "Title",
+ CellChangeTimes->{{3.423249435765991*^9, 3.4232494362659817`*^9}, {
+   3.425938595649876*^9, 3.425938599462327*^9}, {3.4728325864937787`*^9, 
+   3.4728325871186867`*^9}, {3.4728543628462152`*^9, 
+   3.4728543676746492`*^9}, {3.472995656439145*^9, 3.472995657329765*^9}, {
+   3.4745662179002285`*^9, 3.4745662197439785`*^9}, {3.4862219719168663`*^9, 
+   3.4862219765293274`*^9}, {3.4889321576242976`*^9, 3.488932170023537*^9}, {
+   3.4890041680376186`*^9, 3.489004174237239*^9}, {3.489324591621959*^9, 
+   3.489324593756173*^9}, {3.4896916145120697`*^9, 3.4896916154722977`*^9}, {
+   3.4896922922018747`*^9, 3.489692293109723*^9}, {3.4897517967336097`*^9, 
+   3.489751797778714*^9}, {3.49030945905247*^9, 3.4903094610406694`*^9}, 
+   3.4904540657631936`*^9, 3.4904707544045167`*^9},
+ TextAlignment->Center],
+
+Cell[CellGroupData[{
+
+Cell["Setup", "Section",
+ CellChangeTimes->{{3.474554985665854*^9, 3.474554986572104*^9}, {
+  3.4774892196824455`*^9, 3.47748922549502*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Utilities`UnixTime`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.490299670540557*^9, 3.490299671891692*^9}, {
+   3.4903030652859983`*^9, 3.490303069037373*^9}, {3.490306085989508*^9, 
+   3.4903060863565083`*^9}, {3.49030796579916*^9, 3.4903079685554357`*^9}, {
+   3.4903096278993535`*^9, 3.490309628746438*^9}, {3.49045423914653*^9, 
+   3.4904542406186776`*^9}, {3.490470766763517*^9, 3.490470768732517*^9}, {
+   3.5713232059201593`*^9, 3.571323208421805*^9}, 3.597772481677655*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["UnixTime", "Section",
+ CellChangeTimes->{
+  3.489709153907304*^9, 3.489711222172278*^9, {3.489720038718049*^9, 
+   3.489720040867033*^9}, 3.489920214609523*^9, {3.489922446891729*^9, 
+   3.489922447914831*^9}, 3.4899683097027535`*^9, 3.4904540852361407`*^9, 
+   3.4904710672893033`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$UnixEpochDateString"], "Input",
+ CellChangeTimes->{{3.571334267912281*^9, 3.571334267913395*^9}}],
+
+Cell[BoxData["\<\"January 1, 1970, 00:00:00 UTC\"\>"], "Output",
+ CellChangeTimes->{3.571334268492021*^9, 3.57133477235883*^9, 
+  3.571335371198606*^9, 3.571335537529808*^9, 3.597772486559103*^9}]
+}, Open  ]],
+
+Cell["\<\
+The UNIX epoch as a DateList in the local time zone:\
+\>", "Text",
+ CellChangeTimes->{{3.5713354019923058`*^9, 3.5713354147197313`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$UnixEpoch"], "Input",
+ CellChangeTimes->{{3.5713353887091303`*^9, 3.571335388710257*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1969", ",", "12", ",", "31", ",", "16", ",", "0", ",", "0"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.5713353898290033`*^9, 3.571335537579279*^9, 
+  3.597772486655357*^9}]
+}, Open  ]],
+
+Cell["\<\
+Feed the output from CurrentTimeMillis[] to http://www.epochconverter.com.\
+\>", "Text",
+ CellChangeTimes->{{3.5713358081663103`*^9, 3.571335833021819*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CurrentTimeMillis", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.571335552009203*^9, 3.57133555201335*^9}}],
+
+Cell[BoxData["1388783686656"], "Output",
+ CellChangeTimes->{3.571335554841696*^9, 3.5977724867100763`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateList", "[", 
+  RowBox[{"UnixTime", "[", 
+   RowBox[{"CurrentTimeMillis", "[", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{3.571335755253538*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2014", ",", "1", ",", "3", ",", "13", ",", "14", ",", 
+   "46.71199989318848`"}], "}"}]], "Output",
+ CellChangeTimes->{3.571335755753808*^9, 3.5977724867406187`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateList", "[", 
+  RowBox[{"UnixTime", "[", "1265490923702", "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2010", ",", "2", ",", "6", ",", "13", ",", "15", ",", 
+   "23.7020001411438`"}], "}"}]], "Output",
+ CellChangeTimes->{3.49047109346492*^9, 3.4904712760021725`*^9, 
+  3.490472095581122*^9, 3.571323460839631*^9, 3.571335773989197*^9, 
+  3.597772486793517*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateList", "[", 
+  RowBox[{"UnixTime", "[", "\"\<1265490923702\>\"", "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2010", ",", "2", ",", "6", ",", "13", ",", "15", ",", 
+   "23.7020001411438`"}], "}"}]], "Output",
+ CellChangeTimes->{3.4904710934999237`*^9, 3.4904712760281754`*^9, 
+  3.490472095610125*^9, 3.5713234643321333`*^9, 3.5713357773287*^9, 
+  3.5977724868432903`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateString", "[", 
+  RowBox[{"UnixTime", "[", "1265490923702", "]"}], "]"}]], "Input"],
+
+Cell[BoxData["\<\"Sat 6 Feb 2010 13:15:23\"\>"], "Output",
+ CellChangeTimes->{3.490471093530927*^9, 3.490471276057178*^9, 
+  3.4904720956391277`*^9, 3.571323465623269*^9, 3.571335781723713*^9, 
+  3.597772486874761*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateString", "[", 
+  RowBox[{"UnixTime", "[", "\"\<1265490923702\>\"", "]"}], "]"}]], "Input"],
+
+Cell[BoxData["\<\"Sat 6 Feb 2010 13:15:23\"\>"], "Output",
+ CellChangeTimes->{3.49047109355993*^9, 3.490471276084181*^9, 
+  3.490472095668131*^9, 3.571323466705518*^9, 3.5713357852327833`*^9, 
+  3.5977724869077253`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{595, 760},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 832, 12, 92, "Title"],
+Cell[CellGroupData[{
+Cell[1424, 38, 140, 2, 80, "Section"],
+Cell[1567, 42, 524, 7, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2128, 54, 292, 5, 80, "Section"],
+Cell[CellGroupData[{
+Cell[2445, 63, 112, 1, 28, "Input"],
+Cell[2560, 66, 196, 2, 28, "Output"]
+}, Open  ]],
+Cell[2771, 71, 146, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[2942, 78, 104, 1, 28, "Input"],
+Cell[3049, 81, 213, 5, 28, "Output"]
+}, Open  ]],
+Cell[3277, 89, 166, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[3468, 96, 130, 2, 28, "Input"],
+Cell[3601, 100, 106, 1, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3744, 106, 178, 4, 28, "Input"],
+Cell[3925, 112, 208, 5, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4170, 122, 108, 2, 28, "Input"],
+Cell[4281, 126, 300, 7, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4618, 138, 116, 2, 28, "Input"],
+Cell[4737, 142, 305, 7, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5079, 154, 110, 2, 28, "Input"],
+Cell[5192, 158, 218, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5447, 166, 118, 2, 28, "Input"],
+Cell[5568, 170, 219, 3, 86, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
