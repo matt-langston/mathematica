@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>CLang</name>
+	<comment></comment>
+	<projects>
+		<project>Utilities</project>
+		<project>Xcode</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.wolfram.eclipse.MEET.MathematicaProjectBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.wolfram.eclipse.MEET.SimpleMathematicaNature</nature>
+	</natures>
+</projectDescription>

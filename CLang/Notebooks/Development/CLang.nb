@@ -1,0 +1,99 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      2815,         90]
+NotebookOptionsPosition[      2230,         66]
+NotebookOutlinePosition[      2684,         84]
+CellTagsIndexPosition[      2641,         81]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["CLang", "Title",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQAWIQzdBc0RzS+NLxTVMHmD55umRKadtLx6TT78A051l/
+zuf3Xzp6nEkG00Yi0as/Auld076C6SpevpVmD1465vdqgek152w6TR+D6HIw
+/SOs9lLBz5eODh8ELoNo+1+b1ef8e+l48YCDJojWMWEM3A+ky6YfB9Pizz8f
+jf7/0nGSkcUxEP0g6cJvPoZXjgKy78H0odK2AH4gfatpMZjeXTk9TgdIW73e
+AaYn3XqUZcn4yvHfAe5sEB2QUmMSteSV4/YLs8H0lWdri1YBabaCb2DaRZl3
+vsnGV46fWMLAdMYCvrVF2185xqxsB9Pd3REzJ+985fj/bDqYrvD76rkQSJe9
+FPAC0QBHaq2R
+  "],
+ TextAlignment->Center],
+
+Cell["Development Notebook", "Subtitle",
+ CellChangeTimes->CompressedData["
+1:eJwdxWkog2EcAPDXEbmFEjlSSrSUOULCPyVJOdLISpoj8YHkPj4wLZLUkpEj
+hWFzlQ/kyMi9uaVIEbG9Dxk5elHjff4ffv38JGUZheYMw3jz6Iy0VprZzMJz
+Sxu+p63srpKxING+4DYHqTb6GxaSdPm40E2sfuNf6vnE6x0cJyNuWSjrDMKn
+DmPaw+/pNTgnajot/2Yh/tX5jB73Mx8wYGLhRBMfSBeEmaWv8VcrdnB3/fuW
++I8FuTBym34rOf51ZAg4exvxjSpZmhP/VcsIvlynyBXwRz8t4vKru5IoMwIm
+jV0pPa2gMSxnlMDCcT9+/jhdoeK3Kv/Ci4ONpqwxAiJf/z96r21DH6ckkBy6
+invOzgxLxwkYRt/wMZdCr2oVgb1LBS7oGLLYVxPItZ/Diy5UmcYlAtcBq/hL
+o4PedYXApsHaQM87Eotl6wS+dfO4T4hy8GOXwFzrAe7iy93FaglwnMc9PWHZ
+XtSqI/D6K8W3J6ITXQ8JCFNScaW66yGbX245wdL/ARXFADY=
+  "],
+ TextAlignment->Center],
+
+Cell[CellGroupData[{
+
+Cell["Setup", "Section",
+ CellChangeTimes->{{3.474554985665854*^9, 3.474554986572104*^9}, {
+  3.4774892196824455`*^9, 3.47748922549502*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<CLang`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.586984095824902*^9, 3.586984096551927*^9}, 
+   3.59960010006822*^9}]
+}, Open  ]],
+
+Cell["TODO", "Section",
+ CellChangeTimes->{{3.474554985665854*^9, 3.474554986572104*^9}, {
+  3.4774892196824455`*^9, 3.47748922549502*^9}, {3.59974839309588*^9, 
+  3.599748393522769*^9}}]
+}, Open  ]]
+},
+WindowSize->{1680, 923},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 468, 10, 92, "Title"],
+Cell[1038, 34, 644, 12, 51, "Subtitle"],
+Cell[CellGroupData[{
+Cell[1707, 50, 140, 2, 80, "Section"],
+Cell[1850, 54, 162, 3, 28, "Input"]
+}, Open  ]],
+Cell[2027, 60, 187, 3, 80, "Section"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
