@@ -1,0 +1,16 @@
+Resources[
+    Version[1],
+    Sources[
+        Directory["github/Utilities"],
+        Directory["~"]
+    ],
+    Java[
+        Directory["Maven/Java"],
+        Directory["target/classes"],
+        Directory["target/test-classes"]
+    ],
+    ExecutionBuildCommand["<<Maven`"],
+    Paclet[
+        FunctionPaclet[False]
+    ]
+]

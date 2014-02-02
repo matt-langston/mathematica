@@ -1,0 +1,637 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     22699,        628]
+NotebookOptionsPosition[     19649,        519]
+NotebookOutlinePosition[     20103,        537]
+CellTagsIndexPosition[     20060,        534]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Maven", "Title",
+ CellChangeTimes->CompressedData["
+1:eJwdxVkow3EcAPA/SjHHQilHKLVoeXDFqPl6Eg+O1hTlYY7Ew5D7eGAlctWS
+EUmZyeYqirAc5RgmMxEpC23+PzJH5Gr8f9+HT58wmTyn2JlhmCAOnVHUKySt
+LDy2deCGg+r+mnYWZAdPuJsx0812zULaYSEe7Zeve+FeGXjHGz29puItLMh7
+IvHpo+TOuFt6Hf4pbTmp+GIh5Zlvpou/FwQjDhZMGykRdGGsU/Y6d61qF/e3
+vW3n/7GgjE7YoVtkxz9eDAF+sB3fqmnP8ua+bBvHVxtUBUJu0cMyrry8KUt0
+IuDY4JXTs4qaY/PUBJaOh/FT60yVltu14gMvjbI7cicISEPC/+iD7k1DnxoC
+6TF6PGBudkwxSeBe/YJP+BQH1WoJGC5UuLBr1GVfR6DAYx4vOdNK7CsErgR6
+3NOUJPJdI6AzLuKu/NlXutQc+EbXpIp3kri/93pxZbpGzNMT6E6w4urK5YFf
+E4F+5Tl+t9lqDTUTsGb04f9AefW4
+  "],
+ TextAlignment->Center],
+
+Cell["Development Notebook", "Subtitle",
+ CellChangeTimes->CompressedData["
+1:eJwdxWkog2EcAPDXEbmFEjlSSrSUOULCPyVJOdLISpoj8YHkPj4wLZLUkpEj
+hWFzlQ/kyMi9uaVIEbG9Dxk5elHjff4ffv38JGUZheYMw3jz6Iy0VprZzMJz
+Sxu+p63srpKxING+4DYHqTb6GxaSdPm40E2sfuNf6vnE6x0cJyNuWSjrDMKn
+DmPaw+/pNTgnajot/2Yh/tX5jB73Mx8wYGLhRBMfSBeEmaWv8VcrdnB3/fuW
++I8FuTBym34rOf51ZAg4exvxjSpZmhP/VcsIvlynyBXwRz8t4vKru5IoMwIm
+jV0pPa2gMSxnlMDCcT9+/jhdoeK3Kv/Ci4ONpqwxAiJf/z96r21DH6ckkBy6
+invOzgxLxwkYRt/wMZdCr2oVgb1LBS7oGLLYVxPItZ/Diy5UmcYlAtcBq/hL
+o4PedYXApsHaQM87Eotl6wS+dfO4T4hy8GOXwFzrAe7iy93FaglwnMc9PWHZ
+XtSqI/D6K8W3J6ITXQ8JCFNScaW66yGbX245wdL/ARXFADY=
+  "],
+ TextAlignment->Center],
+
+Cell[CellGroupData[{
+
+Cell["Setup", "Section",
+ CellChangeTimes->{{3.474554985665854*^9, 3.474554986572104*^9}, {
+  3.4774892196824455`*^9, 3.47748922549502*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<Maven`\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.600355473268712*^9, 3.600355473703824*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<Spotlight`\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6003554598336983`*^9, 3.6003554679744062`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<Utilities`Debug`\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.5978519970493593`*^9, 3.597851997169876*^9}, 
+   3.6003556164308643`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<JLink`\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.599775605581603*^9, 3.599775616870843*^9}, {
+  3.6000232963475227`*^9, 3.600023299815097*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pomXmlFilePath", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"ProjectDirectory", "[", "\"\<Maven`\>\"", "]"}], ",", 
+      "\"\<pom.xml\>\""}], "}"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6003583311271763`*^9, 3.600358336219783*^9}, {
+  3.600358369844105*^9, 3.60035837910929*^9}, {3.6003584765735064`*^9, 
+  3.600358483462075*^9}, {3.600358845841695*^9, 3.600358846548649*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Maven", "Section",
+ CellChangeTimes->{{3.599766606402047*^9, 3.599766635216173*^9}, {
+  3.599775721269287*^9, 3.5997757216838427`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MavenSrcDir", "[", "pomXmlFilePath", "]"}]], "Input",
+ CellChangeTimes->{{3.5997763789871483`*^9, 3.599776384039794*^9}, 
+   3.6003586056851892`*^9, 3.6003588677680798`*^9}],
+
+Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/Maven/src/main/java\"\>\
+"], "Output",
+ CellChangeTimes->{
+  3.59977638447661*^9, 3.599777545706892*^9, 3.599777683863405*^9, 
+   3.599777731259458*^9, 3.6000385771698847`*^9, {3.600040472118313*^9, 
+   3.600040501832889*^9}, 3.6000406961474743`*^9, 3.600092643084153*^9, 
+   3.600118932321457*^9, 3.600121507079727*^9, 3.600122560602944*^9, 
+   3.600123556650154*^9, 3.600125605084195*^9, 3.600355575372757*^9, 
+   3.600355652682105*^9, 3.60035596598965*^9, 3.600356175944116*^9, 
+   3.600356733692548*^9, 3.6003571431174707`*^9, {3.6003572581730556`*^9, 
+   3.6003572829144993`*^9}, 3.600357441683762*^9, 3.6003577276529083`*^9, 
+   3.600358677180704*^9, 3.60035888921038*^9, 3.600359910006822*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FileNames", "[", 
+   RowBox[{"\"\<*.java\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"MavenSrcDir", "[", "pomXmlFilePath", "]"}], "}"}], ",", 
+    "Infinity"}], "]"}], "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.599776417230186*^9, 3.5997764243126802`*^9}, {
+   3.599776455322084*^9, 3.599776473454487*^9}, 3.600358615685845*^9, 
+   3.6003588694323378`*^9}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{
+  3.59977646632714*^9, 3.599776562995665*^9, 3.599777551273539*^9, 
+   3.5997776839203157`*^9, 3.599777731317522*^9, 3.600038577221485*^9, {
+   3.6000404721724463`*^9, 3.600040501887549*^9}, 3.600040696196226*^9, 
+   3.600092643134162*^9, 3.600118932388411*^9, 3.600121507129963*^9, 
+   3.6001225606510983`*^9, 3.6001235567004547`*^9, 3.600125605133546*^9, 
+   3.600355575421068*^9, 3.600355652731864*^9, 3.600355966031621*^9, 
+   3.6003561759999657`*^9, 3.6003567337432613`*^9, 3.600357143168851*^9, {
+   3.600357258231188*^9, 3.600357282964361*^9}, 3.600357441734867*^9, 
+   3.600357727701123*^9, 3.60035867726698*^9, 3.600358889338002*^9, 
+   3.600359910063499*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mavenOutput", "=", 
+   RowBox[{"MavenCommand", "[", 
+    RowBox[{"pomXmlFilePath", ",", "\"\<mvn help:system\>\""}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{3.600119173298017*^9, 3.600358621752285*^9, 
+  3.600358871143962*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mavenOutput", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.600119178481289*^9, 3.6001191797676353`*^9}}],
+
+Cell[BoxData["106"], "Output",
+ CellChangeTimes->{
+  3.600119180755774*^9, 3.600121519707217*^9, 3.600122572781304*^9, 
+   3.6001235683418303`*^9, 3.6001256165757236`*^9, 3.600355732375547*^9, 
+   3.600355968841523*^9, 3.600356178364448*^9, 3.600356736209323*^9, 
+   3.600357145487872*^9, {3.600357258322876*^9, 3.60035728582447*^9}, 
+   3.6003574441922913`*^9, 3.6003577301427917`*^9, 3.6003586796725492`*^9, 
+   3.600358891755287*^9, 3.6003599125672483`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mavenOutput", "//", "TableForm"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6003559757532167`*^9, 3.600355980183146*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["JLink", "Section",
+ CellChangeTimes->{{3.474554985665854*^9, 3.474554986572104*^9}, {
+   3.4774892196824455`*^9, 3.47748922549502*^9}, 3.600038535865588*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["JLink`Information`$Version"], "Input",
+ CellChangeTimes->{{3.60003230719354*^9, 3.60003233155121*^9}}],
+
+Cell[BoxData["\<\"J/Link Version 4.4.0\"\>"], "Output",
+ CellChangeTimes->{
+  3.60003233279867*^9, 3.6000380100851593`*^9, 3.6000386655924597`*^9, {
+   3.600040474389863*^9, 3.600040504135795*^9}, 3.60004069843143*^9, 
+   3.600092645649559*^9, 3.6001189362920647`*^9, 3.600121511201542*^9, 
+   3.600122564272007*^9, 3.600123560471916*^9, 3.600125608686431*^9, 
+   3.600355633354805*^9, 3.6003560359626617`*^9, 3.6003561373225203`*^9, 
+   3.600356729930986*^9, 3.600357139317992*^9, {3.6003572542311583`*^9, 
+   3.600357281905776*^9}, 3.6003574413525143`*^9, 3.600357727326221*^9, 
+   3.600358691705831*^9, 3.600358891851453*^9, 3.600359912648451*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"JavaClassPath", "[", "]"}], "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.600041001759225*^9, 3.6000410248125477`*^9}}],
+
+Cell[BoxData["88"], "Output",
+ CellChangeTimes->{{3.6000410143730783`*^9, 3.600041025498571*^9}, 
+   3.600092645934696*^9, 3.600118936605592*^9, 3.600121511509088*^9, 
+   3.600122564530336*^9, 3.600123560528716*^9, 3.6001256087456093`*^9, 
+   3.6003556336727457`*^9, 3.600356036223184*^9, 3.600356137550597*^9, 
+   3.600356730157215*^9, 3.600357139541683*^9, {3.600357254459488*^9, 
+   3.600357282132681*^9}, 3.600357441584898*^9, 3.6003577275531597`*^9, 
+   3.6003586920024557`*^9, 3.600358892083562*^9, 3.6003599128892384`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The JavaClassPath has to be manually extended when this Notebook is opened by \
+double-clicking from Wolfram Workbench. If the notebook is \
+\[OpenCurlyDoubleQuote]launched\[CloseCurlyDoubleQuote] instead, then the \
+JavaClassPath is setup correctly.\
+\>", "Text",
+ CellChangeTimes->{{3.60035627881938*^9, 3.600356366892056*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"JavaClassPath", "[", "]"}], "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.600356182652068*^9, 3.600356183926276*^9}}],
+
+Cell[BoxData["88"], "Output",
+ CellChangeTimes->{3.600356184679997*^9, 3.6003565818470793`*^9, 
+  3.6003567414975777`*^9, 3.6003571514235277`*^9, 3.600357316104558*^9, 
+  3.600357449546599*^9, 3.600358692048229*^9, 3.600358892130221*^9, 
+  3.600359912937845*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"JavaClassPath", "[", "]"}], "//", "TableForm"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6000410362100477`*^9, 3.60004106440233*^9}, 
+   3.60012157444928*^9, 3.6001236228152514`*^9, {3.6001237019555264`*^9, 
+   3.6001237165482187`*^9}, {3.600355668183326*^9, 3.60035567421863*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InstallJava", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.600123681314085*^9, 3.600123693598171*^9}}],
+
+Cell[BoxData[
+ RowBox[{"LinkObject", "[", 
+  RowBox[{"\<\"'/Applications/Mathematica.app/SystemFiles/Links/JLink/JLink.\
+app/Contents/MacOS/JavaApplicationStub' -init \\\"/tmp/m00000182481\\\"\"\>", 
+   ",", "105", ",", "4"}], "]"}]], "Output",
+ CellChangeTimes->{3.6001237232811413`*^9, 3.600125616678385*^9, 
+  3.600355746481432*^9, 3.600356515980857*^9, 3.6003565817917356`*^9, 
+  3.600356741439764*^9, 3.600357151323646*^9, 3.600357316046731*^9, 
+  3.6003574495077887`*^9, 3.600358692142542*^9, 3.6003588922159653`*^9, 
+  3.600359913014883*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateTimeClass", "=", 
+  RowBox[{
+  "LoadJavaClass", "[", "\"\<org.joda.time.DateTime\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.600124048679832*^9, 3.600124055262164*^9}, {
+  3.6001248251019297`*^9, 3.6001248306764927`*^9}, {3.600125125586282*^9, 
+  3.6001251257739573`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Java", "::", "excptn"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"A Java exception occurred: \
+\[NoBreak]\\!\\(\\\"java.lang.ClassNotFoundException: \
+org.joda.time.DateTime\\\\n\\\\tat \
+java.net.URLClassLoader$1.run(URLClassLoader.java:202)\\\\n\\\\tat \
+java.security.AccessController.doPrivileged(Native Method)\\\\n\\\\tat \
+java.net.URLClassLoader.findClass(URLClassLoader.java:190)\\\\n\\\\tat \
+java.lang.ClassLoader.loadClass(ClassLoader.java:306)\\\\n\\\\tat \
+java.lang.ClassLoader.loadClass(ClassLoader.java:247)\\\\n\\\\tat \
+java.lang.Class.forName0(Native Method)\\\\n\\\\tat \
+java.lang.Class.forName(Class.java:249)\\\"\\)\[NoBreak].\"\>"}]], "Message", \
+"MSG",
+ CellChangeTimes->{3.600355755244626*^9, 3.600356637255651*^9, 
+  3.600356741756743*^9, 3.600357151762127*^9, 3.60035731636701*^9, 
+  3.600357449801243*^9, 3.600358692489356*^9, 3.600358892481597*^9, 
+  3.6003599132313623`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"LoadJavaClass", "::", "fail"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Java failed to load class \
+\[NoBreak]\\!\\(\\\"org.joda.time.DateTime\\\"\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:JLink/ref/LoadJavaClass\\\", \
+ButtonNote -> \\\"JLink`LoadJavaClass::fail\\\"]\\)\"\>"}]], "Message", "MSG",
+ 
+ CellChangeTimes->{3.600355755244626*^9, 3.600356637255651*^9, 
+  3.600356741756743*^9, 3.600357151762127*^9, 3.60035731636701*^9, 
+  3.600357449801243*^9, 3.600358692489356*^9, 3.600358892481597*^9, 
+  3.600359913357946*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.600124056513218*^9, 3.6001248313509827`*^9, 
+  3.6001256168048267`*^9, 3.6003557553098516`*^9, 3.6003566373737097`*^9, 
+  3.600356741876972*^9, 3.600357151881299*^9, 3.600357316488456*^9, 
+  3.600357449917551*^9, 3.6003586926011066`*^9, 3.6003588926123533`*^9, 
+  3.600359913358787*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"AddMavenClassPath", "[", "pomXmlFilePath", "]"}], ";"}]], "Input",
+ CellChangeTimes->{3.600358525731327*^9, 3.600358875578466*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"JavaClassPath", "[", "]"}], "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.600356182652068*^9, 3.600356183926276*^9}}],
+
+Cell[BoxData["123"], "Output",
+ CellChangeTimes->{
+  3.600356184679997*^9, 3.6003565818470793`*^9, 3.6003567414975777`*^9, 
+   3.600356829412026*^9, {3.60035686928609*^9, 3.6003568823552217`*^9}, 
+   3.600357152242394*^9, 3.600357316580372*^9, 3.600357449994166*^9, 
+   3.600358697604556*^9, 3.600358897724018*^9, 3.600359918511845*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"JavaClassPath", "[", "]"}], "//", "TableForm"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6000410362100477`*^9, 3.60004106440233*^9}, 
+   3.60012157444928*^9, 3.6001236228152514`*^9, {3.6001237019555264`*^9, 
+   3.6001237165482187`*^9}, {3.600355668183326*^9, 3.60035567421863*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateTimeClass", "=", 
+  RowBox[{
+  "LoadJavaClass", "[", "\"\<org.joda.time.DateTime\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.600124048679832*^9, 3.600124055262164*^9}, {
+  3.6001248251019297`*^9, 3.6001248306764927`*^9}, {3.600125125586282*^9, 
+  3.6001251257739573`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"JavaClass", "[", 
+   RowBox[{"org", ".", "joda", ".", "time", ".", "DateTime"}], ",", "<>", 
+   "]"}],
+  JLink`JavaClass["org.joda.time.DateTime", 1, {
+    JLink`JVM["vm1"]}, 2, "org`joda`time`DateTime`", False, True]]], "Output",\
+
+ CellChangeTimes->{3.600356904655176*^9, 3.600357152401232*^9, 
+  3.6003573167506857`*^9, 3.60035745015585*^9, 3.6003586978192883`*^9, 
+  3.60035889791324*^9, 3.6003599186765537`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Constructors", "[", "DateTimeClass", "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.600125059065896*^9, 3.6001250795107203`*^9}, 
+   3.600125131608837*^9}],
+
+Cell[BoxData["18"], "Output",
+ CellChangeTimes->{{3.600125061124373*^9, 3.6001250801881037`*^9}, 
+   3.600125616864707*^9, 3.6003569065973463`*^9, 3.600357152460136*^9, 
+   3.600357316866538*^9, 3.6003574501991243`*^9, 3.600358697861779*^9, 
+   3.600358897954899*^9, 3.600359918719459*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Methods", "[", "DateTimeClass", "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.600124864837085*^9, 3.600124899021*^9}, {
+   3.600125088068722*^9, 3.600125090329143*^9}, 3.600125132997501*^9}],
+
+Cell[BoxData["142"], "Output",
+ CellChangeTimes->{{3.600124870987061*^9, 3.6001248995984917`*^9}, 
+   3.6001250910010223`*^9, 3.600125616927269*^9, 3.600356908572163*^9, 
+   3.600357152527815*^9, 3.60035731692416*^9, 3.600357450341791*^9, 
+   3.600358697913663*^9, 3.600358898005219*^9, 3.600359918769464*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dateList", "=", 
+  RowBox[{"DateList", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.600124065086451*^9, 3.600124070225527*^9}, {
+  3.600124364153757*^9, 3.60012436557388*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2014", ",", "2", ",", "2", ",", "11", ",", "58", ",", 
+   "38.770598`8.341077478438022"}], "}"}]], "Output",
+ CellChangeTimes->{3.6001240717496653`*^9, 3.60012436612226*^9, 
+  3.600125616986999*^9, 3.6003569229882793`*^9, 3.600357152579133*^9, 
+  3.6003573169712963`*^9, 3.600357450385331*^9, 3.600358697963825*^9, 
+  3.6003588980732117`*^9, 3.6003599188196898`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dateTimeConstructorArgumentList", "=", 
+  RowBox[{"dateList", "/.", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "year_Integer", ",", "month_Integer", ",", "day_Integer", ",", 
+      "hour_Integer", ",", "minute_Integer", ",", "second_Real"}], "}"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{
+     "year", ",", "month", ",", "day", ",", "hour", ",", "minute", ",", 
+      RowBox[{"IntegerPart", "[", "second", "]"}], ",", 
+      RowBox[{"IntegerPart", "[", 
+       RowBox[{
+        RowBox[{"FractionalPart", "[", "second", "]"}], "*", 
+        SuperscriptBox["10", "3"]}], "]"}]}], "}"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.600124207594858*^9, 3.600124207914119*^9}, {
+  3.60012427137082*^9, 3.60012438220385*^9}, {3.600124436567173*^9, 
+  3.600124493277676*^9}, {3.600124568166703*^9, 3.600124638442307*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2014", ",", "2", ",", "2", ",", "11", ",", "58", ",", "38", ",", "770"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.600124279567841*^9, 3.6001243449474363`*^9, {3.60012444242774*^9, 
+   3.6001244942227173`*^9}, {3.600124597036851*^9, 3.600124639594866*^9}, 
+   3.600124854221985*^9, 3.60012561706618*^9, 3.600356925120627*^9, 
+   3.600357152627679*^9, 3.6003573170224457`*^9, 3.600357450433885*^9, 
+   3.60035869801328*^9, 3.600358898123611*^9, 3.600359918869791*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dateTime", "=", 
+  RowBox[{"JavaNew", "[", 
+   RowBox[{"DateTimeClass", ",", 
+    RowBox[{"Sequence", "@@", "dateTimeConstructorArgumentList"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.60012464474233*^9, 3.600124683494275*^9}, 
+   3.600124850560852*^9, 3.600125135973175*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"org", ".", "joda", ".", "time", ".", "DateTime"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject29086196596473857]], "Output",
+ CellChangeTimes->{{3.6001246669916*^9, 3.600124685201336*^9}, 
+   3.6001248580687943`*^9, 3.600125169169485*^9, 3.600125617136804*^9, 
+   3.600356927435049*^9, 3.600357152730241*^9, 3.600357317124516*^9, 
+   3.600357450534047*^9, 3.600358698127027*^9, 3.600358898241069*^9, 
+   3.600359918974552*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"localDate", "=", 
+  RowBox[{"dateTime", "@", 
+   RowBox[{"toLocalDate", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6001247123909197`*^9, 3.600124736381942*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"org", ".", "joda", ".", "time", ".", "LocalDate"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject31115418689077249]], "Output",
+ CellChangeTimes->{{3.600124726308002*^9, 3.600124737025667*^9}, 
+   3.6001251693973103`*^9, 3.6001256172081203`*^9, 3.600356935003476*^9, 
+   3.600357152793477*^9, 3.600357317173768*^9, 3.600357450583398*^9, 
+   3.600358698180395*^9, 3.6003588982895412`*^9, 3.60035991902444*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"localDate", "@", 
+  RowBox[{"toString", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.600357345410492*^9, 3.600357347415309*^9}}],
+
+Cell[BoxData["\<\"2014-02-02\"\>"], "Output",
+ CellChangeTimes->{3.6003573481152554`*^9, 3.600357450635612*^9, 
+  3.600358698230098*^9, 3.6003588983392687`*^9, 3.600359919070084*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1633, 992},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 606, 12, 92, "Title"],
+Cell[1176, 36, 644, 12, 51, "Subtitle"],
+Cell[CellGroupData[{
+Cell[1845, 52, 140, 2, 80, "Section"],
+Cell[1988, 56, 155, 3, 28, "Input"],
+Cell[2146, 61, 163, 3, 28, "Input"],
+Cell[2312, 66, 195, 4, 28, "Input"],
+Cell[2510, 72, 206, 4, 28, "Input"],
+Cell[2719, 78, 465, 10, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3221, 93, 141, 2, 80, "Section"],
+Cell[CellGroupData[{
+Cell[3387, 99, 197, 3, 28, "Input"],
+Cell[3587, 104, 754, 11, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4378, 120, 397, 9, 28, "Input"],
+Cell[4778, 131, 717, 11, 28, "Output"]
+}, Open  ]],
+Cell[5510, 145, 269, 7, 28, "Input"],
+Cell[CellGroupData[{
+Cell[5804, 156, 133, 2, 28, "Input"],
+Cell[5940, 160, 460, 7, 28, "Output"]
+}, Open  ]],
+Cell[6415, 170, 154, 3, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6606, 178, 163, 2, 80, "Section"],
+Cell[CellGroupData[{
+Cell[6794, 184, 116, 1, 28, "Input"],
+Cell[6913, 187, 650, 9, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7600, 201, 158, 3, 28, "Input"],
+Cell[7761, 206, 529, 7, 28, "Output"]
+}, Open  ]],
+Cell[8305, 216, 339, 6, 30, "Text"],
+Cell[CellGroupData[{
+Cell[8669, 226, 156, 3, 28, "Input"],
+Cell[8828, 231, 262, 4, 28, "Output"]
+}, Open  ]],
+Cell[9105, 238, 327, 6, 28, "Input"],
+Cell[CellGroupData[{
+Cell[9457, 248, 125, 2, 28, "Input"],
+Cell[9585, 252, 548, 9, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10170, 266, 303, 6, 28, "Input"],
+Cell[10476, 274, 961, 19, 150, "Message"],
+Cell[11440, 295, 671, 14, 24, "Message"],
+Cell[12114, 311, 342, 5, 28, "Output"]
+}, Open  ]],
+Cell[12471, 319, 165, 3, 28, "Input"],
+Cell[CellGroupData[{
+Cell[12661, 326, 156, 3, 28, "Input"],
+Cell[12820, 331, 336, 5, 28, "Output"]
+}, Open  ]],
+Cell[13171, 339, 327, 6, 28, "Input"],
+Cell[CellGroupData[{
+Cell[13523, 349, 303, 6, 28, "Input"],
+Cell[13829, 357, 461, 10, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14327, 372, 253, 6, 28, "Input"],
+Cell[14583, 380, 289, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14909, 389, 289, 6, 28, "Input"],
+Cell[15201, 397, 309, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15547, 406, 200, 4, 28, "Input"],
+Cell[15750, 412, 409, 8, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16196, 425, 855, 19, 52, "Input"],
+Cell[17054, 446, 513, 10, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17604, 461, 306, 7, 28, "Input"],
+Cell[17913, 470, 556, 11, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18506, 486, 189, 4, 28, "Input"],
+Cell[18698, 492, 536, 10, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19271, 507, 153, 3, 28, "Input"],
+Cell[19427, 512, 182, 2, 86, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
