@@ -1,0 +1,740 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     28517,        731]
+NotebookOptionsPosition[     25723,        630]
+NotebookOutlinePosition[     26177,        648]
+CellTagsIndexPosition[     26134,        645]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Spotlight", "Title",
+ CellChangeTimes->CompressedData["
+1:eJwd0Gkog3EcwPEHpZhjoZSblGi8mKM5an68kTeONGXlxZjEC0fu4wUrkePF
+khFJmcnmKsrCspTbZCaLFFF4/mRG5Go8/9+Lb5/333BZVb7cmWGYYC4qo2hS
+FHSw8NTZje4d1A3Wd7EgO3hG3Uw5bvdXLGQdlqBCP6nOzrk69I62eHrNJF2z
+UNUfg84epfUk3lIb0U9J+0n1FwvpL3wLVfy9FDXmYMFsTI+mChKc8jY4G1Q7
+qP/925b0jwWlULRNvZYd/3gxBPjBNnSzvivXm/OicxJda1YVCzhTHvWo8uKm
+ItmJgMPIq6TmlrYlFKkJrByPoqd3c7VaTtfqD7Q8zuYonCIgCY38ow67t458
+aghkxxvQgIX5CcU0gQe1HZ3ykQc1aAnsnatQQe+4y76OQLHHIlp2pi2wrRK4
+jDKgnubUFN91AjrTMurKn3+lSiyBb1RNhng7lfN7dwBVZmvEPAOBPtEdqq7R
+D/2aCQwqrSgTnRkRZuF+XJagRmtsJTUkbwz9B3vd+ec=
+  "],
+ TextAlignment->Center],
+
+Cell["Development Notebook", "Subtitle",
+ CellChangeTimes->CompressedData["
+1:eJwdxWkog2EcAPDXEbmFEjlSSrSUOULCPyVJOdLISpoj8YHkPj4wLZLUkpEj
+hWFzlQ/kyMi9uaVIEbG9Dxk5elHjff4ffv38JGUZheYMw3jz6Iy0VprZzMJz
+Sxu+p63srpKxING+4DYHqTb6GxaSdPm40E2sfuNf6vnE6x0cJyNuWSjrDMKn
+DmPaw+/pNTgnajot/2Yh/tX5jB73Mx8wYGLhRBMfSBeEmaWv8VcrdnB3/fuW
++I8FuTBym34rOf51ZAg4exvxjSpZmhP/VcsIvlynyBXwRz8t4vKru5IoMwIm
+jV0pPa2gMSxnlMDCcT9+/jhdoeK3Kv/Ci4ONpqwxAiJf/z96r21DH6ckkBy6
+invOzgxLxwkYRt/wMZdCr2oVgb1LBS7oGLLYVxPItZ/Diy5UmcYlAtcBq/hL
+o4PedYXApsHaQM87Eotl6wS+dfO4T4hy8GOXwFzrAe7iy93FaglwnMc9PWHZ
+XtSqI/D6K8W3J6ITXQ8JCFNScaW66yGbX245wdL/ARXFADY=
+  "],
+ TextAlignment->Center],
+
+Cell[CellGroupData[{
+
+Cell["Setup", "Section",
+ CellChangeTimes->{{3.474554985665854*^9, 3.474554986572104*^9}, {
+  3.4774892196824455`*^9, 3.47748922549502*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<Spotlight`\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.599775605581603*^9, 3.599775616870843*^9}, {
+  3.600352109462719*^9, 3.600352136482006*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["com.wolfram.notebook", "Section",
+ CellChangeTimes->{{3.599766606402047*^9, 3.599766626901308*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MDFind", "[", 
+   RowBox[{
+   "\"\<kMDItemContentType\>\"", ",", "\"\<com.wolfram.notebook\>\""}], "]"}],
+   "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.599766265610147*^9, 3.599766265736155*^9}, {
+  3.599766744751114*^9, 3.599766750854012*^9}}],
+
+Cell[BoxData["\<\"!mdfind \\\"kMDItemContentType == \
+'com.wolfram.notebook'\\\"\"\>"], "Print",
+ CellChangeTimes->{
+  3.5997663572816477`*^9, 3.59976655376262*^9, 3.5997667122575207`*^9, 
+   3.599766770566579*^9, 3.5997671221687517`*^9, 3.599767426542809*^9, 
+   3.599768627712768*^9, {3.599775706048217*^9, 3.5997757262606277`*^9}, 
+   3.5997775225269957`*^9, 3.6000385635136843`*^9, {3.6000404706623898`*^9, 
+   3.6000405005426826`*^9}, 3.6000406948365183`*^9, 3.600092641105041*^9, 
+   3.600118930862152*^9, 3.600121504886189*^9, 3.600122557905056*^9, 
+   3.600123554222817*^9, 3.6001256027557173`*^9, 3.600352162226409*^9}],
+
+Cell[BoxData["2230"], "Output",
+ CellChangeTimes->{
+  3.599766266399169*^9, 3.599766302271532*^9, 3.5997663572826347`*^9, 
+   3.5997665537639503`*^9, 3.599766712259172*^9, 3.599766770568102*^9, 
+   3.599767122225375*^9, 3.5997674266004047`*^9, 3.599768627772105*^9, {
+   3.5997757061084423`*^9, 3.599775726317832*^9}, 3.599777522584695*^9, 
+   3.6000385636071444`*^9, {3.600040470664119*^9, 3.600040500544561*^9}, 
+   3.600040694838387*^9, 3.600092641161942*^9, 3.600118930918932*^9, 
+   3.6001215049367743`*^9, 3.6001225579067783`*^9, 3.6001235542541933`*^9, 
+   3.6001256027569237`*^9, 3.600352165512974*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MDFind", "[", 
+   RowBox[{
+   "\"\<kMDItemContentType\>\"", ",", "\"\<com.wolfram.notebook\>\"", ",", 
+    RowBox[{"OnlyInDirectory", "\[Rule]", "\"\<~/Dropbox/\>\""}]}], "]"}], "//",
+   "Length"}]], "Input",
+ CellChangeTimes->{{3.599766256554388*^9, 3.59976625791223*^9}}],
+
+Cell[BoxData["\<\"!mdfind -onlyin \\\"/Users/matt/Dropbox/\\\" \
+\\\"kMDItemContentType == 'com.wolfram.notebook'\\\"\"\>"], "Print",
+ CellChangeTimes->{
+  3.5997663594687138`*^9, 3.5997665630367727`*^9, 3.599766712299457*^9, 
+   3.599766770690071*^9, 3.599767122384768*^9, 3.599767426725897*^9, 
+   3.599768627896171*^9, {3.5997757062401943`*^9, 3.599775726367405*^9}, 
+   3.599777522633502*^9, 3.600038563712344*^9, {3.6000404707031727`*^9, 
+   3.600040500584587*^9}, 3.600040694893705*^9, 3.600092641228182*^9, 
+   3.600118930967099*^9, 3.600121504976494*^9, 3.600122557960968*^9, 
+   3.600123554316238*^9, 3.600125602810809*^9, 3.600352165596405*^9}],
+
+Cell[BoxData["63"], "Output",
+ CellChangeTimes->{
+  3.599766258628704*^9, 3.599766304670815*^9, 3.599766359469574*^9, 
+   3.599766563069816*^9, 3.599766712300906*^9, 3.599766770739827*^9, 
+   3.599767122386139*^9, 3.599767426781952*^9, 3.599768627951667*^9, {
+   3.599775706291727*^9, 3.59977572636903*^9}, 3.5997775226352654`*^9, 
+   3.600038563713711*^9, {3.600040470704988*^9, 3.600040500586542*^9}, 
+   3.6000406948956738`*^9, 3.600092641230256*^9, 3.600118930969737*^9, 
+   3.600121504977878*^9, 3.60012255796284*^9, 3.600123554317586*^9, 
+   3.600125602812189*^9, 3.60035216565186*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"notebookList", "=", 
+   RowBox[{"MDFind", "[", 
+    RowBox[{
+    "\"\<kMDItemContentType\>\"", ",", "\"\<com.wolfram.notebook\>\""}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.599768851717327*^9, 3.599768857213317*^9}}],
+
+Cell[BoxData["\<\"!mdfind \\\"kMDItemContentType == \
+'com.wolfram.notebook'\\\"\"\>"], "Print",
+ CellChangeTimes->{
+  3.599768857887784*^9, {3.599775706346773*^9, 3.5997757264191723`*^9}, 
+   3.5997775226850967`*^9, 3.600038563753543*^9, {3.600040470752554*^9, 
+   3.600040500633677*^9}, 3.600040694943798*^9, 3.6000926412958403`*^9, 
+   3.600118931035952*^9, 3.600121505027639*^9, 3.600122558018276*^9, 
+   3.6001235543955307`*^9, 3.600125602867848*^9, 3.6003521657025347`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"notebookList", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.599768861580118*^9, 3.599768862614909*^9}}],
+
+Cell[BoxData["2230"], "Output",
+ CellChangeTimes->{
+  3.599768863367152*^9, {3.5997757063991337`*^9, 3.599775726467757*^9}, 
+   3.599777522734027*^9, 3.6000385638017807`*^9, {3.600040470803287*^9, 
+   3.600040500682735*^9}, 3.6000406950091553`*^9, 3.600092641345508*^9, 
+   3.600118931087864*^9, 3.600121505078124*^9, 3.600122558114131*^9, 
+   3.600123554446353*^9, 3.6001256029128523`*^9, 3.600352165752491*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"FileNameTake", "[", 
+      RowBox[{"#", ",", "4"}], "]"}], "&"}], ",", "notebookList"}], "]"}], "//",
+   "Tally"}]], "Input",
+ CellChangeTimes->{{3.599767093872849*^9, 3.599767115774825*^9}, 
+   3.599768786874415*^9, {3.599768855392898*^9, 3.599768867750671*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"/Volumes/G-RAID/Archive\"\>", ",", "1163"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Volumes/G-RAID/Archive (G-RAID)\"\>", ",", "8"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Volumes/G-DRIVE/Archive\"\>", ",", "815"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Volumes/G-DRIVE/Archive (G-DRIVE)\"\>", ",", "12"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/matt/WolframWorkspaces\"\>", ",", "155"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/matt/Dropbox\"\>", ",", "63"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/matt/Library\"\>", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/usr/share/vim\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/matt/Documents\"\>", ",", "5"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.599767122591667*^9, 3.599767426984082*^9, 3.5997686281543303`*^9, 
+   3.599768787315014*^9, 3.599768868130755*^9, {3.599775706449066*^9, 
+   3.599775726519885*^9}, 3.599777522783513*^9, 3.600038563854994*^9, {
+   3.6000404708519382`*^9, 3.6000405007351007`*^9}, 3.600040695061713*^9, 
+   3.600092641396099*^9, 3.600118931137494*^9, 3.600121505129492*^9, 
+   3.600122558311077*^9, 3.60012355449687*^9, 3.600125602962556*^9, 
+   3.600352165805203*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Select", "[", 
+   RowBox[{"notebookList", ",", 
+    RowBox[{
+     RowBox[{"StringMatchQ", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{
+       "StartOfString", "~~", "\"\</Users/matt/Documents/\>\"", "~~", "__", "~~",
+         "EndOfString"}]}], "]"}], "&"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.599766816503889*^9, 3.599766840258834*^9}, {
+   3.599766986773394*^9, 3.599767035387414*^9}, {3.5997671857842283`*^9, 
+   3.599767222590296*^9}, {3.599767296169825*^9, 3.599767333238824*^9}, 
+   3.599767364762693*^9, {3.5997686967785892`*^9, 3.5997687380829906`*^9}, {
+   3.599768882238866*^9, 3.5997688836762543`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"/Users/matt/Documents/Appcelerator/projects/testcompile/\
+testcompile.nb\"\>"},
+     {"\<\"/Users/matt/Documents/Appcelerator/projects/profiling/iOS \
+Performance Improvements.nb\"\>"},
+     {"\<\"/Users/matt/Documents/Appcelerator/projects/profiling/Blain.nb\"\>\
+"},
+     {"\<\"/Users/matt/Documents/Appcelerator/projects/blain/decrypt.nb\"\>"},\
+
+     {"\<\"/Users/matt/Documents/Appcelerator/projects/blain/Blain2.nb\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.5997668405045853`*^9, 3.599767036388215*^9, 3.5997672234056587`*^9, {
+   3.599767298661316*^9, 3.599767333590701*^9}, 3.59976736517374*^9, 
+   3.599767427033161*^9, 3.599768628227373*^9, 3.599768738846611*^9, {
+   3.599768876755361*^9, 3.599768884227173*^9}, {3.5997757065000277`*^9, 
+   3.599775726567902*^9}, 3.599777522836349*^9, 3.6000385639051743`*^9, {
+   3.600040470903905*^9, 3.6000405007841063`*^9}, 3.600040695111416*^9, 
+   3.600092641462376*^9, 3.600118931185267*^9, 3.600121505182289*^9, 
+   3.6001225585137253`*^9, 3.600123554548307*^9, 3.600125603018271*^9, 
+   3.6003521658562202`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["pom.xml", "Section",
+ CellChangeTimes->{{3.599766606402047*^9, 3.599766635216173*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MDFind", "[", 
+   RowBox[{"\"\<kMDItemFSName\>\"", ",", "\"\<pom.xml\>\""}], "]"}], "//", 
+  "Length"}]], "Input",
+ CellChangeTimes->{{3.599766642729168*^9, 3.599766696909007*^9}}],
+
+Cell[BoxData["\<\"!mdfind \\\"kMDItemFSName == 'pom.xml'\\\"\"\>"], "Print",
+ CellChangeTimes->{{3.599766645995162*^9, 3.599766712447363*^9}, 
+   3.599767435182652*^9, 3.599768907772052*^9, 3.599775726619031*^9, 
+   3.599777522886385*^9, 3.599777676227216*^9, 3.5997777242405233`*^9, 
+   3.600038568394857*^9, {3.600040470937738*^9, 3.600040500834248*^9}, 
+   3.6000406951658497`*^9, 3.60009264157834*^9, 3.60011893123494*^9, 
+   3.60012150522679*^9, 3.6001225589132433`*^9, 3.600123554595764*^9, 
+   3.600125603128298*^9, 3.6003522215332203`*^9}],
+
+Cell[BoxData["767"], "Output",
+ CellChangeTimes->{{3.599766646296721*^9, 3.599766712448616*^9}, 
+   3.599767435242468*^9, 3.5997689078225193`*^9, 3.5997757266207027`*^9, 
+   3.599777522935457*^9, 3.5997776762288513`*^9, 3.5997777242420683`*^9, 
+   3.600038568562003*^9, {3.600040470939735*^9, 3.600040500836567*^9}, 
+   3.600040695167695*^9, 3.60009264158032*^9, 3.6001189312368793`*^9, 
+   3.60012150533785*^9, 3.6001225589152946`*^9, 3.600123554597432*^9, 
+   3.600125603129567*^9, 3.600352222888838*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MDFind", "[", 
+   RowBox[{"\"\<kMDItemFSName\>\"", ",", "\"\<pom.xml\>\"", ",", 
+    RowBox[{"OnlyInDirectory", "\[Rule]", "\"\<~/Dropbox/\>\""}]}], "]"}], "//",
+   "Length"}]], "Input",
+ CellChangeTimes->{{3.5997666887366047`*^9, 3.59976669082901*^9}}],
+
+Cell[BoxData["\<\"!mdfind -onlyin \\\"/Users/matt/Dropbox/\\\" \
+\\\"kMDItemFSName == 'pom.xml'\\\"\"\>"], "Print",
+ CellChangeTimes->{{3.5997667008443127`*^9, 3.599766712497529*^9}, 
+   3.5997674354183826`*^9, 3.599768910160986*^9, 3.599775726669456*^9, 
+   3.5997775229855003`*^9, 3.59977767637638*^9, 3.599777724406672*^9, 
+   3.600038568710075*^9, {3.600040470987236*^9, 3.600040500885747*^9}, 
+   3.6000406952448397`*^9, 3.6000926417466908`*^9, 3.600118931303334*^9, 
+   3.600121505387087*^9, 3.600122559013558*^9, 3.6001235546472073`*^9, 
+   3.6001256033623457`*^9, 3.600352223034581*^9}],
+
+Cell[BoxData["67"], "Output",
+ CellChangeTimes->{{3.5997667008452673`*^9, 3.599766712498835*^9}, 
+   3.59976743542071*^9, 3.599768910211484*^9, 3.59977572667072*^9, 
+   3.5997775229878817`*^9, 3.59977767637783*^9, 3.599777724462892*^9, 
+   3.600038568711328*^9, {3.600040470989109*^9, 3.600040500887876*^9}, 
+   3.600040695246564*^9, 3.6000926417502947`*^9, 3.60011893130529*^9, 
+   3.6001215053881474`*^9, 3.6001225590155487`*^9, 3.6001235546482773`*^9, 
+   3.600125603365014*^9, 3.6003522230359*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pomList", "=", 
+   RowBox[{"MDFind", "[", 
+    RowBox[{"\"\<kMDItemFSName\>\"", ",", "\"\<pom.xml\>\""}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.599763333757132*^9, 3.599763380149075*^9}, {
+  3.599763551258457*^9, 3.599763553886376*^9}}],
+
+Cell[BoxData["\<\"!mdfind \\\"kMDItemFSName == 'pom.xml'\\\"\"\>"], "Print",
+ CellChangeTimes->{{3.599766704721723*^9, 3.5997667125489492`*^9}, 
+   3.599767435474173*^9, 3.599768912634391*^9, 3.599775726719494*^9, 
+   3.59977752303675*^9, 3.5997776764346867`*^9, 3.599777724515129*^9, 
+   3.600038568765913*^9, {3.600040471037271*^9, 3.600040500936154*^9}, 
+   3.600040695294579*^9, 3.60009264191311*^9, 3.600118931369681*^9, 
+   3.6001215054438953`*^9, 3.6001225592640553`*^9, 3.600123554695631*^9, 
+   3.600125603840296*^9, 3.600352223091605*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pomList", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.599763497422763*^9, 3.599763506248328*^9}, {
+  3.5997635585943947`*^9, 3.599763560649562*^9}}],
+
+Cell[BoxData["767"], "Output",
+ CellChangeTimes->{
+  3.599763507777376*^9, 3.599763561441235*^9, {3.599766710368957*^9, 
+   3.599766712598989*^9}, 3.599767435521365*^9, 3.599768914255612*^9, 
+   3.599775726770523*^9, 3.599777523083939*^9, 3.599777676500885*^9, 
+   3.5997777245643263`*^9, 3.600038568816752*^9, {3.600040471112718*^9, 
+   3.600040500985075*^9}, 3.600040695361465*^9, 3.600092642072997*^9, 
+   3.600118931437039*^9, 3.6001215054942293`*^9, 3.6001225594655237`*^9, 
+   3.60012355474711*^9, 3.600125603899124*^9, 3.600352223141007*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"FileNameTake", "[", 
+      RowBox[{"#", ",", "4"}], "]"}], "&"}], ",", "pomList"}], "]"}], "//", 
+  "Tally"}]], "Input",
+ CellChangeTimes->{{3.599767093872849*^9, 3.599767115774825*^9}, 
+   3.599767449092381*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/matt/WolframWorkspaces\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/matt/Documents\"\>", ",", "212"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/matt/springsource\"\>", ",", "31"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/matt/Dropbox\"\>", ",", "67"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Volumes/G-RAID/Archive (G-RAID)\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Volumes/G-RAID/Archive\"\>", ",", "212"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Volumes/G-RAID/Software\"\>", ",", "15"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Volumes/G-DRIVE/Archive (G-DRIVE)\"\>", ",", "1"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Volumes/G-DRIVE/Archive\"\>", ",", "212"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Volumes/G-DRIVE/Software\"\>", ",", "15"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.599767449441125*^9, 3.5997689223788013`*^9, 3.599775726823922*^9, 
+   3.599777523134667*^9, 3.599777676550507*^9, 3.59977772461493*^9, 
+   3.6000385688658733`*^9, {3.600040471153831*^9, 3.60004050103616*^9}, 
+   3.600040695411783*^9, 3.6000926421310863`*^9, 3.600118931487399*^9, 
+   3.600121505623185*^9, 3.600122559666747*^9, 3.60012355479739*^9, 
+   3.600125603946986*^9, 3.600352223198361*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"FileNameTake", "[", 
+      RowBox[{"#", ",", "5"}], "]"}], "&"}], ",", 
+    RowBox[{"MDFind", "[", 
+     RowBox[{"\"\<kMDItemFSName\>\"", ",", "\"\<pom.xml\>\"", ",", 
+      RowBox[{"OnlyInDirectory", "\[Rule]", "\"\<~/Documents/\>\""}]}], 
+     "]"}]}], "]"}], "//", "Tally"}]], "Input",
+ CellChangeTimes->{{3.599767093872849*^9, 3.599767115774825*^9}, 
+   3.599767449092381*^9, {3.599767595553399*^9, 3.5997676212203913`*^9}}],
+
+Cell[BoxData["\<\"!mdfind -onlyin \\\"/Users/matt/Documents/\\\" \
+\\\"kMDItemFSName == 'pom.xml'\\\"\"\>"], "Print",
+ CellChangeTimes->{{3.599767612679689*^9, 3.599767621386573*^9}, 
+   3.5997689415800743`*^9, 3.599775726886348*^9, 3.599777523186116*^9, 
+   3.5997776766189623`*^9, 3.599777724665893*^9, 3.600038568916544*^9, {
+   3.600040471205399*^9, 3.600040501085235*^9}, 3.600040695477824*^9, 
+   3.600092642182005*^9, 3.600118931631757*^9, 3.600121505679171*^9, 
+   3.600122559994157*^9, 3.6001235549413137`*^9, 3.6001256040057383`*^9, 
+   3.6003522232594643`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/matt/Documents/workspace-sts-3.1.0.RELEASE\"\>", ",", 
+     "17"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/matt/Documents/Appcelerator\"\>", ",", "194"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"/Users/matt/Documents/Android\"\>", ",", "1"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.599767612872425*^9, 3.5997676214453373`*^9}, 
+   3.599768941734374*^9, 3.599775726981175*^9, 3.599777523305779*^9, 
+   3.599777676669323*^9, 3.599777724722464*^9, 3.600038569032166*^9, {
+   3.600040471254702*^9, 3.600040501134284*^9}, 3.600040695526582*^9, 
+   3.600092642348535*^9, 3.600118931728149*^9, 3.6001215057202873`*^9, 
+   3.60012256006003*^9, 3.600123555080091*^9, 3.600125604098221*^9, 
+   3.600352223447467*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"exceptDirectoryList", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\</Users/matt/Documents/Android\>\"", ",", 
+     "\"\</Users/matt/Documents/Appcelerator/projects/android/jayway-maven-\
+android-plugin-samples-0f83bcb\>\"", ",", 
+     "\"\</Users/matt/Documents/Appcelerator/src/Android\>\"", ",", 
+     "\"\</Users/matt/Documents/Appcelerator/src/antlr\>\"", ",", 
+     "\"\</Users/matt/Documents/Appcelerator/src/nativelibs4java\>\"", ",", 
+     "\"\</Users/matt/Documents/workspace-sts-3.1.0.RELEASE/antlr-examples-3.\
+5\>\"", ",", 
+     "\"\</Users/matt/Documents/workspace-sts-3.1.0.RELEASE/spring-mvc-\
+showcase\>\"", ",", 
+     "\"\</Users/matt/Dropbox/Documents/Archive/iMac \
+(VideoSurf-Microsoft)/Documents/projects/maven-example-en\>\"", ",", 
+     "\"\</Users/matt/springsource/sts-3.4.0.RELEASE/features\>\""}], "}"}]}],
+   ";"}]], "Input",
+ CellChangeTimes->{{3.599769714972588*^9, 3.599769780127493*^9}, 
+   3.5997698166448097`*^9, {3.599777630283606*^9, 3.59977765906621*^9}, {
+   3.5997777060258713`*^9, 3.5997777212552967`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"exceptDirectoryList", "//", "Sort"}]], "Input",
+ CellChangeTimes->{{3.599777650401445*^9, 3.599777651432382*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Users/matt/Documents/Android\"\>", 
+   ",", "\<\"/Users/matt/Documents/Appcelerator/projects/android/jayway-maven-\
+android-plugin-samples-0f83bcb\"\>", 
+   ",", "\<\"/Users/matt/Documents/Appcelerator/src/Android\"\>", 
+   ",", "\<\"/Users/matt/Documents/Appcelerator/src/antlr\"\>", 
+   ",", "\<\"/Users/matt/Documents/Appcelerator/src/nativelibs4java\"\>", 
+   ",", "\<\"/Users/matt/Documents/workspace-sts-3.1.0.RELEASE/antlr-examples-\
+3.5\"\>", 
+   ",", "\<\"/Users/matt/Documents/workspace-sts-3.1.0.RELEASE/spring-mvc-\
+showcase\"\>", 
+   ",", "\<\"/Users/matt/Dropbox/Documents/Archive/iMac \
+(VideoSurf-Microsoft)/Documents/projects/maven-example-en\"\>", 
+   ",", "\<\"/Users/matt/springsource/sts-3.4.0.RELEASE/features\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.5997776519100103`*^9, 3.599777676744751*^9}, {
+   3.599777716064559*^9, 3.599777724813156*^9}, 3.600038569144416*^9, {
+   3.6000404716512547`*^9, 3.6000405012120123`*^9}, 3.600040695707862*^9, 
+   3.600092642563748*^9, 3.6001189318137197`*^9, 3.600121505803545*^9, 
+   3.600122560127213*^9, 3.6001235554894133`*^9, 3.600125604207896*^9, 
+   3.6003522235370893`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"exceptDirectoryList", "//", "TableForm"}]], "Input",
+ CellChangeTimes->{{3.599769838248538*^9, 3.599769838584374*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"/Users/matt/Documents/Android\"\>"},
+     {"\<\"/Users/matt/Documents/Appcelerator/projects/android/jayway-maven-\
+android-plugin-samples-0f83bcb\"\>"},
+     {"\<\"/Users/matt/Documents/Appcelerator/src/Android\"\>"},
+     {"\<\"/Users/matt/Documents/Appcelerator/src/antlr\"\>"},
+     {"\<\"/Users/matt/Documents/Appcelerator/src/nativelibs4java\"\>"},
+     {"\<\"/Users/matt/Documents/workspace-sts-3.1.0.RELEASE/antlr-examples-3.\
+5\"\>"},
+     {"\<\"/Users/matt/Documents/workspace-sts-3.1.0.RELEASE/spring-mvc-\
+showcase\"\>"},
+     {"\<\"/Users/matt/Dropbox/Documents/Archive/iMac \
+(VideoSurf-Microsoft)/Documents/projects/maven-example-en\"\>"},
+     {"\<\"/Users/matt/springsource/sts-3.4.0.RELEASE/features\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.599769839095591*^9, 3.599775727234572*^9, {3.599777502072844*^9, 
+   3.59977752349504*^9}, {3.599777669776198*^9, 3.5997776768034678`*^9}, 
+   3.599777724865981*^9, 3.600038569200577*^9, {3.600040471704343*^9, 
+   3.600040501362583*^9}, 3.6000406957625513`*^9, 3.600092642621711*^9, 
+   3.600118931871747*^9, 3.600121505861643*^9, 3.600122560185155*^9, 
+   3.600123555766041*^9, 3.600125604265192*^9, 3.600352223608326*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"exceptDirectoryList", "//", "OrderedQ"}]], "Input",
+ CellChangeTimes->{{3.5997698519779863`*^9, 3.599769859918015*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.599769860537958*^9, 3.599775727286429*^9, {3.5997775021459417`*^9, 
+   3.5997775235365257`*^9}, 3.599777676869285*^9, 3.599777724913868*^9, 
+   3.600038569249529*^9, {3.600040471738533*^9, 3.6000405014183397`*^9}, 
+   3.600040695814077*^9, 3.600092642666361*^9, 3.600118931939722*^9, 
+   3.6001215059222107`*^9, 3.600122560234861*^9, 3.6001235559661417`*^9, 
+   3.600125604315954*^9, 3.6003522236602163`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"curatedPomFilePathList", "=", 
+   RowBox[{"Select", "[", 
+    RowBox[{"pomList", ",", 
+     RowBox[{
+      RowBox[{"!", 
+       RowBox[{"StringMatchQ", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"StartOfString", "~~", 
+          RowBox[{"(", 
+           RowBox[{"Alternatives", "@@", "exceptDirectoryList"}], ")"}], "~~",
+           "__", "~~", "EndOfString"}]}], "]"}]}], "&"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.599777420816078*^9, 3.5997774469903297`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"curatedPomFilePathList", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.5997774535970917`*^9, 3.599777454707864*^9}}],
+
+Cell[BoxData["486"], "Output",
+ CellChangeTimes->{
+  3.5997774554283752`*^9, {3.599777502240574*^9, 3.5997775236129837`*^9}, 
+   3.599777676964411*^9, 3.599777725030932*^9, 3.600038569344735*^9, {
+   3.600040471814912*^9, 3.600040501497077*^9}, 3.6000406958881493`*^9, 
+   3.6000926427583447`*^9, 3.6001189320145283`*^9, 3.6001215062456417`*^9, 
+   3.600122560313122*^9, 3.600123556359346*^9, 3.600125604532207*^9, 
+   3.6003522237550488`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"curatedPomFilePathList", "//", "TableForm"}], ";"}]], "Input",
+ CellChangeTimes->{{3.599769132087492*^9, 3.599769133722047*^9}, {
+   3.599769191474039*^9, 3.599769280473568*^9}, {3.599769324962175*^9, 
+   3.599769348084466*^9}, {3.599769682226652*^9, 3.5997696903734207`*^9}, 
+   3.5997699583323593`*^9, 3.599777458748797*^9, 3.600352244301359*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1633, 992},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 626, 12, 92, "Title"],
+Cell[1196, 36, 644, 12, 51, "Subtitle"],
+Cell[CellGroupData[{
+Cell[1865, 52, 140, 2, 80, "Section"],
+Cell[2008, 56, 208, 4, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2253, 65, 105, 1, 80, "Section"],
+Cell[CellGroupData[{
+Cell[2383, 70, 286, 7, 28, "Input"],
+Cell[2672, 79, 628, 9, 22, "Print"],
+Cell[3303, 90, 610, 9, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3950, 104, 308, 7, 28, "Input"],
+Cell[4261, 113, 654, 9, 22, "Print"],
+Cell[4918, 124, 591, 9, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5546, 138, 265, 7, 28, "Input"],
+Cell[5814, 147, 479, 7, 22, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6330, 159, 132, 2, 28, "Input"],
+Cell[6465, 163, 412, 6, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6914, 174, 349, 9, 28, "Input"],
+Cell[7266, 185, 1356, 31, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8659, 221, 680, 15, 28, "Input"],
+Cell[9342, 238, 1599, 35, 108, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10990, 279, 92, 1, 80, "Section"],
+Cell[CellGroupData[{
+Cell[11107, 284, 215, 5, 28, "Input"],
+Cell[11325, 291, 547, 7, 22, "Print"],
+Cell[11875, 300, 506, 7, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12418, 312, 288, 6, 28, "Input"],
+Cell[12709, 320, 594, 8, 22, "Print"],
+Cell[13306, 330, 501, 7, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13844, 342, 284, 7, 28, "Input"],
+Cell[14131, 351, 548, 7, 22, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14716, 363, 178, 3, 28, "Input"],
+Cell[14897, 368, 548, 8, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15482, 381, 298, 9, 28, "Input"],
+Cell[15783, 392, 1411, 32, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17231, 429, 514, 12, 28, "Input"],
+Cell[17748, 443, 571, 8, 22, "Print"],
+Cell[18322, 453, 826, 18, 28, "Output"]
+}, Open  ]],
+Cell[19163, 474, 1080, 21, 80, "Input"],
+Cell[CellGroupData[{
+Cell[20268, 499, 137, 2, 28, "Input"],
+Cell[20408, 503, 1193, 21, 80, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21638, 529, 142, 2, 28, "Input"],
+Cell[21783, 533, 1717, 36, 176, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23537, 574, 143, 2, 28, "Input"],
+Cell[23683, 578, 464, 7, 28, "Output"]
+}, Open  ]],
+Cell[24162, 588, 520, 14, 28, "Input"],
+Cell[CellGroupData[{
+Cell[24707, 606, 144, 2, 28, "Input"],
+Cell[24854, 610, 443, 7, 28, "Output"]
+}, Open  ]],
+Cell[25312, 620, 383, 6, 28, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
