@@ -1,0 +1,11 @@
+Resources[
+    Version[1],
+    Sources[
+        Directory["github/Utilities"],
+        Directory["~"]
+    ],
+    ExecutionBuildCommand["<<Git`"],
+    Paclet[
+        FunctionPaclet[False]
+    ]
+]
