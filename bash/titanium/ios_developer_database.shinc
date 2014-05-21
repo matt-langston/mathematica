@@ -1,0 +1,77 @@
+# -*- mode: shell-script -*-
+
+# Author: Matt Langston
+# Date:   2014.05.01
+#
+# This bash module provides two functions:
+#
+# 1. find_ios_developer_variables
+# 2. echo_ios_developer_variables
+#
+# The "find_ios_developer_variables" function sets the following
+# variables given an iOS target, i.e. either "device", "dist-adhoc" or
+# "dist-appstore":
+#
+# IOS_CERTIFICATE
+# IOS_PROVISIONING_PROFILE
+#
+# The "echo_ios_developer_variables" function echos the following
+# variables given an iOS target, i.e. either "device", "dist-adhoc" or
+# "dist-appstore":
+#
+# IOS_CERTIFICATE
+# IOS_PROVISIONING_PROFILE
+
+
+set -o nounset
+
+function find_ios_developer_variables {
+    local -r ios_target="${1:?}"
+	
+	# Team: Matt Langston
+	local -r IOS_CERTIFICATE_DEVELOPMENT="'Matt Langston (Y72XT557X3)'"
+	#local -r IOS_PROVISIONING_PROFILE_DEVELOPMENT="F0F729B6-ED4D-475D-8093-4848A60ACE9A"
+	local -r IOS_PROVISIONING_PROFILE_DEVELOPMENT="5313FBEA-BC31-4EDC-8FAE-AE248A563C38"
+	
+	# Team: Appcelerator
+	#local -r IOS_CERTIFICATE_DEVELOPMENT="'Matt Langston (XVQQ4C5DL4)'"
+	#local -r IOS_PROVISIONING_PROFILE_DEVELOPMENT="186542DB-286D-42FB-8C72-03D717D93581"
+	
+	local -r IOS_CERTIFICATE_PRODUCTION="'Matt Langston (UTX7J6E8LV)'"
+	local -r IOS_PROVISIONING_PROFILE_PRODUCTION="N/A"
+	
+	case "${ios_target}" in
+		"simulator")
+			IOS_CERTIFICATE="N/A"
+			IOS_PROVISIONING_PROFILE="N/A"
+			;;
+		"device")
+			IOS_CERTIFICATE="${IOS_CERTIFICATE_DEVELOPMENT}"
+			IOS_PROVISIONING_PROFILE="${IOS_PROVISIONING_PROFILE_DEVELOPMENT}"
+			;;
+		"dist-adhoc")
+			IOS_CERTIFICATE="${IOS_CERTIFICATE_DEVELOPMENT}"
+			IOS_PROVISIONING_PROFILE="${IOS_PROVISIONING_PROFILE_DEVELOPMENT}"
+			;;
+		"dist-appstore")
+			IOS_CERTIFICATE="${IOS_CERTIFICATE_PRODUCTION}"
+			IOS_PROVISIONING_PROFILE="${IOS_PROVISIONING_PROFILE_PRODUCTION}"
+			;;
+		*)
+			echo "ERROR: Unrecognized iOS target \"${ios_target}\""
+			exit 1
+			;;
+	esac
+}
+
+function echo_ios_developer_variables {
+    local -r ios_target="${1:?}"
+	
+	local IOS_CERTIFICATE
+	local IOS_PROVISIONING_PROFILE
+	
+	find_ios_developer_variables "${ios_target}"
+	
+	echo "${ios_target}: IOS_CERTIFICATE          = ${IOS_CERTIFICATE}"
+	echo "${ios_target}: IOS_PROVISIONING_PROFILE = ${IOS_PROVISIONING_PROFILE}"
+}

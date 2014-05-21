@@ -1,0 +1,65 @@
+# -*- mode: shell-script -*-
+
+# Author: Matt Langston
+# Date:   2014.05.01
+#
+# This bash module provides one function:
+#
+# 1. find_titanium_build_ios_arguments
+#
+# The "find_titanium_build_ios_arguments" sets the global variable
+# RESULT to the titanium iOS build parameters given the following
+# three arguments:
+#
+# 1. Friendly iOS device name (e.g. "Matt's iPhone 5S")
+#
+# 2. iOS target (i.e. either "device", "dist-adhoc" or
+# "dist-appstore")
+#
+# 3. iOS SDK Version (i.e. 7.1)
+#
+# You can then append this string to your titanium command line.
+
+import titanium/ios_device_database
+import titanium/ios_developer_database
+
+set -o nounset
+
+function find_titanium_build_ios_arguments () {
+    local -r device_name="${1:?}"
+    local -r ios_target="${2:?}"
+    local -r ios_sdk_version="${3:?}"
+	
+	local TITANIUM_PLATFORM
+	local IOS_DEVICE_FAMILY
+	local IOS_DEVICE_ID
+	find_ios_device_variables "${device_name}"
+	
+	local IOS_CERTIFICATE
+	local IOS_PROVISIONING_PROFILE
+	find_ios_developer_variables "${ios_target}"
+
+	# Global return variable.
+	RESULT="--platform ${TITANIUM_PLATFORM}"
+	
+    case ${TITANIUM_PLATFORM} in
+		"ios")
+			RESULT+=" --target ${ios_target}"
+			RESULT+=" --ios-version ${ios_sdk_version}"
+			
+			# Only add device characteristics it not targetting the
+			# simulator.
+			if [ x"${ios_target}" != "xsimulator" ];
+			then
+				RESULT+=" --device-id ${IOS_DEVICE_ID}"
+				RESULT+=" --device-family ${IOS_DEVICE_FAMILY}"
+				RESULT+=" --developer-name ${IOS_CERTIFICATE}"
+				RESULT+=" --pp-uuid ${IOS_PROVISIONING_PROFILE}"
+			fi
+			;;
+		*)
+			echo "ERROR: Unrecognized TITANIUM_PLATFORM \"${TITANIUM_PLATFORM}\""
+			exit 1
+			;;
+	esac
+}
