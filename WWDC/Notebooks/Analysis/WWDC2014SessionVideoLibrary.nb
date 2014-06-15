@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     35166,        838]
-NotebookOptionsPosition[     32278,        735]
-NotebookOutlinePosition[     32733,        753]
-CellTagsIndexPosition[     32690,        750]
+NotebookDataLength[     35493,        861]
+NotebookOptionsPosition[     32488,        754]
+NotebookOutlinePosition[     32943,        772]
+CellTagsIndexPosition[     32900,        769]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -51,12 +51,12 @@ haven\[CloseCurlyQuote]t thought about yet.\
  CellChangeTimes->{{3.611841815004739*^9, 3.6118418446968412`*^9}}],
 
 Cell[BoxData[
- RowBox[{"Needs", "[", "\"\<WWDC`WWDC2013SessionVideoLibrary`\>\"", 
+ RowBox[{"Needs", "[", "\"\<WWDC`WWDC2014SessionVideoLibrary`\>\"", 
   "]"}]], "Input",
  CellChangeTimes->{{3.580739260886853*^9, 3.580739268102388*^9}, {
    3.588262650900156*^9, 3.588262652392825*^9}, {3.588262696179031*^9, 
    3.5882626965127907`*^9}, 3.588349485859943*^9, {3.5996051364999104`*^9, 
-   3.599605137015275*^9}}],
+   3.599605137015275*^9}, 3.611849906543137*^9}],
 
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<Utilities`Debug`\>\"", "]"}]], "Input",
@@ -75,13 +75,14 @@ Cell[BoxData[
      RowBox[{"FileNameJoin", "[", 
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"ProjectDirectory", "[", "\"\<WWDC`WWDC2013`\>\"", "]"}], 
-        ",", "\"\<TestData/2013\>\""}], "}"}], "]"}], ",", 
-     "\"\<wwdc_2013_session_videos_download\>\"", ",", "downloadFormat"}], 
+        RowBox[{"ProjectDirectory", "[", "\"\<WWDC`WWDC2014`\>\"", "]"}], 
+        ",", "\"\<TestData/2014\>\""}], "}"}], "]"}], ",", 
+     "\"\<wwdc_2014_session_videos_download\>\"", ",", "downloadFormat"}], 
     "]"}]}], ";"}]], "Input",
  CellChangeTimes->{
   3.611841281229525*^9, {3.611841336642744*^9, 3.611841345464109*^9}, {
-   3.611841469866963*^9, 3.611841475598893*^9}}],
+   3.611841469866963*^9, 3.611841475598893*^9}, {3.6118499092190857`*^9, 
+   3.6118499105584917`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -118,34 +119,26 @@ Cell[BoxData[
   RowBox[{"FileNameJoin", "[", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{"ProjectDirectory", "[", "\"\<WWDC`WWDC2013`\>\"", "]"}], ",", 
-     "\"\<TestData/2013/sessions_2013.json\>\""}], "}"}], "]"}]}]], "Input",
+     RowBox[{"ProjectDirectory", "[", "\"\<WWDC`WWDC2014`\>\"", "]"}], ",", 
+     "\"\<TestData/2014/sessions_2014.json\>\""}], "}"}], "]"}]}]], "Input",
  CellChangeTimes->{{3.579728512351759*^9, 3.579728535706061*^9}, {
   3.599605029353589*^9, 3.599605044243987*^9}, {3.611765231054756*^9, 
-  3.611765240337241*^9}}],
+  3.611765240337241*^9}, {3.611849911400387*^9, 3.611849912411538*^9}}],
 
-Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2013/\
-sessions_2013.json\"\>"], "Output",
- CellChangeTimes->{
-  3.579728536450959*^9, 3.579729720169829*^9, 3.580006887860104*^9, 
-   3.5800097422508173`*^9, 3.580010498544201*^9, 3.580136506330901*^9, 
-   3.580737836490261*^9, 3.580760468094659*^9, 3.580760646103066*^9, 
-   3.580761031461591*^9, 3.580761515120851*^9, 3.580762859485682*^9, 
-   3.580830163484212*^9, 3.5810160428249397`*^9, 3.587668761552229*^9, 
-   3.587670578479022*^9, 3.58768967626301*^9, 3.5880366685777693`*^9, 
-   3.588259821675764*^9, 3.588262770668787*^9, 3.588263022554785*^9, 
-   3.5882634421513443`*^9, 3.58826481363325*^9, 3.58826486617339*^9, 
-   3.588265137344632*^9, 3.588265775304748*^9, 3.588265829502715*^9, 
-   3.5882661510874577`*^9, 3.588266635200753*^9, 3.588266740675961*^9, 
-   3.58826784381208*^9, 3.588273979285449*^9, 3.5883510429629993`*^9, 
-   3.589914359537925*^9, 3.591039490387169*^9, 3.592075610116651*^9, {
-   3.5996050504086514`*^9, 3.599605067990735*^9}, 3.599605247960709*^9, 
-   3.59960529812251*^9, 3.599605500567123*^9, 3.6051263199302053`*^9, 
-   3.61176524910054*^9, 3.611770020905815*^9, 3.611770251662717*^9, 
-   3.61183414624308*^9, 3.611835984303589*^9, 3.611836365975051*^9, 
-   3.611841506391873*^9, 3.61184223695828*^9, 3.6118424672996902`*^9, 
-   3.611842511533634*^9, {3.611842765728662*^9, 3.611842776727641*^9}, 
-   3.611849752713566*^9, 3.6118498231059227`*^9}]
+Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2014/\
+sessions_2014.json\"\>"], "Output",
+ CellChangeTimes->{3.611849933171658*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\"\</Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2014/\
+sessions_2014.json\>\""], "Input",
+ CellChangeTimes->{{3.611849913806316*^9, 3.611849915249127*^9}}],
+
+Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2014/\
+sessions_2014.json\"\>"], "Output",
+ CellChangeTimes->{3.611849933249839*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -177,7 +170,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.5807387754643908`*^9, 3.580738776606943*^9}, 
    3.588263448581378*^9}],
 
-Cell[BoxData["232"], "Output",
+Cell[BoxData["252"], "Output",
  CellChangeTimes->{
   3.580737868562491*^9, 3.5807387769700108`*^9, 3.580760472236516*^9, 
    3.580760647528902*^9, 3.580761033230147*^9, 3.580761516458633*^9, 
@@ -204,7 +197,8 @@ Cell[BoxData["232"], "Output",
    3.611770252685197*^9, 3.611834147624909*^9, 3.6118359854391403`*^9, 
    3.611836367138177*^9, 3.611841507455307*^9, 3.611842238157473*^9, 
    3.61184246871778*^9, 3.611842512739811*^9, {3.611842766032097*^9, 
-   3.6118427770761633`*^9}, 3.611849753263085*^9, 3.611849823604762*^9}]
+   3.6118427770761633`*^9}, 3.611849753263085*^9, 3.611849823604762*^9, 
+   3.6118499337702217`*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -220,7 +214,7 @@ Cell[BoxData[
  RowBox[{"sessions", "//", "Length"}]], "Input",
  CellChangeTimes->{3.5882668191721582`*^9}],
 
-Cell[BoxData["106"], "Output",
+Cell[BoxData["120"], "Output",
  CellChangeTimes->{
   3.5882668365667686`*^9, 3.58834962894452*^9, 3.588351288464903*^9, 
    3.588774567572464*^9, 3.588792862909326*^9, 3.588792973860939*^9, 
@@ -240,7 +234,7 @@ Cell[BoxData["106"], "Output",
    3.611835985538801*^9, 3.611836367221889*^9, 3.6118415075399723`*^9, 
    3.6118422382575407`*^9, 3.6118424688191013`*^9, 3.611842512818989*^9, {
    3.611842766182147*^9, 3.611842777178339*^9}, 3.6118497533509617`*^9, 
-   3.611849823687497*^9}]
+   3.611849823687497*^9, 3.611849933853364*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -258,17 +252,20 @@ Cell[BoxData[
 Cell[BoxData[
  TagBox[GridBox[{
     {"\<\"SessionID\"\>", "\<\"SessionTitle\"\>", "\<\"SessionTrack\"\>"},
-    {"400", "\<\"Tools\"\>", "\<\"What\[CloseCurlyQuote]s New in Xcode 5\"\>"},
-    {"401", "\<\"Tools\"\>", "\<\"Xcode Core Concepts\"\>"},
-    {"403", "\<\"Tools\"\>", "\<\"From Zero to App Store in Xcode 5\"\>"},
-    {"405", "\<\"Tools\"\>", "\<\"Interface Builder Core Concepts\"\>"},
-    {"406", "\<\"Tools\"\>", "\<\"Taking Control of Auto Layout in Xcode \
-5\"\>"},
-    {"407", "\<\"Tools\"\>", "\<\"Debugging with Xcode\"\>"},
-    {"409", "\<\"Tools\"\>", "\<\"Testing in Xcode 5\"\>"},
-    {"410", "\<\"Tools\"\>", "\<\"Fixing Memory Issues\"\>"},
-    {"412", "\<\"Tools\"\>", "\<\"Continuous Integration with Xcode 5\"\>"},
-    {"414", "\<\"Tools\"\>", "\<\"Understanding Source Control in Xcode\"\>"}
+    {"101", "\<\"Special Events\"\>", "\<\"Keynote\"\>"},
+    {"106", "\<\"Special Events\"\>", "\<\"Stump the Experts\"\>"},
+    {"107", "\<\"Special Events\"\>", "\<\"Designing for the Sensitive Mind: \
+The Digital Experience in the Autistic Spectrum\"\>"},
+    {"111", "\<\"Special Events\"\>", "\<\"Star Wars Past, Present and Future\
+\"\>"},
+    {"114", "\<\"Special Events\"\>", "\<\"The Bash\"\>"},
+    {"115", "\<\"Special Events\"\>", "\<\"A Moment In Silence\"\>"},
+    {"236", "\<\"Frameworks\"\>", "\<\"Building Interruptible and Responsive \
+Interactions\"\>"},
+    {"306", "\<\"Services\"\>", "\<\"JavaScript for Automation\"\>"},
+    {"403", "\<\"Tools\"\>", "\<\"Intermediate Swift\"\>"},
+    {"419", "\<\"Tools\"\>", "\<\"Advanced Graphics and Animations for iOS \
+Apps\"\>"}
    },
    AutoDelete->False,
    GridBoxAlignment->{
@@ -278,7 +275,7 @@ Cell[BoxData[
    GridBoxFrame->{"ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> True}},
    GridBoxItemSize->{"Columns" -> {{All}}, "Rows" -> {{All}}}],
   "Grid"]], "Output",
- CellChangeTimes->{3.611849823727354*^9}]
+ CellChangeTimes->{3.611849823727354*^9, 3.611849933908853*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -297,11 +294,12 @@ Cell[BoxData[
  RowBox[{
   RowBox[{
   "wwdcSessionVideoFilePath", "=", 
-   "\"\</Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2013/WWDC 2013 \
+   "\"\</Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2014/WWDC 2014 \
 Session Videos - Apple Developer.html\>\""}], ";"}]], "Input",
  CellChangeTimes->{{3.588349968608461*^9, 3.588349970093748*^9}, {
   3.599605189873108*^9, 3.599605198255073*^9}, {3.611765216796418*^9, 
-  3.611765217802464*^9}, {3.611842724166328*^9, 3.611842751895431*^9}}],
+  3.611765217802464*^9}, {3.611842724166328*^9, 3.611842751895431*^9}, {
+  3.611849916959436*^9, 3.611849917465173*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -326,7 +324,7 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-  "0.00004500000000000000283410447887710859`1.6738124270549675", ",", 
+  "0.00004100000000000000047401318981066254`1.6333837699993596", ",", 
    "True"}], "}"}]], "Output",
  CellChangeTimes->{
   3.4901064114773364`*^9, 3.4901066634243364`*^9, 3.4901068353793364`*^9, 
@@ -375,7 +373,7 @@ Cell[BoxData[
    3.611770022953927*^9, 3.6117702530710297`*^9, 3.611834148083735*^9, 
    3.611835985962624*^9, 3.6118363675239077`*^9, 3.6118415078572493`*^9, 
    3.611842584709284*^9, 3.6118427668630037`*^9, 3.6118497537620573`*^9, 
-   3.611849824122446*^9}]
+   3.611849824122446*^9, 3.611849934269339*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -394,17 +392,21 @@ Cell[BoxData[
 Cell[BoxData[
  TagBox[GridBox[{
     {"\<\"SessionID\"\>", "\<\"SessionTitle\"\>", "\<\"SessionTrack\"\>"},
-    {"400", "\<\"Tools\"\>", "\<\"What\[CloseCurlyQuote]s New in Xcode 5\"\>"},
-    {"401", "\<\"Tools\"\>", "\<\"Xcode Core Concepts\"\>"},
-    {"403", "\<\"Tools\"\>", "\<\"From Zero to App Store in Xcode 5\"\>"},
-    {"405", "\<\"Tools\"\>", "\<\"Interface Builder Core Concepts\"\>"},
-    {"406", "\<\"Tools\"\>", "\<\"Taking Control of Auto Layout in Xcode \
-5\"\>"},
-    {"407", "\<\"Tools\"\>", "\<\"Debugging with Xcode\"\>"},
-    {"409", "\<\"Tools\"\>", "\<\"Testing in Xcode 5\"\>"},
-    {"410", "\<\"Tools\"\>", "\<\"Fixing Memory Issues\"\>"},
-    {"412", "\<\"Tools\"\>", "\<\"Continuous Integration with Xcode 5\"\>"},
-    {"414", "\<\"Tools\"\>", "\<\"Understanding Source Control in Xcode\"\>"}
+    {"101", "\<\"Special Events\"\>", "\<\"Keynote\"\>"},
+    {"224", "\<\"Frameworks\"\>", "\<\"Core iOS Application Architectural \
+Patterns\"\>"},
+    {"236", "\<\"Frameworks\"\>", "\<\"Building Interruptible and Responsive \
+Interactions\"\>"},
+    {"306", "\<\"Services\"\>", "\<\"JavaScript for Automation\"\>"},
+    {"403", "\<\"Tools\"\>", "\<\"Intermediate Swift\"\>"},
+    {"404", "\<\"Tools\"\>", "\<\"Advanced Swift\"\>"},
+    {"419", "\<\"Tools\"\>", "\<\"Advanced Graphics and Animations for iOS \
+Apps\"\>"},
+    {"701", "\<\"Core OS\"\>", "\<\"Designing Accessories for iOS and OS \
+X\"\>"},
+    {"712", "\<\"Core OS\"\>", "\<\"Writing Energy Efficient Code, Part \
+2\"\>"},
+    {"717", "\<\"Core OS\"\>", "\<\"Kids and Apps\"\>"}
    },
    AutoDelete->False,
    GridBoxAlignment->{
@@ -415,7 +417,8 @@ Cell[BoxData[
    GridBoxItemSize->{"Columns" -> {{All}}, "Rows" -> {{All}}}],
   "Grid"]], "Output",
  CellChangeTimes->{3.611842588442775*^9, 3.6118427706041603`*^9, 
-  3.611849757492126*^9, 3.611849795096025*^9, 3.6118498278792143`*^9}]
+  3.611849757492126*^9, 3.611849795096025*^9, 3.6118498278792143`*^9, 
+  3.611849938267007*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -444,19 +447,19 @@ Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{"{", 
-    RowBox[{"\<\"Tools\"\>", ",", "17"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"Frameworks\"\>", ",", "28"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"Services\"\>", ",", "11"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"Media\"\>", ",", "16"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"Core OS\"\>", ",", "14"}], "}"}], ",", 
+    RowBox[{"\<\"Tools\"\>", ",", "18"}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{"\<\"Special Events\"\>", ",", "3"}], "}"}], ",", 
    RowBox[{"{", 
-    RowBox[{"\<\"Graphics and Games\"\>", ",", "10"}], "}"}]}], 
+    RowBox[{"\<\"Frameworks\"\>", ",", "36"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Services\"\>", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Core OS\"\>", ",", "17"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Media\"\>", ",", "16"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Graphics and Games\"\>", ",", "11"}], "}"}]}], 
   "}"}]], "Output",
  CellChangeTimes->{3.5887927924687023`*^9, 3.588792866340499*^9, 
   3.588792976791979*^9, 3.588793027346078*^9, 3.5887932112594433`*^9, 
@@ -468,7 +471,7 @@ Cell[BoxData[
   3.611770257221415*^9, 3.611836017781582*^9, 3.611836195632722*^9, 
   3.6118374161821127`*^9, 3.611840312613418*^9, 3.611840719006811*^9, 
   3.6118413915300207`*^9, 3.61184960616416*^9, 3.6118497576616087`*^9, 
-  3.6118498280366507`*^9}]
+  3.6118498280366507`*^9, 3.611849938399342*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -485,19 +488,19 @@ Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{"{", 
-    RowBox[{"\<\"Tools\"\>", ",", "17"}], "}"}], ",", 
+    RowBox[{"\<\"Special Events\"\>", ",", "15"}], "}"}], ",", 
    RowBox[{"{", 
-    RowBox[{"\<\"Frameworks\"\>", ",", "28"}], "}"}], ",", 
+    RowBox[{"\<\"Tools\"\>", ",", "18"}], "}"}], ",", 
    RowBox[{"{", 
-    RowBox[{"\<\"Services\"\>", ",", "11"}], "}"}], ",", 
+    RowBox[{"\<\"Frameworks\"\>", ",", "36"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Services\"\>", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Core OS\"\>", ",", "18"}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{"\<\"Media\"\>", ",", "16"}], "}"}], ",", 
    RowBox[{"{", 
-    RowBox[{"\<\"Core OS\"\>", ",", "14"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"Special Events\"\>", ",", "10"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"Graphics and Games\"\>", ",", "10"}], "}"}]}], 
+    RowBox[{"\<\"Graphics and Games\"\>", ",", "11"}], "}"}]}], 
   "}"}]], "Output",
  CellChangeTimes->{3.587670843495592*^9, 3.587689741879895*^9, 
   3.58803670224957*^9, 3.588259848590658*^9, 3.588266983688983*^9, 
@@ -510,7 +513,7 @@ Cell[BoxData[
   3.61177002739859*^9, 3.611770257292263*^9, 3.611836017833064*^9, 
   3.611836195697681*^9, 3.611837416248899*^9, 3.611840312780964*^9, 
   3.611840719072311*^9, 3.611841391600107*^9, 3.611849647462305*^9, 
-  3.611849757697391*^9, 3.61184982807228*^9}]
+  3.611849757697391*^9, 3.61184982807228*^9, 3.611849938454858*^9}]
 }, Open  ]],
 
 Cell["Session Videos which are not listed in Schedule.", "Text",
@@ -541,8 +544,8 @@ Cell[BoxData[
 Cell[BoxData[
  TagBox[GridBox[{
     {"\<\"SessionID\"\>", "\<\"SessionTitle\"\>", "\<\"SessionTrack\"\>"},
-    {"610", "\<\"Media\"\>", "\<\"What\[CloseCurlyQuote]s New in Camera \
-Capture\"\>"}
+    {"703", "\<\"Core OS\"\>", "\<\"What's New in the Accelerate \
+Framework\"\>"}
    },
    AutoDelete->False,
    GridBoxAlignment->{
@@ -554,7 +557,7 @@ Capture\"\>"}
   "Grid"]], "Output",
  CellChangeTimes->{3.611840551226904*^9, 3.611840720107526*^9, 
   3.6118413926713867`*^9, 3.611849656166152*^9, 3.611849758452126*^9, 
-  3.6118498288182*^9}]
+  3.6118498288182*^9, 3.6118499394788713`*^9}]
 }, Open  ]],
 
 Cell["Sessions which do not have a Session Video.", "Text",
@@ -583,17 +586,29 @@ Cell[BoxData[
 Cell[BoxData[
  TagBox[GridBox[{
     {"\<\"SessionID\"\>", "\<\"SessionTitle\"\>", "\<\"SessionTrack\"\>"},
-    {"102", "\<\"Special Events\"\>", "\<\"Apple Design Awards\"\>"},
-    {"103", "\<\"Special Events\"\>", "\<\"Stump the Experts\"\>"},
-    {"104", "\<\"Special Events\"\>", "\<\"Always On: How MLB Advanced Media \
-is Redefining the Live Sports Experience\"\>"},
-    {"105", "\<\"Special Events\"\>", "\<\"My Secret Life as a Knight\"\>"},
-    {"106", "\<\"Special Events\"\>", "\<\"Bill Nye The Science Guy \[Dash] \
-Twenty Years Exploring the PB and J (Passion, Beauty and Joy) of Science\"\>"},
-    {"107", "\<\"Special Events\"\>", "\<\"WWDC After Dark\"\>"},
-    {"108", "\<\"Special Events\"\>", "\<\"The Bash\"\>"},
-    {"610", "\<\"Media\"\>", "\<\"What\[CloseCurlyQuote]s new in Camera \
-Capture\"\>"}
+    {"104", "\<\"Special Events\"\>", "\<\"Apps for Enterprise Get Together\"\
+\>"},
+    {"105", "\<\"Special Events\"\>", "\<\"Health and Fitness Get \
+Together\"\>"},
+    {"106", "\<\"Special Events\"\>", "\<\"Stump the Experts\"\>"},
+    {"107", "\<\"Special Events\"\>", "\<\"Designing for the Sensitive Mind: \
+The Digital Experience in the Autistic Spectrum\"\>"},
+    {"108", "\<\"Special Events\"\>", "\<\"Women in Technology Get Together\"\
+\>"},
+    {"109", "\<\"Special Events\"\>", "\<\"Maps, Location, and iBeacon Get \
+Together\"\>"},
+    {"110", "\<\"Special Events\"\>", "\<\"Apps for China Get Together\"\>"},
+    {"111", "\<\"Special Events\"\>", "\<\"Star Wars Past, Present and Future\
+\"\>"},
+    {"112", "\<\"Special Events\"\>", "\<\"Game Developers Get \
+Together\"\>"},
+    {"113", "\<\"Special Events\"\>", "\<\"Apps for Kids Get Together\"\>"},
+    {"114", "\<\"Special Events\"\>", "\<\"The Bash\"\>"},
+    {"115", "\<\"Special Events\"\>", "\<\"A Moment In Silence\"\>"},
+    {"703", "\<\"Core OS\"\>", "\<\"What's new in the Accelerate \
+Framework\"\>"},
+    {"716", "\<\"Core OS\"\>", "\<\"Power, Performance and Diagnostics: \
+What's new in GCD and XPC\"\>"}
    },
    AutoDelete->False,
    GridBoxAlignment->{
@@ -606,7 +621,7 @@ Capture\"\>"}
  CellChangeTimes->{
   3.611840428868889*^9, {3.611840466685137*^9, 3.61184051516648*^9}, 
    3.611840721792758*^9, 3.611841394373373*^9, 3.611849659902104*^9, 
-   3.611849759392684*^9, 3.611849829795944*^9}]
+   3.611849759392684*^9, 3.611849829795944*^9, 3.6118499410943947`*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -626,11 +641,12 @@ Cell[BoxData[
  RowBox[{
   RowBox[{
   "downloadDir", "=", 
-   "\"\</Volumes/LaCie Rugged/WWDC 2013 Session Videos - SD/\>\""}], 
+   "\"\</Volumes/LaCie Rugged/WWDC 2014 Session Videos - SD/\>\""}], 
   ";"}]], "Input",
  CellChangeTimes->{{3.588267636345933*^9, 3.588267650740221*^9}, {
-  3.589473258826737*^9, 3.589473259162286*^9}, {3.6118357352505207`*^9, 
-  3.611835735326955*^9}, {3.611849733882883*^9, 3.6118497341367283`*^9}}],
+   3.589473258826737*^9, 3.589473259162286*^9}, {3.6118357352505207`*^9, 
+   3.611835735326955*^9}, {3.611849733882883*^9, 3.6118497341367283`*^9}, 
+   3.61184991861266*^9}],
 
 Cell[CellGroupData[{
 
@@ -639,21 +655,21 @@ Cell[BoxData[
   RowBox[{"FileNameJoin", "[", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{"ProjectDirectory", "[", "\"\<WWDC`WWDC2013`\>\"", "]"}], ",", 
-     "\"\<TestData/2013\>\""}], "}"}], "]"}]}]], "Input",
+     RowBox[{"ProjectDirectory", "[", "\"\<WWDC`WWDC2014`\>\"", "]"}], ",", 
+     "\"\<TestData/2014\>\""}], "}"}], "]"}]}]], "Input",
  CellChangeTimes->{{3.588267636345933*^9, 3.588267650740221*^9}, {
   3.589473258826737*^9, 3.589473259162286*^9}, {3.5996054529623747`*^9, 
   3.599605480589479*^9}, {3.611770230825683*^9, 3.6117702316528263`*^9}, {
   3.6118357389713173`*^9, 3.6118357422467318`*^9}, {3.611849737705811*^9, 
-  3.611849741585114*^9}}],
+  3.611849741585114*^9}, {3.611849919663569*^9, 3.6118499206995153`*^9}}],
 
-Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2013\"\>"]\
+Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2014\"\>"]\
 , "Output",
  CellChangeTimes->{{3.599605481259635*^9, 3.599605507734846*^9}, 
    3.605126356244823*^9, 3.611765302337512*^9, 3.611770027723774*^9, 
    3.611770257616444*^9, 3.611836018228451*^9, 3.6118361961917887`*^9, 
    3.611837416674788*^9, 3.6118407224573402`*^9, 3.611841394985017*^9, 
-   3.611849759532773*^9, 3.611849829903569*^9}]
+   3.611849759532773*^9, 3.611849829903569*^9, 3.611849941209606*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -667,8 +683,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.5894715824332447`*^9, 3.589471605873938*^9}, {
    3.589472257745273*^9, 3.5894722656235228`*^9}, 3.6118414037245703`*^9}],
 
-Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2013/wwdc_\
-2013_session_videos_download_PDF.sh\"\>"], "Output",
+Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2014/wwdc_\
+2014_session_videos_download_PDF.sh\"\>"], "Output",
  CellChangeTimes->{
   3.589471606226419*^9, 3.589472020421975*^9, 3.589472057597292*^9, {
    3.5894722481011267`*^9, 3.589472290399268*^9}, 3.58947309993223*^9, 
@@ -677,7 +693,8 @@ Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2013/wwdc_\
    3.60512635650249*^9, 3.611765302580168*^9, 3.611770027964366*^9, 
    3.61177025787501*^9, 3.611836018497285*^9, 3.611836197083791*^9, 
    3.611837416967042*^9, 3.6118407227468967`*^9, 3.61184082771443*^9, 
-   3.611841416513283*^9, 3.611849759586832*^9, 3.611849829961793*^9}]
+   3.611841416513283*^9, 3.611849759586832*^9, 3.611849829961793*^9, 
+   3.611849941261632*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -692,8 +709,8 @@ Cell[BoxData[
   3.589472270874028*^9, 3.589472273232297*^9}, {3.611841405217993*^9, 
   3.611841409980797*^9}}],
 
-Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2013/wwdc_\
-2013_session_videos_download_SD.sh\"\>"], "Output",
+Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2014/wwdc_\
+2014_session_videos_download_SD.sh\"\>"], "Output",
  CellChangeTimes->{
   3.589471629573028*^9, 3.589472020471805*^9, 3.58947205764515*^9, 
    3.589472248134527*^9, 3.589472290457303*^9, 3.5894730998230543`*^9, 
@@ -703,7 +720,8 @@ Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2013/wwdc_\
    3.611765302484208*^9, 3.611770027865181*^9, 3.6117702577735863`*^9, 
    3.611836018394994*^9, 3.6118361969321203`*^9, 3.611837416837378*^9, 
    3.61184072263055*^9, 3.611840763084622*^9, 3.611840827935143*^9, 
-   3.611841416564872*^9, 3.611849759636479*^9, 3.611849830013282*^9}]
+   3.611841416564872*^9, 3.611849759636479*^9, 3.611849830013282*^9, 
+   3.611849941315485*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -718,8 +736,8 @@ Cell[BoxData[
   3.5894722756425753`*^9, 3.589472275911511*^9}, {3.61184140658032*^9, 
   3.611841412266127*^9}}],
 
-Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2013/wwdc_\
-2013_session_videos_download_HD.sh\"\>"], "Output",
+Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2014/wwdc_\
+2014_session_videos_download_HD.sh\"\>"], "Output",
  CellChangeTimes->{
   3.589471637061307*^9, 3.5894720205211287`*^9, 3.5894720576935062`*^9, 
    3.5894722481671467`*^9, 3.589472290504401*^9, 3.589473099876148*^9, 
@@ -728,7 +746,8 @@ Cell[BoxData["\<\"/Users/matt/WolframWorkspaces/Base2/WWDC/TestData/2013/wwdc_\
    3.605126356453788*^9, 3.6117653025277576`*^9, 3.61177002792478*^9, 
    3.611770257825637*^9, 3.611836018447816*^9, 3.611836197033451*^9, 
    3.611837416900127*^9, 3.611840722683683*^9, 3.611840827985341*^9, 
-   3.611841416612979*^9, 3.611849759688819*^9, 3.6118498300597887`*^9}]
+   3.611841416612979*^9, 3.611849759688819*^9, 3.6118498300597887`*^9, 
+   3.611849941361775*^9}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -758,85 +777,89 @@ Cell[1118, 35, 178, 3, 51, "Subtitle"],
 Cell[CellGroupData[{
 Cell[1321, 42, 140, 2, 80, "Section"],
 Cell[1464, 46, 191, 4, 30, "Text"],
-Cell[1658, 52, 343, 6, 28, "Input"],
-Cell[2004, 60, 202, 4, 28, "Input"],
-Cell[2209, 66, 644, 17, 28, "Input"],
-Cell[2856, 85, 585, 15, 28, "Input"]
+Cell[1658, 52, 365, 6, 28, "Input"],
+Cell[2026, 60, 202, 4, 28, "Input"],
+Cell[2231, 66, 698, 18, 28, "Input"],
+Cell[2932, 86, 585, 15, 28, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3478, 105, 370, 6, 80, "Section"],
+Cell[3554, 106, 370, 6, 80, "Section"],
 Cell[CellGroupData[{
-Cell[3873, 115, 441, 9, 28, "Input"],
-Cell[4317, 126, 1453, 21, 28, "Output"]
-}, Open  ]],
-Cell[5785, 150, 412, 8, 28, "Input"],
-Cell[6200, 160, 477, 10, 28, "Input"],
-Cell[CellGroupData[{
-Cell[6702, 174, 160, 3, 28, "Input"],
-Cell[6865, 179, 1898, 27, 28, "Output"]
-}, Open  ]],
-Cell[8778, 209, 193, 5, 28, "Input"],
-Cell[CellGroupData[{
-Cell[8996, 218, 106, 2, 28, "Input"],
-Cell[9105, 222, 1362, 20, 28, "Output"]
+Cell[3949, 116, 487, 9, 28, "Input"],
+Cell[4439, 127, 152, 2, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10504, 247, 296, 8, 28, "Input"],
-Cell[10803, 257, 1274, 23, 227, "Output"]
+Cell[4628, 134, 175, 2, 28, InheritFromParent],
+Cell[4806, 138, 152, 2, 28, "Output"]
+}, Open  ]],
+Cell[4973, 143, 412, 8, 28, "Input"],
+Cell[5388, 153, 477, 10, 28, "Input"],
+Cell[CellGroupData[{
+Cell[5890, 167, 160, 3, 28, "Input"],
+Cell[6053, 172, 1926, 28, 28, "Output"]
+}, Open  ]],
+Cell[7994, 203, 193, 5, 28, "Input"],
+Cell[CellGroupData[{
+Cell[8212, 212, 106, 2, 28, "Input"],
+Cell[8321, 216, 1384, 20, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9742, 241, 296, 8, 28, "Input"],
+Cell[10041, 251, 1377, 26, 227, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12126, 286, 459, 7, 80, "Section"],
-Cell[12588, 295, 418, 8, 28, "Input"],
-Cell[13009, 305, 474, 9, 28, "Input"],
+Cell[11467, 283, 459, 7, 80, "Section"],
+Cell[11929, 292, 467, 9, 28, "Input"],
+Cell[12399, 303, 474, 9, 28, "Input"],
 Cell[CellGroupData[{
-Cell[13508, 318, 214, 5, 28, "Input"],
-Cell[13725, 325, 3540, 52, 28, "Output"]
+Cell[12898, 316, 214, 5, 28, "Input"],
+Cell[13115, 323, 3562, 52, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17302, 382, 340, 9, 28, "Input"],
-Cell[17645, 393, 1369, 24, 227, "Output"]
+Cell[16714, 380, 340, 9, 28, "Input"],
+Cell[17057, 391, 1429, 29, 225, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19063, 423, 487, 7, 80, "Section"],
+Cell[18535, 426, 487, 7, 80, "Section"],
 Cell[CellGroupData[{
-Cell[19575, 434, 239, 6, 28, "Input"],
-Cell[19817, 442, 1315, 28, 28, "Output"]
+Cell[19047, 437, 239, 6, 28, "Input"],
+Cell[19289, 445, 1336, 28, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21169, 475, 243, 6, 28, "Input"],
-Cell[21415, 483, 1400, 29, 28, "Output"]
+Cell[20662, 478, 243, 6, 28, "Input"],
+Cell[20908, 486, 1421, 29, 28, "Output"]
 }, Open  ]],
-Cell[22830, 515, 179, 2, 30, "Text"],
+Cell[22344, 518, 179, 2, 30, "Text"],
 Cell[CellGroupData[{
-Cell[23034, 521, 682, 17, 28, "Input"],
-Cell[23719, 540, 766, 16, 59, "Output"]
+Cell[22548, 524, 682, 17, 28, "Input"],
+Cell[23233, 543, 785, 16, 57, "Output"]
 }, Open  ]],
-Cell[24500, 559, 176, 2, 30, "Text"],
+Cell[24033, 562, 176, 2, 30, "Text"],
 Cell[CellGroupData[{
-Cell[24701, 565, 624, 15, 28, "Input"],
-Cell[25328, 582, 1441, 26, 191, "Output"]
+Cell[24234, 568, 624, 15, 28, "Input"],
+Cell[24861, 585, 1943, 38, 303, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26818, 614, 549, 8, 80, "Section"],
-Cell[27370, 624, 360, 8, 28, "Input"],
+Cell[26853, 629, 549, 8, 80, "Section"],
+Cell[27405, 639, 387, 9, 28, "Input"],
 Cell[CellGroupData[{
-Cell[27755, 636, 556, 11, 28, "Input"],
-Cell[28314, 649, 419, 6, 28, "Output"]
+Cell[27817, 652, 604, 11, 28, "Input"],
+Cell[28424, 665, 441, 6, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28770, 660, 371, 7, 28, "Input"],
-Cell[29144, 669, 717, 10, 28, "Output"]
+Cell[28902, 676, 371, 7, 28, "Input"],
+Cell[29276, 685, 743, 11, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29898, 684, 391, 8, 28, "Input"],
-Cell[30292, 694, 790, 11, 28, "Output"]
+Cell[30056, 701, 391, 8, 28, "Input"],
+Cell[30450, 711, 816, 12, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31119, 710, 392, 8, 28, "Input"],
-Cell[31514, 720, 724, 10, 86, "Output"]
+Cell[31303, 728, 392, 8, 28, "Input"],
+Cell[31698, 738, 750, 11, 86, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

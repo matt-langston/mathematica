@@ -41,6 +41,7 @@ BeginPackage["WWDC`WWDC2013`"]
 SessionDescriptionForSessionID::usage = "";
                 SelectSessions::usage = "";
                 SessionSummary::usage = "";
+            SessionSummaryGrid::usage = "";
 
 Begin["`Private`"]
 Needs["Calendar`"];
@@ -119,6 +120,12 @@ Select[sessionList,
 
 SessionSummary[session_?SessionQ]         := {SessionID[session], SessionTrack[session], SessionTitle[session]};
 SessionSummary[sessionList_?SessionListQ] := Map[SessionSummary, sessionList];
+
+SessionSummaryGrid[sessionList_?SessionListQ] :=
+Grid[Join[{{"SessionID", "SessionTitle", "SessionTrack"}}, SessionSummary[sessionList]],
+	Alignment -> {{Center, Left, Left}, Automatic, {{1, 1}, {1, -1}} -> Center},
+	Dividers -> {None, 2 -> True}, Frame -> True, ItemSize -> Full
+];
 
 End[]
 

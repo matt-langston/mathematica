@@ -16,12 +16,6 @@ BeginPackage["WWDC`WWDC2013SessionVideoLibrary`",
 	}
 ]
 
-(*
-SessionVideoHyperlinkPattern::usage         = "";
-sessionVideoDownloadUrlDataMap::usage       = "";
-sessionVideoDownloadUrlDataList::usage      = "";
-*)
-
 DownloadFormatList::usage                    = "";
 ExportDownloadScript::usage                  = "";
 CurlCommand::usage                           = "";
@@ -46,7 +40,14 @@ SessionVideoLibraryQ::usage                  = "";
 
 SessionVideoData::usage                      = "";
 SessionVideoDataQ::usage                     = "";
+SessionVideoDataListQ::usage                 = "";
 SessionVideoDownloadUrlDataList::usage       = "";
+
+(*
+SessionVideoHyperlinkPattern::usage         = "";
+sessionVideoDownloadUrlDataMap::usage       = "";
+sessionVideoDownloadUrlDataList::usage      = "";
+*)
 
 Begin["`Private`"]
 Needs["Calendar`"];
@@ -169,6 +170,9 @@ SessionVideoDataQ[___]                                                      := F
 SessionVideoDataQ[object:SessionVideoData[pattern:SessionVideoDataPattern]] :=
 SessionVideoDataQ[object                                                  ]  = True;
 
+SessionVideoDataListQ[___]                                                                           := False;
+SessionVideoDataListQ[sessionVideoDataList_List /; VectorQ[sessionVideoDataList, SessionVideoDataQ]] := True;
+
 SessionVideoData[
 	sessionID_Integer,
 	sessionTitle_String,
@@ -197,6 +201,14 @@ SessionVideoData /:                          SessionTitle[object:SessionVideoDat
 SessionVideoData /:                          SessionTrack[object:SessionVideoData[pattern:SessionVideoDataPattern]] := SessionTrack                    /. {pattern};
 SessionVideoData /:       SessionVideoDownloadUrlDataList[object:SessionVideoData[pattern:SessionVideoDataPattern]] := SessionVideoDownloadUrlDataList /. {pattern};
 SessionVideoData /:                              TextFile[object:SessionVideoData[pattern:SessionVideoDataPattern]] := TextFile                        /. {pattern};
+
+SessionSummary[sessionVideoDataList_?SessionVideoDataListQ] := Map[SessionSummary, sessionVideoDataList];
+
+SessionSummaryGrid[sessionVideoDataList_?SessionVideoDataListQ] :=
+Grid[Join[{{"SessionID", "SessionTitle", "SessionTrack"}}, SessionSummary[sessionVideoDataList]],
+	Alignment -> {{Center, Left, Left}, Automatic, {{1, 1}, {1, -1}} -> Center},
+	Dividers -> {None, 2 -> True}, Frame -> True, ItemSize -> Full
+];
 
 (*
 SessionVideoData /:               SessionVideoDownloadUrl[object:SessionVideoData[pattern:SessionVideoDataPattern]] :=               SessionVideoDownloadUrl[SessionVideoDownloadUrlData[object]];
