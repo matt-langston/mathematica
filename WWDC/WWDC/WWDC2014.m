@@ -39,6 +39,7 @@ BeginPackage["WWDC`WWDC2014`"]
 SessionDescriptionForSessionID::usage = "";
                 SelectSessions::usage = "";
                 SessionSummary::usage = "";
+            SessionSummaryGrid::usage = "";
 
 Begin["`Private`"]
 Needs["Calendar`"];
@@ -84,6 +85,8 @@ NounQ[word_String]                                               := MemberQ[Word
 SessionListQ[___]                                                := False;
 SessionListQ[sessionList_List /; VectorQ[sessionList, SessionQ]] := True;
 
+(* FIXME: this should use my upvalue pattern instead of the following downvalue pattern. *)
+
  SessionDescription[sessionData_?SessionDataQ] :=              "description"  /. sessionData;
       SessionEndGMT[sessionData_?SessionDataQ] := DateList[    "endGMT"       /. sessionData];
       SessionEndPDT[sessionData_?SessionDataQ] := DateList[    "end_time"     /. sessionData];
@@ -111,6 +114,12 @@ Select[sessionList,
 
 SessionSummary[session_?SessionQ]         := {SessionID[session], SessionTrack[session], SessionTitle[session]};
 SessionSummary[sessionList_?SessionListQ] := Map[SessionSummary, sessionList];
+
+SessionSummaryGrid[sessionList_?SessionListQ] :=
+Grid[Join[{{"SessionID", "SessionTitle", "SessionTrack"}}, SessionSummary[sessionList]],
+	Alignment -> {{Center, Left, Left}, Automatic, {{1, 1}, {1, -1}} -> Center},
+	Dividers -> {None, 2 -> True}, Frame -> True, ItemSize -> Full
+];
 
 End[]
 
