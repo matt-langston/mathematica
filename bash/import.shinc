@@ -1,0 +1,121 @@
+# -*- mode: shell-script -*-
+
+# Author: Matt Langston
+# Date:   2014.05.01
+#
+# This script provides a "python-like" import function for bash
+# modules. Name your bash modules with the extension .shinc and import
+# the module with the following syntax:
+#
+# import "AModule/ModuleFile"
+
+set -o nounset
+
+# @description Normalize the given pathname by removing /./ and
+# dir/.. sequences from it. This was found on
+# http://www.linuxjournal.com/content/normalizing-path-names-bash
+#
+# Usage: normalize_path PATH
+#
+# @param $1 the pathname to normalize
+#
+function normalize_path() {
+    # Remove all /./ sequences.
+    local path=${1//\/.\//\/}
+    
+    # Remove dir/.. sequences.
+    while [[ $path =~ ([^/][^/]*/\.\./) ]]
+    do
+        path=${path/${BASH_REMATCH[0]}/}
+    done
+    RESULT="$path"
+}
+
+# @description Private helper function for the "import" function
+# documented below.
+#
+# @param $1 the script's $0 parameter
+#
+function getScriptAbsoluteDir {
+    local script_invoke_path="${0}"
+	
+    # If the first character is not a "/" then it is not an absolute path.
+    if ! test "x${script_invoke_path:0:1}" = 'x/'; then
+		script_invoke_path="${PWD}/${script_invoke_path}"
+    fi
+	
+	normalize_path "${script_invoke_path}"
+    RESULT=$(dirname "${RESULT}")
+}
+
+# @description A "python-like" import function for bash modules. The
+# specified module is first searched for in the script's directory and
+# if not found then the module is searched for in the paths contained
+# in the SHELL_LIBRARY_PATH environment variable.
+#
+# @param $1 the .shinc file to import, without a .shinc extension
+#
+function import() { 
+	local -r module="${1:?}"
+	local -r script_name=$(basename "${0}")
+	
+	getScriptAbsoluteDir
+	local -r script_absolute_dir="${RESULT}"
+	
+	local path=
+	local module_path=
+	
+    if test "x${module}" == "x"
+    then
+        echo "${script_name} : Unable to import unspecified module. Dying."
+        exit 1
+    fi
+	
+    if test "x${script_absolute_dir:-notset}" == "xnotset"
+    then
+        echo "${script_name} : Undefined script absolute dir. Did you remove getScriptAbsoluteDir? Dying."
+        exit 1
+    fi
+	
+    if test "x${script_absolute_dir}" == "x"
+    then
+        echo "${script_name} : empty script path. Dying."
+        exit 1
+    fi
+
+	# First try to import the module from the main script's directory.
+	path="${script_absolute_dir}"
+	module_path="${path}/${module}.shinc"
+    if test -e "${module_path}"
+	then
+		# echo "MDL: search for ${module_path}"
+        source "${module_path}"
+        return
+    elif test "x${SHELL_LIBRARY_PATH:-notset}" != "xnotset"
+    then
+        # Next try to import the module from the SHELL_LIBRARY_PATH
+        # environment variable.
+        local -r saved_IFS="${IFS}"
+        IFS=':'
+        for path in "${SHELL_LIBRARY_PATH}"
+        do
+			module_path="${path}/${module}.shinc"
+			# echo "MDL: search for ${module_path}"
+            if test -e "${module_path}"
+            then
+				# echo "MDL: found for ${module_path}"
+                source "${module_path}"
+				
+				# restore the standard separator
+				IFS="${saved_IFS}"
+				
+                return
+            fi
+        done
+        # restore the standard separator
+        IFS="${saved_IFS}"
+    fi
+
+    echo "${script_name} : Unable to find module \"${module}\"."
+    exit 1
+}
