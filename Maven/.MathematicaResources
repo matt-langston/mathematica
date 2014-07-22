@@ -1,7 +1,6 @@
 Resources[
     Version[1],
     Sources[
-        Directory["github/Utilities"],
         Directory["~"]
     ],
     Java[
