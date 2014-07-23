@@ -18,6 +18,7 @@
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <antlr4.version>4.3</antlr4.version>
   </properties>
   
   <dependencyManagement>
@@ -36,7 +37,14 @@
         <version>1.0</version>
         <scope>compile</scope>
       </dependency>
-    </dependencies>
+	  
+      <dependency>
+        <!-- ANTLR v4  -->
+		<groupId>org.antlr</groupId>
+		<artifactId>antlr4-runtime</artifactId>
+		<version>${antlr4.version}</version>
+      </dependency>
+	</dependencies>
   </dependencyManagement>
   
   <dependencies>
@@ -45,12 +53,63 @@
       <artifactId>jlink</artifactId>
     </dependency>
     <dependency>
+      <groupId>net.jcip</groupId>
+      <artifactId>jcip-annotations</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-all</artifactId>
     </dependency>
   </dependencies>
   
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+		  <!--
+			  Plugin to compile the g4 files ahead of the java
+			  files. See
+			  https://github.com/antlr/antlr4/blob/master/antlr4-maven-plugin/src/site/apt/examples/simple.apt.vm. Except
+			  that the grammar does not need to contain the package
+			  declaration as stated in the documentation (I do not
+			  know why). To use this plugin, type:
+			  
+              mvn antlr4:antlr4
+			  
+			  In any case, Maven will invoke this plugin before the
+			  Java source is compiled.
+          -->
+		  <groupId>org.antlr</groupId>
+          <artifactId>antlr4-maven-plugin</artifactId>
+          <version>${antlr4.version}</version>
+          <executions>
+			<execution>
+              <goals>
+				<goal>antlr4</goal>
+              </goals>
+			</execution>
+          </executions>   
+          <configuration>
+              <sourceDirectory>${antlr.dir}</sourceDirectory>
+              <listener>true</listener>
+              <visitor>true</visitor>
+              <!-- <arguments> -->
+              <!--   <argument>-package</argument> -->
+              <!--   <argument>org.boazglean.dabar.parser</argument> -->
+              <!-- </arguments> -->
+            </configuration>
+		</plugin>
+      </plugins>
+    </pluginManagement>
+	
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
