@@ -10,14 +10,15 @@
   <name>Parent POM for Matt Langston's Mathematica Projects</name>
   
   <parent>
-    <groupId>io.spring.platform</groupId>
-    <artifactId>platform-bom</artifactId>
-    <version>1.0.1.RELEASE</version>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.1.4.RELEASE</version>
     <relativePath/>
   </parent>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.7</java.version>
     <antlr4.version>4.3</antlr4.version>
   </properties>
   
@@ -37,14 +38,20 @@
         <version>1.0</version>
         <scope>compile</scope>
       </dependency>
-	  
+      
       <dependency>
         <!-- ANTLR v4  -->
-		<groupId>org.antlr</groupId>
-		<artifactId>antlr4-runtime</artifactId>
-		<version>${antlr4.version}</version>
+        <groupId>org.antlr</groupId>
+        <artifactId>antlr4-runtime</artifactId>
+        <version>${antlr4.version}</version>
       </dependency>
-	</dependencies>
+      
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.3.2</version>
+      </dependency>
+    </dependencies>
   </dependencyManagement>
   
   <dependencies>
@@ -57,63 +64,87 @@
       <artifactId>jcip-annotations</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest-all</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   
   <build>
     <pluginManagement>
       <plugins>
+        <!-- This plugin sets up maven to use Java 7 -->
         <plugin>
-		  <!--
-			  Plugin to compile the g4 files ahead of the java
-			  files. See
-			  https://github.com/antlr/antlr4/blob/master/antlr4-maven-plugin/src/site/apt/examples/simple.apt.vm. Except
-			  that the grammar does not need to contain the package
-			  declaration as stated in the documentation (I do not
-			  know why). To use this plugin, type:
-			  
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-shade-plugin</artifactId>
+          <version>2.3</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-eclipse-plugin</artifactId>
+          <version>2.9</version>
+          <configuration>
+            <additionalProjectnatures>
+              <projectnature>com.wolfram.eclipse.MEET.SimpleMathematicaNature</projectnature>
+            </additionalProjectnatures>
+            <additionalBuildcommands>
+              <buildcommand>com.wolfram.eclipse.MEET.MathematicaProjectBuilder</buildcommand>
+            </additionalBuildcommands>
+          </configuration>
+        </plugin>
+        <plugin>
+          <!--
+              Plugin to compile the g4 files ahead of the java
+              files. See
+              https://github.com/antlr/antlr4/blob/master/antlr4-maven-plugin/src/site/apt/examples/simple.apt.vm. Except
+              that the grammar does not need to contain the package
+              declaration as stated in the documentation (I do not
+              know why). To use this plugin, type:
+              
               mvn antlr4:antlr4
-			  
-			  In any case, Maven will invoke this plugin before the
-			  Java source is compiled.
+              
+              In any case, Maven will invoke this plugin before the
+              Java source is compiled.
           -->
-		  <groupId>org.antlr</groupId>
+          <groupId>org.antlr</groupId>
           <artifactId>antlr4-maven-plugin</artifactId>
           <version>${antlr4.version}</version>
           <executions>
-			<execution>
+            <execution>
               <goals>
-				<goal>antlr4</goal>
+                <goal>antlr4</goal>
               </goals>
-			</execution>
+            </execution>
           </executions>   
           <configuration>
-              <sourceDirectory>${antlr.dir}</sourceDirectory>
-              <listener>true</listener>
-              <visitor>true</visitor>
-              <!-- <arguments> -->
-              <!--   <argument>-package</argument> -->
-              <!--   <argument>org.boazglean.dabar.parser</argument> -->
-              <!-- </arguments> -->
-            </configuration>
-		</plugin>
+            <listener>true</listener>
+            <visitor>true</visitor>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
-	
+    
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
